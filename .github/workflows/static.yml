@@ -25,6 +25,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      # Add explicit setup of upload-artifact
+      - name: Setup Upload Artifact
+        uses: actions/upload-artifact@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
