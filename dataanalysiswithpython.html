@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<!--
+	Portfolio: M. Mazhar
+-->
+<html>
+	<head>
+		<title>Portfolio | Mazhar</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" /> -->
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>M. Mazhar</strong></a>
+									<ul class="icons">
+										<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
+										<li><a href="https://github.com/mm-mazhar/mazhar" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+										<li><a href="https://www.kaggle.com/mazhar01" target="_blank" class="icon brands fa-kaggle"><span class="label">kaggle</span></a></li>
+										<li><a href="https://www.linkedin.com/in/m-mazhar-121133269/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+										<!-- <li><a href="https://twitter.com/mm_mazhar19" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+										<li><a href="https://wa.me/+923002576068" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li>
+										<!-- <li><a href="#" target="_blank" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h2>Data Analysis with Python</h2>
+										
+										<ul class="icons icons-badges">
+											<li><span class="label"><img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=plastic&logo=Jupyter"/></span></li>
+											<li><span class="label"><img src="https://img.shields.io/badge/Python->3.7-3776AB?style=plastic&logo=Python"/></span></li>
+											<li><span class="label"><img src="https://img.shields.io/badge/Numpy-073343?style=plastic&logo=Numpy"/></span></li>
+											<li><span class="label"><img src="https://img.shields.io/badge/pandas-150458?style=plastic&logo=pandas"/></span></li>
+											<li><span class="label"><img src="https://img.shields.io/badge/matplotlib-366f81?style=plasticlogo=matplotlib"/></span></li>
+											<li><span class="label"><img src="https://img.shields.io/badge/seaborn-adafc2?style=plastic&logo=seaborn"/></span></li>
+											<li><span class="label"><img src="https://img.shields.io/badge/Plotly-3F4F75?style=plastic&logo=Plotly"/></span></li>
+											<li><span class="label"><img src="https://img.shields.io/badge/Django-092E20?style=plastic&logo=Django"/></span></li>
+										</ul>
+										<hr>
+									</header>
+									<!-- Data Analysis with Python Projects -->
+									<!-- <h2 id="elements">Data Analysis with Python</h2> -->
+									<div class="row gtr-200">
+										<div class="col-6 col-12-small">
+											<h2>COVID-19 DASHBOARD Django Plotly Dash App</h2>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<span class="image right">
+														<a href="/images/covid-19.jpg" target="_blank">
+															<img src="/images/covid-19.jpg" alt="COVID-19 DASHBOARD Django Plotly Dash App" style="width:416; height:256" />
+														</a>
+													</span>
+													This COVID-19 Dashboard tracks covid-19 confirmed, deaths, recovered, active cases. It also contains vaccination analysis. The data was collected from various sources such as <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series" target="_blank">CSSE at Johns Hopkins University</a> and <a href="https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations" target="_blank">Our World in Data</a>. 
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<code>extractData.py</code>The script starts by importing the necessary libraries and filtering out any FutureWarning messages. It then sets three URL variables for the three CSV files that contain information on confirmed cases, deaths, and recoveries.
+													The script then merges the three data frames using the merge() function, first merging the total_confirmed and total_deaths data frames, and then merging the result with the total_recovered data frame.
+													The script then converts the date column from string to proper date format using the pd.to_datetime() function. It checks the number of missing values using the isna().sum() function and replaces any NaN values in the recovered column with 0 using the fillna() function.
+													The script then creates a new column called active that calculates the number of active cases by subtracting the number of deaths and recovered cases from the number of confirmed cases. It then groups the data by date and calculates the total number of confirmed cases, deaths, recoveries, and active cases using the groupby() and sum() functions.
+													Finally, the script creates a dictionary of lists containing the latitude and longitude coordinates of each country using the set_index(), T(), and to_dict() functions.
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<code>processDFs.py</code>This script imports some data from a file named extractData.py and performs some data cleaning tasks. After that, it converts the data types of some columns of the imported data and prepares a dataframe dfc for animation confirmed cases.
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<code>vaccinations_by_age_group.py</code>This Python code imports necessary libraries and packages to create an interactive dashboard for visualizing vaccination data by age group. It fetches vaccination data by age group from a GitHub repository and loads it into a pandas dataframe. 
+													The dataframe is sorted by date and location, and NaN values are filled with 0. The dashboard is built using the Dash library, which is a web application framework for building data-driven applications. The dashboard displays a dropdown menu with a list of countries to select from. 
+													Based on the user's selection, the line chart shows the percentage of fully vaccinated people per hundred for each age group in the selected country over time. The code also uses the 
+													DjangoDash library to integrate the dashboard into a Django project. Finally, the code defines a callback function to update the line chart based on the selected country in the dropdown menu. 
+													The figure is customized with various layout settings to improve its appearance.
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">
+													Similarly, there are few other scripts like <code>vaccineManufacturer.py</code> explores the data regarding vaccine manufacturers and <code>deathRace.py</code> animates the death toll in some countries.
+												</p>
+												<p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/Dashbaord-Covid19-Django-Plotly_Dash" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
+												<!-- <br> -->
+												<hr>
+											<!-- Next -->
+											<h2>Data Analysis and Visualization on Ecommerce Dataset</h2>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<span class="image left">
+														<a href="/images/EcommerceDataset1.jpg" target="_blank">
+															<img src="/images/EcommerceDataset1.jpg" alt="Data Analysis and Visualization on Ecommerce Dataset" style="width:416; height:256"  />
+														</a>
+													</span>
+												This is the largest retail e-commerce orders dataset from Pakistan. It contains half a million transaction records from March 2016 to August 2018. The data was collected from various e-commerce merchants as part of a research study. 
+												</p>
+												
+												<p style="text-align: justify; text-justify: inter-word;">
+													The code reads a dataset from a CSV file, performs some data cleaning operations like dropping some unnecessary columns, checking for missing data, dropping 
+													rows with missing data, replacing zeros from certain columns with values from other columns, and extracting year and month from a column. The cleaned dataset is stored in a Pandas DataFrame.
+													It explores, Best Seller Category Yearly, Highest Order Cancellation per Category, Highest Order Refunded per Category, Most Orders for Product and Top 10 Most Orders for Products,
+													Most Qty of Products Ordered, Visualize payment method and order status frequency etc and plot relevent charts and graphs
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">
+													More on Github &nbsp; <a href="https://github.com/mm-mazhar/Data-Analysis-and-Visualization-on-Ecommerce-Dataset" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
+												</p>
+												<!-- <br> -->
+												<hr>
+											<!-- Next -->
+											<h2>TwitterAPI/dash/plotly, A simple example</h2>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<span class="image right">
+														<a href="/images/TwitterDash.jpg" target="_blank">
+															<img src="/images/TwitterDash.jpg" alt="TwitterAPI/dash/plotly, A simple example" style="width:416; height:256" />
+														</a>
+													</span>
+													This is a simple example of TwitterAPI/dash/plotly deployment on server using flask, gunicorn and docker. 
+												</p>
+												
+												<p style="text-align: justify; text-justify: inter-word;">
+													<code>appTrends.py</code>The code is a Python script that imports several libraries including Plotly, Dash, and pandas. The script is designed to process Twitter trends and display them in a Dash web application. The script defines a generator function, 
+													woidsGenerator, that reads a JSON file, removes invalid parent ids, creates a list of countries and parent ids, removes duplicates, and yields a list of woeids, country, 
+													and parent ids. There is also a function called f that inserts a URL link inside a Dash DataTable.                            
+													The locationTrends variable is set to "United States" and a tuple object is created by calling the woidsGenerator function with the JSON file and locationTrends. 
+													The woeid variable is set to the first value in the tuple object and lstCountryParentid is set to the second value. The listCountry variable is created by creating a 
+													list of countries from the lstCountryParentid variable.                            
+													The trends_layout variable is a Dash container that includes a title row, a dropdown menu for selecting a country, a submit button, a notification row, a Dash table for displaying 
+													trends, and an interval for updating trends (not shown in the tab).                            
+													The displayTrends function is a callback function that takes a country input from the dropdown menu, retrieves the trends using the woidsGenerator function, and displays them in a Dash table. The n_clicks input from the submit button triggers the callback function. 
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<code>appTweetsSearch.py</code>This Python code is a part of a Dash app that displays analytics of Twitter search results based on inputted keywords. 
+													The code imports various modules, including plotly.express, dash_bootstrap_components, pandas, and re. It defines a function called "cleanText" that cleans 
+													the text data by removing Twitter-specific content such as URLs, mentions, hashtags, and retweets.
+													The code defines a Dash layout for the tab "Recent Search," which includes a search bar, a dropdown menu for the number of results to display, and a 
+													submit button. It also includes two bar charts and a Dash table for displaying trends.                             
+													The code defines a callback function called "display_value," which takes as input the number of clicks on the submit button, the number of results to 
+													return, and the search term. The function uses the Twitter API to search for tweets containing the inputted search term, and then creates two bar charts 
+													and a Dash table to display the results. The function returns the children of the notification component, the figure for the first bar chart, the figure 
+													for the second bar chart, and the children of the Dash table.
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">
+													There are other scripts such as <code>getUsersTweet.py</code> which gather user's tweet and <code>getUsersInfo.py</code> which collects user's info pretty much 
+													basic use of Twitter's API
+												</p>
+												<p  style="text-align: justify; text-justify: inter-word;">View it on <a href="https://dashboard-twitter-analytics.onrender.com/" target="_blank">Render</a></p>
+												<p  style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/Dashboard-Twitter-Analytics" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
+												<!-- <br> -->
+												<hr>
+											<!-- Next -->
+											<h2>Chicago Divvy Bicycle Sharing Data</h2>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<span class="image left">
+														<a href="/images/da2.jpg" target="_blank">
+															<img src="/images/da2.jpg" alt="Chicago Divvy Bicycle Sharing Data" style="width:416; height:256" />
+														</a>
+													</span>
+													In this short exercise data analysis and visualization is being performed on the Chicago Divvy bicycle sharing data from 2014 to 2017. The code begins by importing 
+													the required libraries such as numpy, pandas, matplotlib, seaborn, and plotly.express. Next, the dataset is downloaded using the Kaggle API and the csv file is 
+													loaded into a dataframe called 'df'. The code then inspects the data and checks for missing values. It also adds new features to the dataframe such 
+													as 'date', 'weekend', 'dayofweek', 'months', 'dayofmonth', 'dayofyear', 'trip_count', and 'season'. The 'season' column is added using the given Northern 
+													Hemisphere season dates. Finally, the code visualizes the data using different plots such as scatter plot, bar plot, line plot, heatmaps, etc. 
+													The code shows various visualizations such as hourly usage patterns, daily usage patterns, monthly usage patterns, popular start and stop stations, 
+													user types, etc.
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/ChicagoDivvyBicycleSharingData" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
+												<!-- <br> -->
+												<hr>
+											<!-- Next -->
+											<h2>Emergency 911 Calls</h2>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<span class="image right">
+														<a href="/images/da2.jpg" target="_blank">
+															<img src="/images/da2.jpg" alt="Emergency 911 Calls" style="width:416; height:256" />
+														</a>
+													</span>
+													This Python code performs data analysis and visualization on a dataset of 911 calls. Initially, it imports necessary libraries including NumPy, Pandas, 
+													Matplotlib, Seaborn, and Plotly. Then it downloads a dataset of 911 calls through Kaggle API and reads it into a Pandas DataFrame named df. The code performs 
+													some basic data cleaning and analysis by checking missing values and filling missing values in the zip column. It then answers some questions about the 
+													dataset such as the top 5 zip codes and townships for 911 calls and the most common reason for 911 calls. Finally, it visualizes the data by creating a 
+													Seaborn countplot and a Plotly histogram.
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/Emergency_911_Calls" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
+												<!-- <br> -->
+												<hr>
+											<!-- Next -->
+											<h2>Walmart Sales Dataset of 45 stores</h2>
+												<p style="text-align: justify; text-justify: inter-word;">
+													<span class="image left">
+														<a href="/images/WalmartSales.jpg" target="_blank">
+														<img src="/images/WalmartSales.jpg" alt="Walmart Sales Dataset of 45 stores" style="width:416; height:256" />
+													</a>
+												</span>
+												This Python code performs data analysis and visualization on a Walmart sales dataset of 45 stores. The code starts by importing necessary libraries like numpy, 
+												pandas, seaborn, matplotlib, and plotly for data manipulation and visualization. After that, it reads the Walmart sales dataset from a CSV file using Pandas. 
+												The code then performs data preprocessing tasks like inspecting the dataset's information, finding missing values, adding new features like holidays, season, 
+												and month names to the data frame. It also drops some columns and rearranges the data frame columns. Finally, the code performs exploratory data analysis 
+												using visualization techniques. It creates various charts and plots to analyze the annual sales of stores, monthly sales trends, sales by different holidays 
+												and seasons, sales based on temperature, fuel prices, CPI, and unemployment rate, etc. The code also provides insights into stores' performance and identifies 
+												the top-performing stores based on their annual sales.
+												</p>
+												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/WalmartSalesDatasetof45stores" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
+												<!-- <br> -->
+												<hr>
+											<!-- Next -->
+											
+											<!-- Sample -->
+											<!-- Next -->
+											<!-- <h2>Enter Project Name</h2>
+												<p>
+													<span class="image left">
+														<a href="" target="_blank">
+														<img src="" alt=""  />
+														</a>
+													</span>
+													Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+												</p>
+												More on Github &nbsp; <a href="" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
+												<br>
+												<hr> -->
+											<!-- Next -->
+										</div>
+									</div>
+							</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+				<div id="sidebar">
+					<div class="inner">
+						<!-- Menu -->
+							<nav id="menu">
+								<div class="theme-buttons">
+									<button id="toggle" class="button">Switch Mode <img src="images/moon.png" id="icon" class="icon-themes"></button>
+								</div>
+								<header class="major">
+									<!-- <a href="#menu"><h2>Menu</h2></a> -->
+									<h2>Menu</h2>
+								</header>
+								<ul>
+									<!-- <li><a href="/index.html">Homepage</a></li> -->
+									<li><a href="/">Homepage</a></li>
+									<!-- <li><a href="#latest-work">Latest</a></li> -->
+									<li><a href="/dataanalysiswithpython.html">Data Analysis with Python</a></li>
+									<li><a href="/mldlcv.html">ML/DL and Computer Vision</a></li>
+									<li><a href="/genai.html">Generative AI</a></li>
+									<li><a href="/pythonpackages.html">Python Packages</a></li>
+									<li><a href="/sqlandpowerbi.html">SQL & Power BI</a></li>
+									<li><a href="/webscrapingandothers.html">Web Scraping & Others</a></li>
+							
+									<!-- <li><a href="generic.html">Generic</a></li>
+												<li><a href="elements.html">Elements</a></li> -->
+								  </ul>
+							</nav>
+
+						<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Get in touch</h2>
+								</header>
+								<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
+								<ul class="contact">
+									<li class="icon solid fa-envelope"><a href="mazqoty.01@gmail.com" target="_blank">mazqoty.01@gmail.com</a></li>
+									<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
+									<!-- <li class="icon solid fa-phone"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li> -->
+									<li class="icon solid brands fa-whatsapp"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li>
+									<li class="icon brands fa-github"><a href="https://github.com/mm-mazhar/mazhar" target="_blank">Github</a></li>
+									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/m-mazhar-121133269/" target="_blank">Linkedin</a></li>
+									<!-- <li class="icon brands fa-twitter"><a href="https://twitter.com/mm_mazhar19" target="_blank">Twitter</a></li> -->
+									
+									<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+									Nashville, TN 00000-0000</li> -->
+								</ul>
+							</section>
+
+
+						<!-- Footer -->
+							<footer id="footer">
+								<p class=" © copyright">&copy; M. Mazhar Made with ❤️   +  <a href="https://html5up.net">HTML5 UP</a></p>
+								
+							</footer>
+
+					</div>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				const toggle = document.getElementById("toggle");
+				const refresh = document.getElementById("refresh");
+				const theme = window.localStorage.getItem("theme");
+				var icon=document.getElementById("icon");
+
+				/* checks if the theme stored in localStorage is dark
+				if yes apply the dark theme to the body */
+				if (theme === "dark") {
+					document.body.classList.add("dark");
+					icon.src="images/sun.png";
+				}
+
+				// event listener stops when the change theme button is clicked
+				toggle.addEventListener("click", () => {
+				document.body.classList.toggle("dark");
+				if (theme === "dark") {
+					icon.src="images/sun.png";
+					window.localStorage.setItem("theme", "light");
+					window.location.reload();
+				} else {
+					icon.src="images/moon.png";
+					window.localStorage.setItem("theme", "dark");
+					window.location.reload();
+				}
+				});
+			</script>
+
+			<script>
+				var tablinks=document.getElementsByClassName("tab-links");
+				var tabcontents=document.getElementsByClassName("tab-contents");
+				
+				function opentab(tabname){
+					for(tablink of tablinks){
+						tablink.classList.remove("active-link");
+					}
+					for(tabcontent of tabcontents){
+						tabcontent.classList.remove("active-tab");
+					}
+					event.currentTarget.classList.add("active-link");
+					document.getElementById(tabname).classList.add("active-tab");
+				}
+			</script>
+
+
+	</body>
+</html>
