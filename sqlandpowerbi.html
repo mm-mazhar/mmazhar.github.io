@@ -1,17 +1,106 @@
 <!DOCTYPE HTML>
 <!--
-	Portfolio: M. Mazhar
+	Portfolio: M. Mazhar - SQL & Power BI
 -->
 <html>
 	<head>
-		<title>Portfolio | Mazhar</title>
+		<title>SQL & Power BI | M. Mazhar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" /> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" >
+		
+		<style>
+			/* Styling built using main.css variables */
+			.project-card {
+				background: var(--color-5);
+				border: 1px solid var(--color-2);
+				border-radius: 0.375em;
+				padding: 1.8em;
+				margin-bottom: 2em;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+			}
+			.project-card:hover {
+				border-color: var(--color-13);
+				box-shadow: 0 4px 15px var(--color-11);
+				transform: translateY(-2px);
+			}
+			.project-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-bottom: 1em;
+			}
+			.project-title {
+				margin: 0 !important;
+				color: var(--color-3);
+			}
+			.project-body {
+				display: flex;
+				flex-direction: row;
+				gap: 1.5em;
+				align-items: flex-start;
+			}
+			@media screen and (max-width: 768px) {
+				.project-body {
+					flex-direction: column;
+				}
+				.project-img-wrapper {
+					width: 100% !important;
+				}
+			}
+			.project-img-wrapper {
+				width: 35%;
+				flex-shrink: 0;
+				border-radius: 0.375em;
+				overflow: hidden;
+				border: 1px solid var(--color-2);
+			}
+			.project-img-wrapper img {
+				width: 100%;
+				height: 220px;
+				object-fit: cover;
+				display: block;
+				transition: transform 0.3s ease;
+			}
+			.project-card:hover .project-img-wrapper img {
+				transform: scale(1.05);
+			}
+			.project-content {
+				flex-grow: 1;
+			}
+			.tech-pill-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 10px 0 15px 0;
+			}
+			.tech-pill {
+				font-size: 0.75em;
+				padding: 2px 10px;
+				border-radius: 0.375em;
+				border: 1px solid var(--color-13);
+				background: var(--color-11);
+				color: var(--color-13);
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+			.action-buttons-group {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-top: 1.2em;
+			}
+			.badge-header-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 1.2em 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload dark">
 
@@ -22,212 +111,351 @@
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
-									<a href="./" class="logo"><strong>M. Mazhar</strong></a>
-									<ul class="icons">
-										<li><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
-										<li><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-										<li><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-										<li><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li>
-										<!-- <li><a href="https://www.kaggle.com/mazhar01" target="_blank" class="icon brands fa-kaggle"><span class="label">kaggle</span></a></li> -->
-										 <!-- <li><a href="https://twitter.com/mm_mazhar19" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-										<!-- <li><a href="https://wa.me/+923002576068" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li> -->
-										<!-- <li><a href="#" target="_blank" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+								<header id="header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 1.2em 0; width: 100%;">
+								<!-- Logo / Name (Left Aligned) -->
+								<a href="./" class="logo" style="font-size: 1.25em; border-bottom: none; flex-shrink: 0;"><strong>M. Mazhar</strong></a>
+
+								<!-- Right Header Actions Container (Pushed Flush Right) -->
+								<div style="margin-left: auto; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px;">
+									
+									<!-- Work Authorization Status Badge -->
+									<span style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--color-13); background: var(--color-11); color: var(--color-13); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px; flex-shrink: 0;">
+										<i class="fa-solid fa-circle-check"></i> Full Work Authorized
+									</span>
+
+									<!-- Download CV Button -->
+									<a href="images/mazhar_CV.pdf" target="_blank" class="button small" download style="height: 2.5em; line-height: 2.5em; padding: 0 1.2em; font-size: 0.7em; display: inline-flex; align-items: center; gap: 6px; border-bottom: none; flex-shrink: 0;">
+										<i class="fa-solid fa-download"></i> Download CV
+									</a>
+
+									<!-- Vertical Divider -->
+									<span style="height: 18px; width: 1px; background: var(--color-2); margin: 0 2px;"></span>
+
+									<!-- Contact & Social Icons (Aligned Flush Right) -->
+									<ul class="icons" style="margin: 0; padding: 0; display: inline-flex; align-items: center; gap: 12px;">
+										<li style="padding: 0;"><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone" style="border-bottom: none;"><span class="label">Phone</span></a></li>
+										<li style="padding: 0;"><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope" style="border-bottom: none;"><span class="label">Email</span></a></li>
+										<li style="padding: 0;"><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github" style="border-bottom: none;"><span class="label">Github</span></a></li>
+										<li style="padding: 0;"><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin" style="border-bottom: none;"><span class="label">Linkedin</span></a></li>
+										<li style="padding: 0; margin-right: 0;"><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp" style="border-bottom: none;"><span class="label">WhatsApp</span></a></li>
 									</ul>
-								</header>
+								</div>
+							</header>
 
 							<!-- Content -->
                             <section>
-								<header class="main">
-									<h2>SQL & PowerBI</h2>
-									
-									<ul class="icons icons-badges">
-										<li><span class="label"><img src="https://img.shields.io/badge/MySQL-4479A1?style=plastic&logo=MySQL"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=plastic&logo=PostgreSQL"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/Python->3.7-3776AB?style=plastic&logo=Python"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/Power BI-F2C811?style=plastic&logo=Power BI"/></span></li>
-							
-										
-									</ul>
-									<hr>
-								</header>
-								<!-- SQL & PowerBI Projects -->
-									<!-- <h2 id="elements">SQL & PowerBI</h2> -->
-									<div class="row gtr-200">
-										<div class="col-6 col-12-small">
-											<h2>PostgreSQL | Music Store Analysis</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="images/schema_diagram_resized.png" target="_blank">
-															<img src="images/schema_diagram_resized.png" alt="Schema Diagram"  style="width:416; height:256" />
-														</a>
-													</span>
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													These SQL queries are used to perform data analysis on a music store database. The questions are divided into three sets - Easy, Moderate, and Advance.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													The Easy set consists of five questions that can be easily answered using basic SQL commands. The questions include finding the senior-most employee based on job title, identifying the countries with the most invoices, determining the top three values of total invoice, identifying the city with the best customers based on the sum of invoice totals, and finding the best customer who has spent the most money.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													The Moderate set consists of three questions that are a bit more complex than the Easy set. The questions include finding the email, first name, last name, and genre of all rock music listeners, identifying the top 10 rock bands based on the total track count, and identifying all track names that have a song length longer than the average song length.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													The Advance set consists of two questions that are more challenging than the previous sets. The questions include finding how much amount spent by each customer on artists and identifying the most popular music genre for each country, where the maximum number of purchases is shared, returning all genres.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/PostgreSQL-Music-Store-Analysis" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>Working with Facts and Dimension Tables</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image right">
-														<a href="images/Working_with_Facts_and_Dimension_Tables_resized.png" target="_blank">
-															<img src="images/Working_with_Facts_and_Dimension_Tables_resized.png" alt="Working with Facts and Dimension Tables"  style="width:416; height:256" />
-														</a>
-													</span>
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													The objective of this lab is to:
-													<ul>
-														<li>Study the schema of the given csv file</li>
-														<li>Design the fact tables</li>
-														<li>Design the dimension tables</li>
-														<li>Create a star schema using the fact and dimension tables</li>
-													</ul>
-													in mySQL and PostgreSQL
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/ER_and_Working-with-Facts-and-Dimension-Tables" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>ETL Using Shell Scripts</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="images/ETL_Using_Shell_Scripts_resized.png" target="_blank">
-															<img src="images/ETL_Using_Shell_Scripts_resized.png" alt="ETL Using Shell Scripts"  style="width:416; height:256" />
-														</a>
-													</span>
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													This shell script is an ETL (Extract, Transform, Load) pipeline for processing web server access logs and storing the data in a PostgreSQL database table.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													The script begins by creating a table called "access_log" in the "template1" database of the PostgreSQL instance running on the local host.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													Next, it downloads a compressed text file "web-server-access-log.txt.gz" from a public URL and unzips it. The file contains data about website visitors, including their timestamp, latitude, longitude, visitor ID, and other columns.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													After extracting the relevant data columns (timestamp, latitude, longitude, and visitor ID) from the unzipped file using the "cut" command, the script transforms the data delimiter from "#" to "," using the "tr" command and saves the output to a CSV file called "extracted-data.csv".
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													Finally, the script loads the CSV file into the "access_log" table using the "\COPY" command and verifies the successful data insertion by querying the table using a SELECT statement.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													Overall, this script demonstrates how to use shell commands and PostgreSQL utilities to build a simple data pipeline for processing and storing large volumes of structured data.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/ETL_with_Shell_Scripts" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<h2>PowerBI | Super Store Sales Analysis</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image right">
-														<a href="images/PowerBI-SuperStore-SalesAnalysis_resized.png" target="_blank">
-															<img src="images/PowerBI-SuperStore-SalesAnalysis_resized.png" alt="BPowerBI Super Store Sales Analysis"  style="width:416; height:256" />
-														</a>
-													</span>
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													This is small exercise where data of Super Store is being explored in PowerBI.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/PowerBI-Super-Store-Sales-Analysis" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<p style="text-align: justify; text-justify: inter-word;">Other Similar Project on Github &nbsp; <a href="https://github.com/mm-mazhar/PowerBI-NY-Property-Sales-Analysis" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>PowerBI | Bank Customer Churn Analysis</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="images/PowerBI-End-to-End-Project-BankingDomain_resized.png" target="_blank">
-															<img src="images/PowerBI-End-to-End-Project-BankingDomain_resized.png" alt=""  style="width:416; height:256" />
-														</a>
-													</span>
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													Churn analysis is a technique used to identify customers who are likely to discontinue using a product or service. It involves analyzing customer behavior and other data to understand why customers stop using a product or service, and what factors contribute to their decision to leave.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/PowerBI-Bank-Customers-Churn-Analysis" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-										</div>
-									</div>
-							</section>
+                                <header class="main">
+                                    <h2>SQL & Power BI</h2>
+                                    <p>Database Design, Star Schema Data Modeling, ETL Shell Scripting, and Interactive Business Intelligence Dashboards.</p>
+                                    
+                                    <div class="badge-header-container">
+										<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
+										<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+										<img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI"/>
+										<img src="https://img.shields.io/badge/Bash_Shell-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash Shell"/>
+                                    </div>
+                                    <hr>
+                                </header>
+
+                                <!-- Projects List -->
+                                <div class="projects-container">
+
+                                    <!-- PROJECT 1: PostgreSQL Music Store -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">PostgreSQL | Music Store Database Analysis</h3>
+                                            <a href="https://github.com/mm-mazhar/PostgreSQL-Music-Store-Analysis" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/schema_diagram_resized.png" target="_blank">
+                                                    <img src="images/schema_diagram_resized.png" alt="Schema Diagram">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">PostgreSQL</span>
+                                                    <span class="tech-pill">Relational Schema</span>
+                                                    <span class="tech-pill">SQL Analytics</span>
+                                                    <span class="tech-pill">Business Intelligence</span>
+                                                </div>
+
+                                                <p>Executed structured SQL queries across Easy, Moderate, and Advanced complexity tiers to analyze music store operations. Queries evaluated employee hierarchy structures, regional invoice volumes, track durations, top artist revenue drivers, and country-specific genre popularity metrics.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://github.com/mm-mazhar/PostgreSQL-Music-Store-Analysis" target="_blank" class="button small"><i class="icon brands fa-github"></i> View Queries & Schema</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 2: Facts & Dimension Tables -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Star Schema Data Modeling: Facts & Dimensions</h3>
+                                            <a href="https://github.com/mm-mazhar/ER_and_Working-with-Facts-and-Dimension-Tables" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/Working_with_Facts_and_Dimension_Tables_resized.png" target="_blank">
+                                                    <img src="images/Working_with_Facts_and_Dimension_Tables_resized.png" alt="Facts and Dimension Tables">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Data Modeling</span>
+                                                    <span class="tech-pill">Star Schema</span>
+                                                    <span class="tech-pill">Fact & Dimension</span>
+                                                    <span class="tech-pill">MySQL / Postgres</span>
+                                                </div>
+
+                                                <p>Designed relational database schemas, fact tables, and dimension tables from raw CSV datasets. Created optimized Star Schemas implemented across both MySQL and PostgreSQL database environments for OLAP reporting performance.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://github.com/mm-mazhar/ER_and_Working-with-Facts-and-Dimension-Tables" target="_blank" class="button small"><i class="icon brands fa-github"></i> View Data Model</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 3: Shell Script ETL -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Automated Shell Script ETL Log Pipeline</h3>
+                                            <a href="https://github.com/mm-mazhar/ETL_with_Shell_Scripts" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/ETL_Using_Shell_Scripts_resized.png" target="_blank">
+                                                    <img src="images/ETL_Using_Shell_Scripts_resized.png" alt="ETL Using Shell Scripts">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Bash Shell Scripting</span>
+                                                    <span class="tech-pill">ETL Pipeline</span>
+                                                    <span class="tech-pill">PostgreSQL</span>
+                                                    <span class="tech-pill">Web Log Processing</span>
+                                                </div>
+
+                                                <p>An automated Extract, Transform, Load (ETL) pipeline script processing compressed web server access logs. Downloads <strong>.gz</strong> log archives, uses GNU Linux utilities (<strong>cut</strong>, <strong>tr</strong>) to transform delimiters, creates target PostgreSQL database tables, and executes bulk data loading via <strong>\COPY</strong> commands.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://github.com/mm-mazhar/ETL_with_Shell_Scripts" target="_blank" class="button small"><i class="icon brands fa-github"></i> View Shell Pipeline</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 4: PowerBI SuperStore Sales -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Power BI | SuperStore Retail Sales Analytics</h3>
+                                            <a href="https://github.com/mm-mazhar/PowerBI-Super-Store-Sales-Analysis" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/PowerBI-SuperStore-SalesAnalysis_resized.png" target="_blank">
+                                                    <img src="images/PowerBI-SuperStore-SalesAnalysis_resized.png" alt="Power BI Super Store Sales">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Power BI</span>
+                                                    <span class="tech-pill">DAX Measures</span>
+                                                    <span class="tech-pill">Retail BI</span>
+                                                    <span class="tech-pill">Sales Dashboard</span>
+                                                </div>
+
+                                                <p>Interactive Power BI business intelligence dashboard exploring retail SuperStore sales performance, profit margins, shipping modes, and regional category growth metrics using customized DAX measures.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://github.com/mm-mazhar/PowerBI-Super-Store-Sales-Analysis" target="_blank" class="button small"><i class="icon brands fa-github"></i> SuperStore Repo</a>
+                                                    <a href="https://github.com/mm-mazhar/PowerBI-NY-Property-Sales-Analysis" target="_blank" class="button small"><i class="icon brands fa-github"></i> NY Property Sales Repo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 5: PowerBI Bank Customer Churn -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Power BI | Banking Customer Churn Analysis</h3>
+                                            <a href="https://github.com/mm-mazhar/PowerBI-Bank-Customers-Churn-Analysis" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/PowerBI-End-to-End-Project-BankingDomain_resized.png" target="_blank">
+                                                    <img src="images/PowerBI-End-to-End-Project-BankingDomain_resized.png" alt="Power BI Bank Customer Churn">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Power BI</span>
+                                                    <span class="tech-pill">Banking Domain</span>
+                                                    <span class="tech-pill">Churn Analysis</span>
+                                                    <span class="tech-pill">Retention Insights</span>
+                                                </div>
+
+                                                <p>End-to-end banking analytics dashboard modeling customer attrition risks. Analyzes demographic patterns, credit scores, account balances, and product holdings to provide actionable insights for customer retention strategies.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://github.com/mm-mazhar/PowerBI-Bank-Customers-Churn-Analysis" target="_blank" class="button small"><i class="icon brands fa-github"></i> View Churn Dashboard</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-				<div id="sidebar">
+					<!-- Sidebar -->
+					<div id="sidebar">
+					<style>
+						/* Dark Mode Sidebar Contrast Color */
+						body.dark #sidebar {
+							background-color: #1a1a1a !important;
+							border-right: 1px solid rgba(255, 255, 255, 0.08);
+						}
+
+						/* Adjust top padding so SWITCH MODE aligns with header line */
+						#sidebar > .inner {
+							padding-top: 1.2em !important;
+						}
+
+						/* Remove horizontal lines & section dividers inside sidebar */
+						#sidebar > .inner > * {
+							border-bottom: none !important;
+							margin-bottom: 1.8em !important;
+							padding-bottom: 0 !important;
+						}
+						#menu > ul > li {
+							border-top: none !important;
+							margin-top: 0.3em !important;
+							padding-top: 0.3em !important;
+						}
+						#sidebar a {
+							border-bottom: none !important;
+						}
+
+						/* Reset & Flex-align Get In Touch contact items */
+						ul.contact-flex {
+							list-style: none !important;
+							padding-left: 0 !important;
+							margin: 0 !important;
+						}
+						ul.contact-flex li {
+							display: flex !important;
+							align-items: center !important;
+							gap: 12px !important;
+							margin-bottom: 0.8em !important;
+							padding: 0 !important;
+							border-top: none !important;
+						}
+						ul.contact-flex li i {
+							color: var(--color-13);
+							font-size: 1.15em;
+							width: 20px;
+							text-align: center;
+							flex-shrink: 0;
+						}
+					</style>
+
 					<div class="inner">
+
+						<!-- Theme Toggle Button -->
+						<div style="margin-top: 0; margin-bottom: 1.5em;">
+							<button id="toggle" class="button fit" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 2.8em; line-height: 2.8em;">
+								<span>Switch Mode</span> 
+								<img src="images/moon.png" id="icon" class="icon-themes" style="width: 16px; height: 16px; margin: 0;">
+							</button>
+						</div>
+
 						<!-- Menu -->
-							<nav id="menu">
-								<div class="theme-buttons">
-									<button id="toggle" class="button">Switch Mode <img src="images/moon.png" id="icon" class="icon-themes"></button>
-								</div>
-								<header class="major">
-									<!-- <a href="#menu"><h2>Menu</h2></a> -->
-									<h2>Menu</h2>
-								</header>
-								<ul>
-									<!-- <li><a href="/index.html">Homepage</a></li> -->
-									<li><a href="./">Homepage</a></li>
-									<!-- <li><a href="#latest-work">Latest</a></li> -->
-									<li><a href="./genai.html">Generative AI</a></li>
-									<li><a href="./mldlcv.html">ML/DL and Computer Vision</a></li>
-									<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
-									<li><a href="./pythonpackages.html">Python Packages</a></li>
-									<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
-									<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
-							
-									<!-- <li><a href="generic.html">Generic</a></li>
-												<li><a href="elements.html">Elements</a></li> -->
-								  </ul>
-							</nav>
+						<nav id="menu">
+							<header class="major">
+								<h2>Navigation</h2>
+							</header>
+							<ul>
+								<li>
+									<a href="./"><i class="fa-solid fa-house" style="margin-right: 8px; color: var(--color-13);"></i> Homepage</a>
+								</li>
+								<li>
+									<a href="./genai.html"><i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 8px; color: var(--color-13);"></i> Generative AI</a>
+								</li>
+								<li>
+									<a href="./mldlcv.html"><i class="fa-solid fa-brain" style="margin-right: 8px; color: var(--color-13);"></i> ML / DL & Computer Vision</a>
+								</li>
 
-						<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Get in touch</h2>
-								</header>
-								<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
-								<ul class="contact">
-									<li class="icon solid fa-envelope"><a href="mazqoty.01@gmail.com" target="_blank">mazqoty.01@gmail.com</a></li>
-									<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
-									<!-- <li class="icon solid fa-phone"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li> -->
-									<li class="icon solid brands fa-whatsapp"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li>
-									<li class="icon brands fa-github"><a href="https://github.com/mm-mazhar/mazhar" target="_blank">Github</a></li>
-									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/m-mazhar-121133269/" target="_blank">Linkedin</a></li>
-									<!-- <li class="icon brands fa-twitter"><a href="https://twitter.com/mm_mazhar19" target="_blank">Twitter</a></li> -->
-									
-									<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-									Nashville, TN 00000-0000</li> -->
-								</ul>
-							</section>
+								<!-- Collapsible Archived Projects Dropdown -->
+								<li>
+									<span class="opener" style="opacity: 0.85;">
+										<i class="fa-solid fa-box-archive" style="margin-right: 8px; color: var(--color-4);"></i> Archived Projects
+									</span>
+									<ul style="padding-left: 1.2em; margin-top: 0.5em;">
+										<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
+										<li><a href="./pythonpackages.html">Python Packages</a></li>
+										<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
+										<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
 
+						<!-- Get In Touch Section -->
+						<section style="margin-top: 2em;">
+							<header class="major">
+								<h2>Get in touch</h2>
+							</header>
+							<ul class="contact-flex">
+								<li>
+									<i class="fa-solid fa-envelope"></i>
+									<a href="mailto:email.mazhar.01@gmail.com" target="_blank">email.mazhar.01@gmail.com</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-whatsapp"></i>
+									<a href="https://wa.me/+15715322248" target="_blank">WhatsApp (+1 571 532 2248)</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-github"></i>
+									<a href="https://github.com/mm-mazhar" target="_blank">GitHub Profile</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-linkedin"></i>
+									<a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank">LinkedIn Profile</a>
+								</li>
+							</ul>
+						</section>
 
 						<!-- Footer -->
-							<footer id="footer">
-								<p class=" © copyright">&copy; M. Mazhar Made with ❤️   +  <a href="https://html5up.net">HTML5 UP</a></p>
-								
-							</footer>
+						<footer id="footer" style="margin-top: 2em;">
+							<p class="copyright">&copy; M. Mazhar &bull; Built with ❤️ & <a href="https://html5up.net" target="_blank">HTML5 UP</a></p>
+						</footer>
 
 					</div>
 				</div>
-
 			</div>
 
 		<!-- Scripts -->
@@ -238,11 +466,9 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				const toggle = document.getElementById("toggle");
-				const refresh = document.getElementById("refresh");
 				let theme = window.localStorage.getItem("theme");
-				var icon=document.getElementById("icon");
+				var icon = document.getElementById("icon");
 
-				// Default to dark mode if no theme is set
 				if (!theme) {
 					theme = "dark";
 					window.localStorage.setItem("theme", "dark");
@@ -250,13 +476,12 @@
 
 				if (theme === "dark") {
 					document.body.classList.add("dark");
-					icon.src="images/sun.png";
+					icon.src = "images/sun.png";
 				} else {
 					document.body.classList.remove("dark");
-					icon.src="images/moon.png";
+					icon.src = "images/moon.png";
 				}
 
-				// event listener stops when the change theme button is clicked
 				toggle.addEventListener("click", () => {
 					if (theme === "dark") {
 						window.localStorage.setItem("theme", "light");
@@ -266,23 +491,5 @@
 					window.location.reload();
 				});
 			</script>
-
-			<script>
-				var tablinks=document.getElementsByClassName("tab-links");
-				var tabcontents=document.getElementsByClassName("tab-contents");
-				
-				function opentab(tabname){
-					for(tablink of tablinks){
-						tablink.classList.remove("active-link");
-					}
-					for(tabcontent of tabcontents){
-						tabcontent.classList.remove("active-tab");
-					}
-					event.currentTarget.classList.add("active-link");
-					document.getElementById(tabname).classList.add("active-tab");
-				}
-			</script>
-
-
 	</body>
 </html>

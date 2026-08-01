@@ -1,17 +1,106 @@
 <!DOCTYPE HTML>
 <!--
-	Portfolio: M. Mazhar
+	Portfolio: M. Mazhar - ML/DL & Computer Vision
 -->
 <html>
 	<head>
-		<title>Portfolio | Mazhar</title>
+		<title>ML/DL & Computer Vision | M. Mazhar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" /> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		
+		<style>
+			/* Styling built using main.css variables */
+			.project-card {
+				background: var(--color-5);
+				border: 1px solid var(--color-2);
+				border-radius: 0.375em;
+				padding: 1.8em;
+				margin-bottom: 2em;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+			}
+			.project-card:hover {
+				border-color: var(--color-13);
+				box-shadow: 0 4px 15px var(--color-11);
+				transform: translateY(-2px);
+			}
+			.project-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-bottom: 1em;
+			}
+			.project-title {
+				margin: 0 !important;
+				color: var(--color-3);
+			}
+			.project-body {
+				display: flex;
+				flex-direction: row;
+				gap: 1.5em;
+				align-items: flex-start;
+			}
+			@media screen and (max-width: 768px) {
+				.project-body {
+					flex-direction: column;
+				}
+				.project-img-wrapper {
+					width: 100% !important;
+				}
+			}
+			.project-img-wrapper {
+				width: 35%;
+				flex-shrink: 0;
+				border-radius: 0.375em;
+				overflow: hidden;
+				border: 1px solid var(--color-2);
+			}
+			.project-img-wrapper img {
+				width: 100%;
+				height: 220px;
+				object-fit: cover;
+				display: block;
+				transition: transform 0.3s ease;
+			}
+			.project-card:hover .project-img-wrapper img {
+				transform: scale(1.05);
+			}
+			.project-content {
+				flex-grow: 1;
+			}
+			.tech-pill-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 10px 0 15px 0;
+			}
+			.tech-pill {
+				font-size: 0.75em;
+				padding: 2px 10px;
+				border-radius: 0.375em;
+				border: 1px solid var(--color-13);
+				background: var(--color-11);
+				color: var(--color-13);
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+			.action-buttons-group {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-top: 1.2em;
+			}
+			.badge-header-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 1.2em 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload dark">
 
@@ -22,397 +111,555 @@
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
-									<a href="./" class="logo"><strong>M. Mazhar</strong></a>
-									<ul class="icons">
-										<li><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
-										<li><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-										<li><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-										<li><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li>
-										<!-- <li><a href="https://www.kaggle.com/mazhar01" target="_blank" class="icon brands fa-kaggle"><span class="label">kaggle</span></a></li> -->
-										 <!-- <li><a href="https://twitter.com/mm_mazhar19" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-										<!-- <li><a href="https://wa.me/+923002576068" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li> -->
-										<!-- <li><a href="#" target="_blank" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+								<header id="header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 1.2em 0; width: 100%;">
+								<!-- Logo / Name (Left Aligned) -->
+								<a href="./" class="logo" style="font-size: 1.25em; border-bottom: none; flex-shrink: 0;"><strong>M. Mazhar</strong></a>
+
+								<!-- Right Header Actions Container (Pushed Flush Right) -->
+								<div style="margin-left: auto; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px;">
+									
+									<!-- Work Authorization Status Badge -->
+									<span style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--color-13); background: var(--color-11); color: var(--color-13); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px; flex-shrink: 0;">
+										<i class="fa-solid fa-circle-check"></i> Full Work Authorized
+									</span>
+
+									<!-- Download CV Button -->
+									<a href="images/mazhar_CV.pdf" target="_blank" class="button small" download style="height: 2.5em; line-height: 2.5em; padding: 0 1.2em; font-size: 0.7em; display: inline-flex; align-items: center; gap: 6px; border-bottom: none; flex-shrink: 0;">
+										<i class="fa-solid fa-download"></i> Download CV
+									</a>
+
+									<!-- Vertical Divider -->
+									<span style="height: 18px; width: 1px; background: var(--color-2); margin: 0 2px;"></span>
+
+									<!-- Contact & Social Icons (Aligned Flush Right) -->
+									<ul class="icons" style="margin: 0; padding: 0; display: inline-flex; align-items: center; gap: 12px;">
+										<li style="padding: 0;"><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone" style="border-bottom: none;"><span class="label">Phone</span></a></li>
+										<li style="padding: 0;"><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope" style="border-bottom: none;"><span class="label">Email</span></a></li>
+										<li style="padding: 0;"><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github" style="border-bottom: none;"><span class="label">Github</span></a></li>
+										<li style="padding: 0;"><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin" style="border-bottom: none;"><span class="label">Linkedin</span></a></li>
+										<li style="padding: 0; margin-right: 0;"><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp" style="border-bottom: none;"><span class="label">WhatsApp</span></a></li>
 									</ul>
-								</header>
+								</div>
+							</header>
 
 							<!-- Content -->
                             <section>
                                 <header class="main">
-                                    <h2>ML/DL and Computer Vision</h2>
+                                    <h2>ML / DL & Computer Vision</h2>
+                                    <p>Predictive Modeling, 3D Point Cloud Segmentation, Real-Time Object Detection, and Production MLOps Deployments.</p>
                                     
-                                    <ul class="icons icons-badges">
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=plastic&logo=Jupyter"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Python->3.7-3776AB?style=plastic&logo=Python"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Tensoflow-FF6F00?style=plastic&logo=Tensoflow"/></span></li>
-                                        <!-- <li><span class="label"><img src="https://img.shields.io/badge/scikit-learn-F7931E?style=plastic&logo=scikit-learn"/></span></li> -->
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Numpy-073343?style=plastic&logo=Numpy"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/pandas-150458?style=plastic&logo=pandas"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/matplotlib-366f81?style=plasticlogo=matplotlib"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/seaborn-adafc2?style=plastic&logo=seaborn"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=plastic&logo=Streamlit"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Docker-000000?style=plastic&logo=Docker"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/FastAPI-000000?style=plastic&logo=FastAPI"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/CircleCI-000000?style=plastic&logo=CircleCI"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=plastic&logo=PyTorch"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/MLFlow-0194E2?style=plastic&logo=MLFlow"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Scikit-Learn-F7931E?style=plastic&logo=Scikit-Learn"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/OpenCV-000000?style=plastic&logo=OpenCV"/></span></li>
-                                    </ul>
+                                    <div class="badge-header-container">
+										<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+										<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/>
+										<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"/>
+										<img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn"/>
+										<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV"/>
+										<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/>
+										<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+										<img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow"/>
+										<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+                                    </div>
                                     <hr>
                                 </header>
-                                <!-- Machine/Deep Learning and Computer Vision Projects -->
-                                    <!-- <h2 id="elements">Machine/Deep Learning and Computer Vision</h2> -->
-                                    <div class="row gtr-200">
-                                        <div class="col-6 col-12-small">
-                                            <!-- Next -->
-                                            <h2>Cognitive Health Prediction: A Hybrid Unsupervised and Supervised Learning System For Alzheimer's Disease</h2>
-                                            <div align="center">
-                                                <span class="label"><a href="javascript:void(0);" style="pointer-events: none;"><img alt="Python 3.10" src="https://img.shields.io/badge/Python-356c9b"/></a></span>
-                                                </div>
-                                            <br>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image left">
-                                                        <a href="./images/alzheimer-02.png" target="_blank">
-                                                            <img src="./images/alzheimer-02.png" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                This research project aims to predict Cognitive Health Scores (composite_score) in an aging population.
-                                                
 
-                                                    Traditional regression models often fail to capture the distinct etiology of cognitive decline across different socioeconomic and health profiles. Instead of a "one-size-fits-all" approach, this project implements a Hybrid Machine Learning System that:
-                                                     <ul style="list-style-position: inside; padding-left: 0;">
-                                                    <li><strong>Discovers Phenotypes: </strong>Uses Unsupervised Learning (K-Means) to identify distinct patient personas (e.g., "The Frail", "The Ultra-Wealthy", "The Professionals").</li>
-                                                    <li><strong>Adaptive Modeling: </strong>Routes patients to specific predictive models optimized for their phenotype.</li>
-                                                    <li><strong>Explainability: </strong>Uses SHAP to validate the distinct biological and socioeconomic drivers for each group.</li>
-                                                    </ul>
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/Hybrid-Unsupervised-Supervised-Learning-System-for-Alzheimer" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Soil Nutrient Prediction for Enhanced Fertilizer Recommendations</h2>
-                                            <div align="center">
-                                                <span class="label"><a href="https://github.com/mm-mazhar/IPAGE" target="_blank"><img alt="IPAGE" src="https://img.shields.io/badge/Github-Repo-blue"></a></span>
-                                                <span class="label"><a href="javascript:void(0);" style="pointer-events: none;"><img alt="Python 3.10" src="https://img.shields.io/badge/Python-356c9b"/></a></span>
-                                                <span class="label"><a href="https://github.com/OmdenaAI/ipage" target="_blank"><img alt="Main `IPAGE` Github Repo" src="https://img.shields.io/badge/Main `IPAGE` Github-Repo-blue"></a></span>
-                                                <span class="label"><a href="https://ipage-app.streamlit.app/" target="_blank"><img alt="Steamlit" src="https://img.shields.io/badge/Streamlit-000000?style=social&logo=streamlit"></a></span>
-                                                <span class="label"><a href="https://ipage.onrender.com/" target="_blank"><img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-000000?style=social&logo=FastAPI"></a></span>
-                                                <span class="label"><a href="javascript:void(0);" target="_blank"><img alt="MLFlow" src="https://img.shields.io/badge/MLFlow-000000?style=social&logo=mlflow"></a></span>
-                                             </div>
-                                             <br>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image right">
-                                                        <a href="./images/omdena-ipage-cert.png" target="_blank">
-                                                            <img src="./images/omdena-ipage-cert.png" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    Certificate To be Issued
-                                                    Contributed in EDA, Developed Models for SOC, Boron, Experiment Tracking using MLFlow, Zn, API using FastAPI, Streamlit App for PoC.
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <p><a href="https://www.omdena.com/projects/soil-nutrient-prediction-for-enhanced-fertilizer-recommendations" target="_blank">Omdena Challenge Details</a></p>
-                                                    <p><a href="https://ipage-app.streamlit.app/" target="_blank">Streamlit App</a></p>
-                                                    <p><a href="https://ipage.onrender.com/" target="_blank">FastAPI</a></p>
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/IPAGE" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>3D Roof Reconstruction with Computer Vision for Solar Energy Optimization</h2>
-                                            <div align="center">
-                                                <span class="label"><a href="https://github.com/mm-mazhar/IECO" target="_blank"><img alt="3D Roof Reconstruction with Computer Vision for Solar Energy Optimization" src="https://img.shields.io/badge/Github-Repo-blue"></a></span>
-                                                <span class="label"><a href="javascript:void(0);" style="pointer-events: none;"><img alt="Python 3.10" src="https://img.shields.io/badge/Python-356c9b"/></a></span>
-                                                <span class="label"><a href="https://github.com/OmdenaAI/IECO" target="_blank"><img alt="Main `IECO` Github Repo" src="https://img.shields.io/badge/Main `IECO` Github-Repo-blue"></a></span>
-                                             </div>
-                                             <br>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image left">
-                                                        <a href="./images/omdena-ieco-cert.png" target="_blank">
-                                                            <img src="./images/omdena-ieco-cert.png" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    PointNet-based segmentation model (PointNetSeg) for point cloud data.
-                                                    The model is designed to classify each point in a point cloud into a predefined set of classes, leveraging a combination of feature and spatial transformations.
-                                                    The PointNetSeg model processes the transformed features to perform point-wise segmentation. The model’s final layer predicts the class of each point.
-                                                    Input: Point cloud of shape (batch_size, num_points, 3), where each point has 3 coordinates (x, y, z).
-                                                    Output: Class scores for each point in the point cloud, with a shape of (batch_size, num_classes, num_points).
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <p><a href="https://www.omdena.com/projects/3d-roof-reconstruction-with-computer-vision-for-solar-energy-optimization" target="_blank">Omdena Challenge Details</a></p>
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/IECO" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Identifying Potential Areas for Urban Agriculture in Milan-Italy</h2>
-                                            <div align="center">
-                                                <span class="label"><a href="https://github.com/maria-fisher/Urban-Agriculture-in-Milan" target="_blank"><img alt="Identifying Potential Areas for Urban Agriculture in Milan - Italy Repo" src="https://img.shields.io/badge/Github-Repo-blue"></a></span>
-                                                <span class="label"><a href="https://www.kaggle.com/datasets/mazhar01/identify-potential-areas-for-urban-agriculture/data" target="_blank"><img alt="Collected Dataset" src="https://img.shields.io/badge/Collected%20Dataset-blue"></a></span>
-                                                <span class="label"><a href="javascript:void(0);" style="pointer-events: none;"><img alt="Python 3.10" src="https://img.shields.io/badge/Python-356c9b"/></a></span>
-                                                <span class="label"><a href="javascript:void(0);" style="pointer-events: none;"><img alt="Python 3.10" src="https://img.shields.io/badge/JavaScript-efd81d"/></a></span>
-                                                <span class="label"><a href="javascript:void(0);" style="pointer-events: none;"><img alt="Python 3.10" src="https://img.shields.io/badge/Streamlit-ff2b2b"/></a></span>
-                                                <span class="label"><a href="javascript:void(0);" style="pointer-events: none;"><img alt="Python 3.10" src="https://img.shields.io/badge/GIS-c39f0b"/></a></span>
-                                             </div>
-                                             <br>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image right">
-                                                        <a href="./images/omdena-ipaua-cert.png" target="_blank">
-                                                            <img src="./images/omdena-ipaua-cert.png" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    Contributed mainly in task 1 of the Omdena challenge, which includes, data collection from Google Earth Engine, EDA and visualization, unsupervised modeling and web app development. Collected dataset from Google Earth Engine is now uploaded to  
-                                                    <a href="https://www.kaggle.com/datasets/mazhar01/identify-potential-areas-for-urban-agriculture/data" target="_blank">kaggle</a>.
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <p><a href="https://www.omdena.com/chapter-challenges/identifying-potential-areas-for-urban-agriculture-in-milan-italy" target="_blank">Omdena Challenge Details</a></p>
-                                                    <p><a href="https://drive.google.com/file/d/1iAeaTzuRiVOMaBhEHjqKjItOnK9r9FKy/edit" target="_blank">Streamlit App</a></p>
-                                                    <p>More on Github &nbsp; <a href="https://github.com/maria-fisher/Urban-Agriculture-in-Milan" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Regression Model Pipeline</h2>
-                                            <h4>From Data Scraping to Deployment: using, PyPI Model Packaging, FastAPI App deployed on Railway/Render</h4>
-                                            <h5>Since Railway has stopped it's free tier, App is now deployed on Render</h5>
-                                                <div align="center">
-                                                    <span class="label"><a href="https://github.com/mm-mazhar/Scraping-Zameen.com" target="_blank"><img alt="Github Data Scraping Repo" src="https://img.shields.io/badge/Github-Data%20Scraping%20Repo-blue"></a></span>
-                                                    <span class="label"><a href="https://www.kaggle.com/datasets/mazhar01/real-state-website-data" target="_blank"><img alt="Download Data From Kaggle" src="https://img.shields.io/badge/kaggle-Data-blue"></a></span>
-                                                    <span class="label"><a href="https://deploying-ml-lasso-regression-model.onrender.com" target="_blank"><img alt="Predict API" src="https://img.shields.io/badge/FastAPI-Predict%20API-blue"></a></span>
-                                                    <span class="label"><a href="https://pypi.org/project/lasso-regression-model/" target="_blank"><img alt="PyPI" src="https://img.shields.io/pypi/v/lasso-regression-model?logo=PyPi&style=Flat"></a></span>
-                                                    <!-- <span class="label"><a href="javascript:void(0);" style="pointer-events: none;"><img alt="CircleCI" src="https://img.shields.io/circleci/build/github/mm-mazhar/Deploying-ML-Lasso-Regression-Model/main?logo=circleci&style=Flat"></a></span> -->
-                                                    <!-- <span class="label"><a href="https://deploying-ml-lasso-regression-model.onrender.com" target="_blank"><img alt="Railway/Render APP" src="https://img.shields.io/badge/Render-000000?style=Flat&logo=Render"/></a></span> -->
-                                                    <!-- <span class="label"><a href="https://github.com/mm-mazhar/Deploying-ML-Lasso-Regression-Model/tree/main/5.deploying_with_containers" target="_blank"><img src="https://img.shields.io/badge/Docker-000000?style=Flat&logo=Docker"/></a></span> -->
+                                <!-- ML/DL/CV Projects List -->
+                                <div class="projects-container">
+
+                                    <!-- PROJECT 1: Cognitive Health Prediction -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Cognitive Health Prediction: Hybrid Unsupervised & Supervised System</h3>
+                                            <a href="https://github.com/mm-mazhar/Hybrid-Unsupervised-Supervised-Learning-System-for-Alzheimer" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/alzheimer-02.png" target="_blank">
+                                                    <img src="./images/alzheimer-02.png" alt="Cognitive Health Prediction">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Python 3.10</span>
+                                                    <span class="tech-pill">K-Means Clustering</span>
+                                                    <span class="tech-pill">SHAP Explainability</span>
+                                                    <span class="tech-pill">Healthcare AI</span>
                                                 </div>
-                                                <br>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                        <span class="image left">
-                                                            <a href="./images/main_image.png" target="_blank">
-                                                                <img src="./images/main_image.png" alt=""  />
-                                                            </a>
-                                                        </span>
-                                                    <b>Key Features</b>
-                                                    <li>Collection of data via scraping a real estate website, data processing and cleaning.</li>
-                                                    <li>Feature engineering using libraries like pandas, numpy, SK-Learn, and Feature Engine.</li>
-                                                    <li>Building a robust ML pipeline with Lasso Regression Model training and fine-tuning.</li>
-                                                    <li>Packaging and uploading the model to PyPi for easy integration and deployment.</li>
-                                                    <li>Implementation of best practices with emphasis on testing using Pytest and Tox.</li>
-                                                    <li>Exposing trained ML model using FastAPI, a modern and efficient web framework.</li>
-                                                    <!-- <li>CI/CD with CircleCI for automated building, testing, and deployment.</li> -->
-                                                    <!-- <li>Utilizing Docker for streamlined deployment to the Railway Platform.</li> -->
-                                                    <!-- <li>Encapsulation of the entire application, including dependencies and environment, within a Docker container.</li> -->
-                                                    
-                                                    
-                            
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/Deploying-ML-Lasso-Regression-Model-Render" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Automatic Number Plate Recognition and EasyOCR</h2>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image right">
-                                                        <a href="./images/anpr.jpg" target="_blank">
-                                                            <img src="./images/anpr.jpg" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    This exercise is an implementation of Automatic Number Plate Recognition (ANPR) using EasyOCR library in Python. The goal of this exercise is to automatically recognize license plate numbers from an image, 
-                                                    live camera or a video by using transfer learning from Pretrained Model <code>SSD MobileNet V2</code> from Tensorflow Model Zoo. The dataset used in this exercise taken from 
-                                                    <a href="https://www.kaggle.com/datasets/andrewmvd/car-plate-detection" target="_blank">kaggle</a>.
-                                                </p>
-                                                    <p style="text-align: justify; text-justify: inter-word;">The file <code>1.PrepareDataset.py</code>performs Creation of necessary directories for organizing image and annotation files, Extracts image and annotation files from a downloaded zip file i.e. 
-                                                        dataset downloaded from kaggle, Moves the image and annotation files to their respective directories, Splits the image and annotation files into train and test directories using a predefined ratio, 
-                                                        Compresses the train and test directories into a tar.gz file.
-                                                    </p>
-                                                    <p style="text-align: justify; text-justify: inter-word;">
-                                                        <code>2.ColabANPR_and_EasyOCR_ColabRun_v1.ipynb</code>, this does the Tensorflow Object Detection installation on google colab to utilize the power of GPU, create Label Map, Creates TF Records, 
-                                                        Copy Model Config to Training Folder, Update Config For Transfer Learning, Train and Evaluate the model, Load Trained Model From Checkpoint and perform detection tasks from given images, webcam, and 
-                                                        videos. It also converts the model to TFJS and TFLite for further usage.
-                                                    </p>
-                                                    <p style="text-align: justify; text-justify: inter-word;">
-                                                        <code>2.Local_ANPR_Detection_and_EasyOCR.ipynb</code> doest the same things as above but it is for the local machine where GPU is not available.
-                                                    </p>
-                                                    <p style="text-align: justify; text-justify: inter-word;">
-                                                        <code>3.DetectFromImage_EasyOCR.py</code>, <code>4.DetectFromRealTimeFeed_EasyOCR.py</code>, <code>5.DetectFromVideos_EasyOCR.py</code> are seperate scripts for object detection from images, webcam, 
-                                                        videos respectively
-                                                    </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <p><a href="https://github.com/mm-mazhar/Tensorflow-Object-Detection-Installation-and-ANPReasyOCR-Streamlit-App" target="_blank">Streamlit App</a></p>
-                                                    <p><a href="https://youtu.be/syjWdTto2-o" target="_blank">Watch Demo</a></p>
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/Automatic-Number-Plate-Recognition-and-EasyOCR" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Yolo v5 | Streamlit App | Road Sign Detection</h2>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image left">
-                                                        <a href="./images/roadsigndetection.jpg" target="_blank">
-                                                            <img src="./images/roadsigndetection.jpg" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    The goal of this exercise is to detect road signs from given images, webcam and videos. Dataset is taken from kaggle. <code>Yolov5_Colab_CustomModel_Training.ipynb</code> performs Yolo v5 Custom Training
-                                                    which involves cloning the github repo of YoloV5, Installing requirements, Unzipping Dataset and Moving data.yaml, Checking and defining the number of classes in our dataset, Model configuration for YoloV5,
-                                                    Customize iPython writefile so we can write variables, Model Configuration for our Model, Doing Changes in train.py for training, Training, and Inferencing with our custom Trained Model.
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <p><a href="https://github.com/mm-mazhar/Yolo-v5-Streamlit-App-Road-Sign-Detection/blob/main/app.py" target="_blank">Streamlit App</a></p>
-                                                    <p><a href="https://youtu.be/l0yEcua5HEw" target="_blank">Watch Demo</a></p>
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/Yolo-v5-Streamlit-App-Road-Sign-Detection" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Yolo V5 | Streamlit App | Multiple Object Detection on Pretrained Model</h2>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image right">
-                                                        <a href="./images/YoloV5MultipleObjectDetection_onPretrained Model.jpg" target="_blank">
-                                                            <img src="./images/YoloV5MultipleObjectDetection_onPretrained Model.jpg" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    This Python code is for a Streamlit app that uses YOLOv5, an object detection model, to perform object detection on a user-supplied image or video, or from a live video feed. The app allows the user to select
-                                                    which device to use for inference (CPU or GPU), the minimum confidence score threshold, and which classes of objects to detect. The app displays the detected objects in the input media and their corresponding
-                                                    confidence scores. The code imports necessary libraries, such as Streamlit, OpenCV and defines a few helper functions, including one to get the latest folder in a certain directory, which is used to get the 
-                                                    latest output folder for the detection results, and another to get all subdirectories in a certain path. The main function is defined to run the Streamlit app. The app has a sidebar that allows the user to 
-                                                    select the activity (image, video, or live feed), select the device, select the minimum confidence score threshold, and select which object classes to detect. The app also displays the selected input media 
-                                                    and detected objects with their confidence scores.
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">    
-                                                    <p>Streamlit App: <a href="https://youtu.be/xTq5YP5gHSo" target="_blank">Watch Demo</a></p>
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/Yolo-v5-Streamlit-App-Pretrained-Model" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Face Mask Detection</h2>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image left">
-                                                        <a href="./images/facemaskdetection.jpg" target="_blank">
-                                                            <img src="./images/facemaskdetection.jpg" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    Goal of this exercise is to detect whether the person is wearing a face mask or not. As usual dataset is taken from <a href="https://www.kaggle.com/code/jiaowoguanren/face-mask-detection-tensorflow-cnn-resmlp/data" target="_blank">kaggle</a>.
-                                                    <code>2.Colab_Training_and_Detection.ipynb</code> script does the Tensorflow Object Detection installation on google colab to utilize the power of GPU, create Label Map, Creates TF Records, 
-                                                    Copy Model Config to Training Folder, Update Config For Transfer Learning, Train and Evaluate the model, Load Trained Model From Checkpoint and perform detection tasks from given images, webcam, and 
-                                                    videos. It also converts the model to TFJS and TFLite for further usage.
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/Face-Mask-Detection" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Image Classification | Detect Infected Blood Cells of Maleria Bacteria</h2>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image right">
-                                                        <a href="./images/MaleriaBacteriaDetect.png" target="_blank">
-                                                            <img src="./images/MaleriaBacteriaDetect.png" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    This is a web application for detecting malaria using a pre-trained deep learning model. The application is built using the Streamlit framework, which makes it easy to create and share interactive 
-                                                    data applications. The app starts by importing the necessary libraries, including Streamlit and Keras for loading the pre-trained model. It also imports a custom module called "FilesUpload," which is 
-                                                    used to handle file uploads from the user interface. The pre-trained model is loaded from disk, and the image is passed through the model for prediction. The output is displayed as either 
-                                                    "Infected/Parasitized" or "Uninfected," along with the probability of the prediction.
-                                                </p>
-                                                <p style="text-align: justify; text-justify: inter-word;">    
-                                                    <p>Data Source: <a href="https://ceb.nlm.nih.gov/repositories/malaria-datasets/" target="_blank">Official NIH Website</a></p>
-                                                    <p>Streamlit App: <a href="https://mazqoty-malaria-detection-app-9d0gj6.streamlit.app" target="_blank">Watch Demo</a></p>
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/malaria_detection" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                </p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Convolutional neural network (CNN) | CIFAR-100 dataset</h2>
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <span class="image left">
-                                                        <a href="./images/cnn_cifar100.jpg" target="_blank">
-                                                            <img src="./images/cnn_cifar100.jpg" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    The recognition of images in this project has been done using transfer learning approach. The network built in this project uses the state-of-the-art EfficientNet-B0 which was trained on the popular, 
-                                                    challenging and large ImageNet dataset. Transfer learning and the idea of intelligently scaling the network (carefully balancing the network's width, depth and resolution) helped in getting a good performance
-                                                    on this dataset. By just training the model for 11 epochs, the model managed to achieve an accuracy of 81 percent. The training of the model has been done on a GPU and the model has also been tested on some 
-                                                    new random images to visualize the top 5 category predictions along with their probabilities. 
-                                                </p>
-                                                    
-                                                
-                                                
-                                                <p style="text-align: justify; text-justify: inter-word;">
-                                                    <p>Data Source: <a href="https://www.cs.toronto.edu/~kriz/cifar.html" target="_blank">Kaggle/Cifar-10 and Cifar-100 datasets</a> The dataset contains 3 folders - Meta, Train, Test. </p>
-                                                    <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/CNN_CIFAR100" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-                                                <!-- <br> -->
-                                                <hr>
-                                            <!-- Next -->
-                                            
+
+                                                <p>A research-driven Hybrid Machine Learning System predicting cognitive health scores across aging population profiles. Instead of a one-size-fits-all model, it leverages <strong>Unsupervised Learning (K-Means)</strong> to discover distinct patient personas ("The Frail", "The Professionals"), routes patients to specialized predictive regression models, and uses <strong>SHAP</strong> for clinical explainability.</p>
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <!-- PROJECT 2: Soil Nutrient Prediction (IPAGE) -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Soil Nutrient Prediction for Fertilizer Recommendations (Omdena)</h3>
+                                            <a href="https://github.com/mm-mazhar/IPAGE" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/omdena-ipage-cert.png" target="_blank">
+                                                    <img src="./images/omdena-ipage-cert.png" alt="Soil Nutrient Prediction">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">FastAPI</span>
+                                                    <span class="tech-pill">Streamlit</span>
+                                                    <span class="tech-pill">MLflow</span>
+                                                    <span class="tech-pill">Omdena Challenge</span>
+                                                </div>
+
+                                                <p>Contributed to an Omdena challenge developing machine learning models for Soil Organic Carbon (SOC), Boron, and Zinc predictions to generate enhanced fertilizer recommendations. Handled exploratory data analysis, experiment tracking with MLflow, and deployed a FastAPI backend alongside a Streamlit web application.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://ipage-app.streamlit.app/" target="_blank" class="button small"><i class="icon solid fa-desktop"></i> Streamlit App</a>
+                                                    <a href="https://ipage.onrender.com/" target="_blank" class="button small"><i class="icon solid fa-bolt"></i> FastAPI Endpoint</a>
+                                                    <a href="https://www.omdena.com/projects/soil-nutrient-prediction-for-enhanced-fertilizer-recommendations" target="_blank" class="button small"><i class="icon solid fa-info-circle"></i> Omdena Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 3: 3D Roof Reconstruction -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">3D Roof Reconstruction for Solar Energy Optimization (Omdena)</h3>
+                                            <a href="https://github.com/mm-mazhar/IECO" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/omdena-ieco-cert.png" target="_blank">
+                                                    <img src="./images/omdena-ieco-cert.png" alt="3D Roof Reconstruction">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">PointNet</span>
+                                                    <span class="tech-pill">3D Point Clouds</span>
+                                                    <span class="tech-pill">Computer Vision</span>
+                                                    <span class="tech-pill">PyTorch</span>
+                                                </div>
+
+                                                <p>Developed a PointNet-based 3D segmentation model (PointNetSeg) processing 3D spatial point cloud data <strong>(batch_size, num_points, 3)</strong>. Designed spatial and feature transformations to classify each point on roof structures to optimize solar panel placement.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://www.omdena.com/projects/3d-roof-reconstruction-with-computer-vision-for-solar-energy-optimization" target="_blank" class="button small"><i class="icon solid fa-info-circle"></i> Omdena Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 4: Urban Agriculture Milan -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Identifying Potential Areas for Urban Agriculture in Milan, Italy</h3>
+                                            <a href="https://github.com/maria-fisher/Urban-Agriculture-in-Milan" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/omdena-ipaua-cert.png" target="_blank">
+                                                    <img src="./images/omdena-ipaua-cert.png" alt="Urban Agriculture Milan">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Google Earth Engine</span>
+                                                    <span class="tech-pill">GIS Data</span>
+                                                    <span class="tech-pill">Unsupervised ML</span>
+                                                    <span class="tech-pill">Streamlit</span>
+                                                </div>
+
+                                                <p>Engineered satellite geospatial data collection pipeline via Google Earth Engine, performed clustering modeling, and created interactive visualizations for identifying urban agricultural sites in Milan. Uploaded curated datasets to Kaggle.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://www.kaggle.com/datasets/mazhar01/identify-potential-areas-for-urban-agriculture/data" target="_blank" class="button small"><i class="icon brands fa-kaggle"></i> Kaggle Dataset</a>
+                                                    <a href="https://www.omdena.com/chapter-challenges/identifying-potential-areas-for-urban-agriculture-in-milan-italy" target="_blank" class="button small"><i class="icon solid fa-info-circle"></i> Challenge Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 5: Regression Model Pipeline -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">End-to-End Regression ML Pipeline & PyPI Package</h3>
+                                            <a href="https://github.com/mm-mazhar/Deploying-ML-Lasso-Regression-Model-Render" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/main_image.png" target="_blank">
+                                                    <img src="./images/main_image.png" alt="Regression Model Pipeline">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">PyPI Package</span>
+                                                    <span class="tech-pill">FastAPI</span>
+                                                    <span class="tech-pill">Scikit-Learn</span>
+                                                    <span class="tech-pill">Pytest & Tox</span>
+                                                    <span class="tech-pill">Render</span>
+                                                </div>
+
+                                                <p>Complete machine learning engineering lifecycle from real estate web scraping to model packaging and API deployment:</p>
+                                                <ul style="margin-bottom: 1em; padding-left: 1.2em;">
+                                                    <li>Scraped real estate datasets, cleaned, and engineered features using <strong>Feature Engine</strong>.</li>
+                                                    <li>Trained & fine-tuned a Lasso Regression model pipeline.</li>
+                                                    <li>Packaged and published the model to <strong>PyPI</strong> (<strong>lasso-regression-model</strong>).</li>
+                                                    <li>Exposed predictions through a <strong>FastAPI</strong> microservice deployed on Render.</li>
+                                                </ul>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://pypi.org/project/lasso-regression-model/" target="_blank" class="button small"><i class="icon solid fa-box"></i> PyPI Package</a>
+                                                    <a href="https://deploying-ml-lasso-regression-model.onrender.com" target="_blank" class="button small"><i class="icon solid fa-bolt"></i> Predict API</a>
+                                                    <a href="https://www.kaggle.com/datasets/mazhar01/real-state-website-data" target="_blank" class="button small"><i class="icon brands fa-kaggle"></i> Kaggle Data</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 6: ANPR & EasyOCR -->
+                                    <!-- <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Automatic Number Plate Recognition (ANPR) & EasyOCR</h3>
+                                            <a href="https://github.com/mm-mazhar/Automatic-Number-Plate-Recognition-and-EasyOCR" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/anpr.jpg" target="_blank">
+                                                    <img src="./images/anpr.jpg" alt="ANPR EasyOCR Project">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">SSD MobileNet V2</span>
+                                                    <span class="tech-pill">TensorFlow Object Detection</span>
+                                                    <span class="tech-pill">EasyOCR</span>
+                                                    <span class="tech-pill">OpenCV</span>
+                                                </div>
+
+                                                <p>Implemented automatic license plate recognition from real-time webcam feeds, images, and videos. Leveraged transfer learning with <strong>SSD MobileNet V2</strong> from TensorFlow Model Zoo and EasyOCR for character extraction. Converted models to TFJS & TFLite.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://youtu.be/syjWdTto2-o" target="_blank" class="button small"><i class="icon brands fa-youtube"></i> Watch Demo</a>
+                                                    <a href="https://github.com/mm-mazhar/Tensorflow-Object-Detection-Installation-and-ANPReasyOCR-Streamlit-App" target="_blank" class="button small"><i class="icon solid fa-desktop"></i> Streamlit App Repo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- PROJECT 7: YOLOv5 Road Sign Detection -->
+                                    <!-- <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">YOLOv5 Road Sign Detection Streamlit App</h3>
+                                            <a href="https://github.com/mm-mazhar/Yolo-v5-Streamlit-App-Road-Sign-Detection" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/roadsigndetection.jpg" target="_blank">
+                                                    <img src="./images/roadsigndetection.jpg" alt="YOLOv5 Road Sign Detection">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">YOLOv5</span>
+                                                    <span class="tech-pill">PyTorch</span>
+                                                    <span class="tech-pill">Streamlit</span>
+                                                    <span class="tech-pill">Computer Vision</span>
+                                                </div>
+
+                                                <p>Custom trained a YOLOv5 model on Kaggle road sign datasets using Google Colab GPUs. Built a full Streamlit interface allowing users to upload images or video streams and detect traffic signs with confidence score thresholds.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://youtu.be/l0yEcua5HEw" target="_blank" class="button small"><i class="icon brands fa-youtube"></i> Watch Demo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- PROJECT 8: YOLOv5 Pretrained App -->
+                                    <!-- <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">YOLOv5 Real-Time Multiple Object Detection Web App</h3>
+                                            <a href="https://github.com/mm-mazhar/Yolo-v5-Streamlit-App-Pretrained-Model" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/YoloV5MultipleObjectDetection_onPretrained Model.jpg" target="_blank">
+                                                    <img src="./images/YoloV5MultipleObjectDetection_onPretrained Model.jpg" alt="YOLOv5 Multiple Object Detection">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">YOLOv5</span>
+                                                    <span class="tech-pill">Streamlit</span>
+                                                    <span class="tech-pill">OpenCV</span>
+                                                    <span class="tech-pill">Real-time Detection</span>
+                                                </div>
+
+                                                <p>Streamlit web application utilizing YOLOv5 for multi-class object detection. Supports dynamic hardware selection (CPU vs GPU inference), class filtering, confidence score sliders, and live webcam feed detection.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://youtu.be/xTq5YP5gHSo" target="_blank" class="button small"><i class="icon brands fa-youtube"></i> Watch Demo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- PROJECT 9: Face Mask Detection -->
+                                    <!-- <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Face Mask Detection with TensorFlow & OpenCV</h3>
+                                            <a href="https://github.com/mm-mazhar/Face-Mask-Detection" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/facemaskdetection.jpg" target="_blank">
+                                                    <img src="./images/facemaskdetection.jpg" alt="Face Mask Detection">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">TensorFlow</span>
+                                                    <span class="tech-pill">CNN</span>
+                                                    <span class="tech-pill">OpenCV</span>
+                                                    <span class="tech-pill">Transfer Learning</span>
+                                                </div>
+
+                                                <p>Computer vision system detecting whether individuals in video streams or images are wearing face masks. Utilizes transfer learning with TensorFlow object detection models, TFRecords creation, and model export to TFLite.</p>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- PROJECT 10: Malaria Detection -->
+                                    <!-- <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Infected Blood Cells Malaria Detection App</h3>
+                                            <a href="https://github.com/mm-mazhar/malaria_detection" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/MaleriaBacteriaDetect.png" target="_blank">
+                                                    <img src="./images/MaleriaBacteriaDetect.png" alt="Malaria Detection App">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Keras / TensorFlow</span>
+                                                    <span class="tech-pill">Deep Learning</span>
+                                                    <span class="tech-pill">Streamlit</span>
+                                                    <span class="tech-pill">Healthcare AI</span>
+                                                </div>
+
+                                                <p>Deep learning medical diagnostic app built with Keras and Streamlit. Evaluates microscopic cell images to detect malaria parasite infections (Parasitized vs Uninfected) with probability score metrics based on NIH official datasets.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://mazqoty-malaria-detection-app-9d0gj6.streamlit.app" target="_blank" class="button small"><i class="icon solid fa-desktop"></i> Streamlit App</a>
+                                                    <a href="https://ceb.nlm.nih.gov/repositories/malaria-datasets/" target="_blank" class="button small"><i class="icon solid fa-database"></i> NIH Dataset</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- PROJECT 11: CNN CIFAR-100 -->
+                                    <!-- <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">CNN Image Classification on CIFAR-100 (EfficientNet-B0)</h3>
+                                            <a href="https://github.com/mm-mazhar/CNN_CIFAR100" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/cnn_cifar100.jpg" target="_blank">
+                                                    <img src="./images/cnn_cifar100.jpg" alt="CNN CIFAR-100">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">EfficientNet-B0</span>
+                                                    <span class="tech-pill">Transfer Learning</span>
+                                                    <span class="tech-pill">PyTorch / Keras</span>
+                                                    <span class="tech-pill">CIFAR-100</span>
+                                                </div>
+
+                                                <p>Multi-class image recognition on the 100-class CIFAR dataset. Achieved over 81% top-class accuracy in just 11 epochs by applying transfer learning and compound scaling with EfficientNet-B0 trained on ImageNet.</p>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                </div>
                             </section>
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-				<div id="sidebar">
+				    <!-- Sidebar -->
+					<div id="sidebar">
+					<style>
+						/* Dark Mode Sidebar Contrast Color */
+						body.dark #sidebar {
+							background-color: #1a1a1a !important;
+							border-right: 1px solid rgba(255, 255, 255, 0.08);
+						}
+
+						/* Adjust top padding so SWITCH MODE aligns with header line */
+						#sidebar > .inner {
+							padding-top: 1.2em !important;
+						}
+
+						/* Remove horizontal lines & section dividers inside sidebar */
+						#sidebar > .inner > * {
+							border-bottom: none !important;
+							margin-bottom: 1.8em !important;
+							padding-bottom: 0 !important;
+						}
+						#menu > ul > li {
+							border-top: none !important;
+							margin-top: 0.3em !important;
+							padding-top: 0.3em !important;
+						}
+						#sidebar a {
+							border-bottom: none !important;
+						}
+
+						/* Reset & Flex-align Get In Touch contact items */
+						ul.contact-flex {
+							list-style: none !important;
+							padding-left: 0 !important;
+							margin: 0 !important;
+						}
+						ul.contact-flex li {
+							display: flex !important;
+							align-items: center !important;
+							gap: 12px !important;
+							margin-bottom: 0.8em !important;
+							padding: 0 !important;
+							border-top: none !important;
+						}
+						ul.contact-flex li i {
+							color: var(--color-13);
+							font-size: 1.15em;
+							width: 20px;
+							text-align: center;
+							flex-shrink: 0;
+						}
+					</style>
+
 					<div class="inner">
+
+						<!-- Theme Toggle Button -->
+						<div style="margin-top: 0; margin-bottom: 1.5em;">
+							<button id="toggle" class="button fit" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 2.8em; line-height: 2.8em;">
+								<span>Switch Mode</span> 
+								<img src="images/moon.png" id="icon" class="icon-themes" style="width: 16px; height: 16px; margin: 0;">
+							</button>
+						</div>
+
 						<!-- Menu -->
-							<nav id="menu">
-								<div class="theme-buttons">
-									<button id="toggle" class="button">Switch Mode <img src="images/moon.png" id="icon" class="icon-themes"></button>
-								</div>
-								<header class="major">
-									<!-- <a href="#menu"><h2>Menu</h2></a> -->
-									<h2>Menu</h2>
-								</header>
-								<ul>
-									<!-- <li><a href="/index.html">Homepage</a></li> -->
-									<li><a href="./">Homepage</a></li>
-									<li><a href="./genai.html">Generative AI</a></li>
-									<li><a href="./mldlcv.html">ML/DL and Computer Vision</a></li>
-									<!-- <li><a href="#latest-work">Latest</a></li> -->
-									<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
-									<li><a href="./pythonpackages.html">Python Packages</a></li>
-									<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
-									<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
-							
-									<!-- <li><a href="generic.html">Generic</a></li>
-												<li><a href="elements.html">Elements</a></li> -->
-								  </ul>
-							</nav>
+						<nav id="menu">
+							<header class="major">
+								<h2>Navigation</h2>
+							</header>
+							<ul>
+								<li>
+									<a href="./"><i class="fa-solid fa-house" style="margin-right: 8px; color: var(--color-13);"></i> Homepage</a>
+								</li>
+								<li>
+									<a href="./genai.html"><i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 8px; color: var(--color-13);"></i> Generative AI</a>
+								</li>
+								<li>
+									<a href="./mldlcv.html"><i class="fa-solid fa-brain" style="margin-right: 8px; color: var(--color-13);"></i> ML / DL & Computer Vision</a>
+								</li>
 
-						<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Get in touch</h2>
-								</header>
-								<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
-								<ul class="contact">
-									<li class="icon solid fa-envelope"><a href="mazqoty.01@gmail.com" target="_blank">mazqoty.01@gmail.com</a></li>
-									<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
-									<!-- <li class="icon solid fa-phone"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li> -->
-									<li class="icon solid brands fa-whatsapp"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li>
-									<li class="icon brands fa-github"><a href="https://github.com/mm-mazhar/mazhar" target="_blank">Github</a></li>
-									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/m-mazhar-121133269/" target="_blank">Linkedin</a></li>
-									<!-- <li class="icon brands fa-twitter"><a href="https://twitter.com/mm_mazhar19" target="_blank">Twitter</a></li> -->
-									
-									<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-									Nashville, TN 00000-0000</li> -->
-								</ul>
-							</section>
+								<!-- Collapsible Archived Projects Dropdown -->
+								<li>
+									<span class="opener" style="opacity: 0.85;">
+										<i class="fa-solid fa-box-archive" style="margin-right: 8px; color: var(--color-4);"></i> Archived Projects
+									</span>
+									<ul style="padding-left: 1.2em; margin-top: 0.5em;">
+										<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
+										<li><a href="./pythonpackages.html">Python Packages</a></li>
+										<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
+										<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
 
+						<!-- Get In Touch Section -->
+						<section style="margin-top: 2em;">
+							<header class="major">
+								<h2>Get in touch</h2>
+							</header>
+							<ul class="contact-flex">
+								<li>
+									<i class="fa-solid fa-envelope"></i>
+									<a href="mailto:email.mazhar.01@gmail.com" target="_blank">email.mazhar.01@gmail.com</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-whatsapp"></i>
+									<a href="https://wa.me/+15715322248" target="_blank">WhatsApp (+1 571 532 2248)</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-github"></i>
+									<a href="https://github.com/mm-mazhar" target="_blank">GitHub Profile</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-linkedin"></i>
+									<a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank">LinkedIn Profile</a>
+								</li>
+							</ul>
+						</section>
 
 						<!-- Footer -->
-							<footer id="footer">
-								<p class=" © copyright">&copy; M. Mazhar Made with ❤️   +  <a href="https://html5up.net">HTML5 UP</a></p>
-								
-							</footer>
+						<footer id="footer" style="margin-top: 2em;">
+							<p class="copyright">&copy; M. Mazhar &bull; Built with ❤️ & <a href="https://html5up.net" target="_blank">HTML5 UP</a></p>
+						</footer>
 
 					</div>
 				</div>
-
 			</div>
 
 		<!-- Scripts -->
@@ -423,11 +670,9 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				const toggle = document.getElementById("toggle");
-				const refresh = document.getElementById("refresh");
 				let theme = window.localStorage.getItem("theme");
-				var icon=document.getElementById("icon");
+				var icon = document.getElementById("icon");
 
-				// Default to dark mode if no theme is set
 				if (!theme) {
 					theme = "dark";
 					window.localStorage.setItem("theme", "dark");
@@ -435,13 +680,12 @@
 
 				if (theme === "dark") {
 					document.body.classList.add("dark");
-					icon.src="images/sun.png";
+					icon.src = "images/sun.png";
 				} else {
 					document.body.classList.remove("dark");
-					icon.src="images/moon.png";
+					icon.src = "images/moon.png";
 				}
 
-				// event listener stops when the change theme button is clicked
 				toggle.addEventListener("click", () => {
 					if (theme === "dark") {
 						window.localStorage.setItem("theme", "light");
@@ -451,23 +695,5 @@
 					window.location.reload();
 				});
 			</script>
-
-			<script>
-				var tablinks=document.getElementsByClassName("tab-links");
-				var tabcontents=document.getElementsByClassName("tab-contents");
-				
-				function opentab(tabname){
-					for(tablink of tablinks){
-						tablink.classList.remove("active-link");
-					}
-					for(tabcontent of tabcontents){
-						tabcontent.classList.remove("active-tab");
-					}
-					event.currentTarget.classList.add("active-link");
-					document.getElementById(tabname).classList.add("active-tab");
-				}
-			</script>
-
-
 	</body>
 </html>

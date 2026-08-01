@@ -12,7 +12,7 @@
 		<link href="images/icons8-machine-learning-96.png" type="image/x-icon" rel="icon">
 
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" /> -->
@@ -27,25 +27,36 @@
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
-									<a href="./" class="logo"><strong>M. Mazhar</strong></a>
-									<ul class="icons">
-										<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-										<li><a href="#" style="color: var(--color-13);">Full Work Auth</a></li>
-										<li><a href="images/mazhar_CV.pdf" target="_blank" class="button small" download>Download CV</a></li>
-										<li><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
-										<li><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-										<li><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-										<li><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li>
-										<!-- <li><a href="https://www.kaggle.com/mazhar01" target="_blank" class="icon brands fa-kaggle"><span class="label">kaggle</span></a></li> -->
-										 <!-- <li><a href="https://twitter.com/mm_mazhar19" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-										<!-- <li><a href="https://wa.me/+923002576068" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li> -->
-										<!-- <li><a href="#" target="_blank" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->										
+							<header id="header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 1.2em 0; width: 100%;">
+								<!-- Logo / Name (Left Aligned) -->
+								<a href="./" class="logo" style="font-size: 1.25em; border-bottom: none; flex-shrink: 0;"><strong>M. Mazhar</strong></a>
+
+								<!-- Right Header Actions Container (Pushed Flush Right) -->
+								<div style="margin-left: auto; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px;">
+									
+									<!-- Work Authorization Status Badge -->
+									<span style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--color-13); background: var(--color-11); color: var(--color-13); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px; flex-shrink: 0;">
+										<i class="fa-solid fa-circle-check"></i> Full Work Authorized
+									</span>
+
+									<!-- Download CV Button -->
+									<a href="images/mazhar_CV.pdf" target="_blank" class="button small" download style="height: 2.5em; line-height: 2.5em; padding: 0 1.2em; font-size: 0.7em; display: inline-flex; align-items: center; gap: 6px; border-bottom: none; flex-shrink: 0;">
+										<i class="fa-solid fa-download"></i> Download CV
+									</a>
+
+									<!-- Vertical Divider -->
+									<span style="height: 18px; width: 1px; background: var(--color-2); margin: 0 2px;"></span>
+
+									<!-- Contact & Social Icons (Aligned Flush Right) -->
+									<ul class="icons" style="margin: 0; padding: 0; display: inline-flex; align-items: center; gap: 12px;">
+										<li style="padding: 0;"><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone" style="border-bottom: none;"><span class="label">Phone</span></a></li>
+										<li style="padding: 0;"><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope" style="border-bottom: none;"><span class="label">Email</span></a></li>
+										<li style="padding: 0;"><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github" style="border-bottom: none;"><span class="label">Github</span></a></li>
+										<li style="padding: 0;"><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin" style="border-bottom: none;"><span class="label">Linkedin</span></a></li>
+										<li style="padding: 0; margin-right: 0;"><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp" style="border-bottom: none;"><span class="label">WhatsApp</span></a></li>
 									</ul>
-								</header>
+								</div>
+							</header>
 							<!-- Banner -->
 							<section id="banner" style="display: flex; align-items: center; padding: 4em 0;">
 								<div class="content" style="flex-grow: 1; flex-shrink: 1; width: 50%;">
@@ -246,7 +257,7 @@
 										<div class="content">
 											<h3>Cognitive Health Prediction: A Hybrid Unsupervised and Supervised Learning System For Alzheimer's Disease</h3>
 											<p style="text-align: justify; text-justify: inter-word;">This research project aims to predict Cognitive Health Scores (composite_score) in an aging population.</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv" target="_blank" >Machine/Deep Learning and Computer Vision</a></p>
+											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv.html" >Machine/Deep Learning and Computer Vision</a></p>
 										</div>
 									</article>
 									<article>
@@ -273,177 +284,280 @@
 											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv.html">Machine/Deep Learning and Computer Vision</a></p>
 										</div>
 									</article>
-									<article>
-										<span class="icon fa-gem"></span>
-										<div class="content">
-											<h3>ANPR with EasyOCR</h3>
-											<p style="text-align: justify; text-justify: inter-word;">Automatically Number Plate Recognition (ANPR) from given images, webcam and videos by using transfer learning from Pretrained Model SSD MobileNet v2 from TF Model Zoo.</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv.html">Machine/Deep Learning and Computer Vision</a></p>
-										</div>
-									</article>
-									
-									<article>
-										<span class="icon solid fa-rocket"></span>
-										<div class="content">
-											<h3>Pytubev3</h3>
-											<p style="text-align: justify; text-justify: inter-word;">A wrapper around youtube API v3: pytubev3 is a Python library (work in progress) to simplify Youtube Data API tasks.</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./pythonpackages.html">Python Packages</a></p>
-										</div>
-									</article>
-									<article>
-										<span class="icon solid fa-signal"></span>
-										<div class="content">
-											<h3>COVID-19 DASHBOARD Django Plotly Dash App</h3>
-											<p style="text-align: justify; text-justify: inter-word;"> This COVID-19 Dashboard tracks covid-19 confirmed, deaths, recovered, active cases. It also contains vaccination analysis.</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./dataanalysiswithpython.html">Data Analysis with Python</a></p>
-										</div>
-									</article>
 								</div>
 							</section>
 
-							<!-- Section -->
-							<section id="work-categories">
+							<!-- Section: Work Categories -->
+							<section id="work-categories" style="width: 100%; max-width: 100%;">
+								<style>
+									/* Fix CSS Grid overflow inside HTML5 UP Flex Wrapper */
+									#work-categories {
+										width: 100%;
+										max-width: 100%;
+									}
+									.featured-grid {
+										display: grid;
+										grid-template-columns: repeat(2, 1fr);
+										gap: 1.5em;
+										margin-bottom: 2em;
+										width: 100%;
+									}
+									.archived-grid {
+										display: grid;
+										grid-template-columns: repeat(4, 1fr);
+										gap: 1em;
+										width: 100%;
+									}
+									/* CRITICAL FIX: prevents grid items from breaking flex layout */
+									.featured-grid > article,
+									.archived-grid > article {
+										min-width: 0 !important; 
+										margin: 0 !important;
+										width: 100% !important;
+									}
+									.featured-grid .image img {
+										width: 100% !important;
+										max-width: 100% !important;
+										height: 180px !important;
+										object-fit: cover !important;
+										display: block !important;
+										border-radius: 0.375em;
+									}
+									.archived-grid .image img {
+										width: 100% !important;
+										max-width: 100% !important;
+										height: 120px !important;
+										object-fit: cover !important;
+										display: block !important;
+										border-radius: 0.375em;
+									}
+									.archived-grid article h3 {
+										font-size: 0.85em !important;
+										margin-top: 0.5em !important;
+										line-height: 1.3 !important;
+									}
+
+									/* Responsive fallback so it never overflows sidebar on smaller screens */
+									@media screen and (max-width: 1100px) {
+										.archived-grid {
+											grid-template-columns: repeat(2, 1fr);
+										}
+									}
+									@media screen and (max-width: 736px) {
+										.featured-grid {
+											grid-template-columns: 1fr;
+										}
+										.archived-grid {
+											grid-template-columns: 1fr;
+										}
+									}
+								</style>
+
+								<!-- Featured Work Section (2 Categories in 1 Row) -->
 								<header class="major">
-									<h2>My Work</h2>
+									<h2>Featured Work</h2>
+									<p style="font-size: 0.9em; opacity: 0.85; text-transform: none; margin-top: 0;">Primary focus areas & active engineering projects</p>
 								</header>
-								<div class="posts">
+								
+								<div class="featured-grid">
+									<!-- Generative AI -->
 									<article id="genai" class="image-layer">
-										<a href="./genai.html" class="image"><img src="images/GenAI_resized.jpg" alt="" /></a>
+										<a href="./genai.html" class="image"><img src="images/GenAI_resized.jpg" alt="Generative AI" /></a>
 										<div class="layer">
 											<h3>Generative AI</h3>
 											<a href="./genai.html"><i class="fas fa-external-link-alt"></i></a>
-											<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
 										</div>
 										<h3>Generative AI</h3>
-										<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul> -->
 									</article>
+
+									<!-- ML/DL and Computer Vision -->
 									<article id="mldlcv" class="image-layer">
-										<a href="./mldlcv.html" class="image"><img src="images/deeplearning2_resized.jpg" alt="" /></a>
+										<a href="./mldlcv.html" class="image"><img src="images/deeplearning2_resized.jpg" alt="ML/DL and Computer Vision" /></a>
 										<div class="layer">
 											<h3>ML/DL and Computer Vision</h3>
 											<a href="./mldlcv.html"><i class="fas fa-external-link-alt"></i></a>
-											<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
 										</div>
 										<h3>ML/DL and Computer Vision</h3>
-										<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul> -->
 									</article>
+								</div>
+
+								<!-- Archived Projects Section (4 Categories in 1 Row) -->
+								<header class="major" style="margin-top: 2.5em;">
+									<h2>📦 Archived Projects</h2>
+									<p style="font-size: 0.9em; opacity: 0.8; text-transform: none; margin-top: 0;">Legacy projects & foundational work</p>
+								</header>
+
+								<div class="archived-grid">
+									<!-- Data Analysis with Python -->
 									<article id="dataanalysiswithpython" class="image-layer">
-										<a href="./dataanalysiswithpython.html" class="image"><img src="./images/dataanalysiswithpython.jpg" alt="" /></a>
+										<a href="./dataanalysiswithpython.html" class="image"><img src="./images/dataanalysiswithpython.jpg" alt="Data Analysis with Python" /></a>
 										<div class="layer">
-											<h3>Data Analysis with Python</h3>
+											<h4 style="color: #fff; margin-bottom: 5px;">Data Analysis</h4>
 											<a href="./dataanalysiswithpython.html"><i class="fas fa-external-link-alt"></i></a>
 										</div>
 										<h3>Data Analysis with Python</h3>
 									</article>
+
+									<!-- Python Packages -->
 									<article id="pythonpackages" class="image-layer">
-										<a href="./pythonpackages.html" class="image"><img src="images/pythonpackages.jpg" alt="" /></a>
+										<a href="./pythonpackages.html" class="image"><img src="images/pythonpackages.jpg" alt="Python Packages" /></a>
 										<div class="layer">
-											<h3>Python Packages</h3>
+											<h4 style="color: #fff; margin-bottom: 5px;">Python Packages</h4>
 											<a href="./pythonpackages.html"><i class="fas fa-external-link-alt"></i></a>
-											<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
 										</div>
 										<h3>Python Packages</h3>
-										<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul> -->
 									</article>
+
+									<!-- SQL & PowerBI -->
 									<article id="sqlandpowerbi" class="image-layer">
-										<a href="./sqlandpowerbi.html" class="image"><img src="images/sql4_resized.jpg" alt="" /></a>
+										<a href="./sqlandpowerbi.html" class="image"><img src="images/sql4_resized.jpg" alt="SQL & PowerBI" /></a>
 										<div class="layer">
-											<h3>SQL & PowerBI</h3>
+											<h4 style="color: #fff; margin-bottom: 5px;">SQL & Power BI</h4>
 											<a href="./sqlandpowerbi.html"><i class="fas fa-external-link-alt"></i></a>
-											<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
 										</div>
 										<h3>SQL & PowerBI</h3>
-										<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul> -->
 									</article>
+
+									<!-- Web Scraping & Others -->
 									<article id="webscrapingandothers" class="image-layer">
-										<a href="./webscrapingandothers.html" class="image"><img src="images/webscrapingandothers.jpg" alt="" /></a>
+										<a href="./webscrapingandothers.html" class="image"><img src="images/webscrapingandothers.jpg" alt="Web Scraping & Others" /></a>
 										<div class="layer">
-											<h3>Web Scraping & Others</h3>
+											<h4 style="color: #fff; margin-bottom: 5px;">Web Scraping</h4>
 											<a href="./webscrapingandothers.html"><i class="fas fa-external-link-alt"></i></a>
-											<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
 										</div>
 										<h3>Web Scraping & Others</h3>
-										<!-- <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul> -->
 									</article>
 								</div>
 							</section>
 
 						</div>
 					</div>
-
 				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-							<!-- Menu -->
-								<nav id="menu">
-									<div class="theme-buttons">
-										<button id="toggle" class="button">Switch Mode <img src="images/moon.png" id="icon" class="icon-themes"></button>
-									</div>
-									<header class="major">
-										<!-- <a href="#menu"><h2>Menu</h2></a> -->
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<!-- <li><a href="/index.html">Homepage</a></li> -->
-										<li><a href="./">Homepage</a></li>
-										<li><a href="./genai.html">Generative AI</a></li>
-										<li><a href="./mldlcv.html">ML/DL and Computer Vision</a></li>
-										<!-- <li><a href="#latest-work">Latest</a></li> -->
+				<div id="sidebar">
+					<style>
+						/* Dark Mode Sidebar Contrast Color */
+						body.dark #sidebar {
+							background-color: #1a1a1a !important;
+							border-right: 1px solid rgba(255, 255, 255, 0.08);
+						}
+
+						/* Adjust top padding so SWITCH MODE aligns with header line */
+						#sidebar > .inner {
+							padding-top: 1.2em !important;
+						}
+
+						/* Remove horizontal lines & section dividers inside sidebar */
+						#sidebar > .inner > * {
+							border-bottom: none !important;
+							margin-bottom: 1.8em !important;
+							padding-bottom: 0 !important;
+						}
+						#menu > ul > li {
+							border-top: none !important;
+							margin-top: 0.3em !important;
+							padding-top: 0.3em !important;
+						}
+						#sidebar a {
+							border-bottom: none !important;
+						}
+
+						/* Reset & Flex-align Get In Touch contact items */
+						ul.contact-flex {
+							list-style: none !important;
+							padding-left: 0 !important;
+							margin: 0 !important;
+						}
+						ul.contact-flex li {
+							display: flex !important;
+							align-items: center !important;
+							gap: 12px !important;
+							margin-bottom: 0.8em !important;
+							padding: 0 !important;
+							border-top: none !important;
+						}
+						ul.contact-flex li i {
+							color: var(--color-13);
+							font-size: 1.15em;
+							width: 20px;
+							text-align: center;
+							flex-shrink: 0;
+						}
+					</style>
+
+					<div class="inner">
+
+						<!-- Theme Toggle Button -->
+						<div style="margin-top: 0; margin-bottom: 1.5em;">
+							<button id="toggle" class="button fit" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 2.8em; line-height: 2.8em;">
+								<span>Switch Mode</span> 
+								<img src="images/moon.png" id="icon" class="icon-themes" style="width: 16px; height: 16px; margin: 0;">
+							</button>
+						</div>
+
+						<!-- Menu -->
+						<nav id="menu">
+							<header class="major">
+								<h2>Navigation</h2>
+							</header>
+							<ul>
+								<li>
+									<a href="./"><i class="fa-solid fa-house" style="margin-right: 8px; color: var(--color-13);"></i> Homepage</a>
+								</li>
+								<li>
+									<a href="./genai.html"><i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 8px; color: var(--color-13);"></i> Generative AI</a>
+								</li>
+								<li>
+									<a href="./mldlcv.html"><i class="fa-solid fa-brain" style="margin-right: 8px; color: var(--color-13);"></i> ML / DL & Computer Vision</a>
+								</li>
+
+								<!-- Collapsible Archived Projects Dropdown -->
+								<li>
+									<span class="opener" style="opacity: 0.85;">
+										<i class="fa-solid fa-box-archive" style="margin-right: 8px; color: var(--color-4);"></i> Archived Projects
+									</span>
+									<ul style="padding-left: 1.2em; margin-top: 0.5em;">
 										<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
 										<li><a href="./pythonpackages.html">Python Packages</a></li>
 										<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
 										<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
-								
-										<!-- <li><a href="generic.html">Generic</a></li>
-													<li><a href="elements.html">Elements</a></li> -->
-									  </ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
-									<ul class="contact">
-										<li class="icon solid fa-phone"><a href="tel:+15715322248" target="_blank">+1 (571) 532 2248</a></li>
-										<li class="icon solid fa-envelope"><a href="email.mazhar.01@gmail.com" target="_blank">email.mazhar.01@gmail.com</a></li>
-										<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
-										<!-- <li class="icon solid brands fa-whatsapp"><a href="https://wa.me/+923002576068" target="_blank">WhatsApp</a></li> -->
-										<li class="icon brands fa-github"><a href="https://github.com/mm-mazhar" target="_blank">Github</a></li>
-										<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank">Linkedin</a></li>
-										<li class="icon solid brands fa-whatsapp"><a href="https://wa.me/+15715322248" target="_blank">WhatsApp</a></li>
-										<!-- <li class="icon brands fa-twitter"><a href="https://twitter.com/mm_mazhar19" target="_blank">Twitter</a></li> -->
-										
-										<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li> -->
 									</ul>
-								</section>
+								</li>
+							</ul>
+						</nav>
 
+						<!-- Get In Touch Section -->
+						<section style="margin-top: 2em;">
+							<header class="major">
+								<h2>Get in touch</h2>
+							</header>
+							<ul class="contact-flex">
+								<li>
+									<i class="fa-solid fa-envelope"></i>
+									<a href="mailto:email.mazhar.01@gmail.com" target="_blank">email.mazhar.01@gmail.com</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-whatsapp"></i>
+									<a href="https://wa.me/+15715322248" target="_blank">WhatsApp (+1 571 532 2248)</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-github"></i>
+									<a href="https://github.com/mm-mazhar" target="_blank">GitHub Profile</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-linkedin"></i>
+									<a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank">LinkedIn Profile</a>
+								</li>
+							</ul>
+						</section>
 
-							<!-- Footer -->
-								<footer id="footer">
-									<p class=" © copyright">&copy; M. Mazhar Made with ❤️   +  <a href="https://html5up.net">HTML5 UP</a></p>
-									
-								</footer>
+						<!-- Footer -->
+						<footer id="footer" style="margin-top: 2em;">
+							<p class="copyright">&copy; M. Mazhar &bull; Built with ❤️ & <a href="https://html5up.net" target="_blank">HTML5 UP</a></p>
+						</footer>
 
-						</div>
 					</div>
+				</div>
+				
 			</div>
 
 		<!-- Scripts -->

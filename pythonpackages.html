@@ -1,17 +1,106 @@
 <!DOCTYPE HTML>
 <!--
-	Portfolio: M. Mazhar
+	Portfolio: M. Mazhar - Python Packages
 -->
 <html>
 	<head>
-		<title>Portfolio | Mazhar</title>
+		<title>Python Packages | M. Mazhar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" /> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		
+		<style>
+			/* Styling built using main.css variables */
+			.project-card {
+				background: var(--color-5);
+				border: 1px solid var(--color-2);
+				border-radius: 0.375em;
+				padding: 1.8em;
+				margin-bottom: 2em;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+			}
+			.project-card:hover {
+				border-color: var(--color-13);
+				box-shadow: 0 4px 15px var(--color-11);
+				transform: translateY(-2px);
+			}
+			.project-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-bottom: 1em;
+			}
+			.project-title {
+				margin: 0 !important;
+				color: var(--color-3);
+			}
+			.project-body {
+				display: flex;
+				flex-direction: row;
+				gap: 1.5em;
+				align-items: flex-start;
+			}
+			@media screen and (max-width: 768px) {
+				.project-body {
+					flex-direction: column;
+				}
+				.project-img-wrapper {
+					width: 100% !important;
+				}
+			}
+			.project-img-wrapper {
+				width: 35%;
+				flex-shrink: 0;
+				border-radius: 0.375em;
+				overflow: hidden;
+				border: 1px solid var(--color-2);
+			}
+			.project-img-wrapper img {
+				width: 100%;
+				height: 220px;
+				object-fit: cover;
+				display: block;
+				transition: transform 0.3s ease;
+			}
+			.project-card:hover .project-img-wrapper img {
+				transform: scale(1.05);
+			}
+			.project-content {
+				flex-grow: 1;
+			}
+			.tech-pill-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 10px 0 15px 0;
+			}
+			.tech-pill {
+				font-size: 0.75em;
+				padding: 2px 10px;
+				border-radius: 0.375em;
+				border: 1px solid var(--color-13);
+				background: var(--color-11);
+				color: var(--color-13);
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+			.action-buttons-group {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-top: 1.2em;
+			}
+			.badge-header-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 1.2em 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload dark">
 
@@ -22,172 +111,289 @@
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
-									<a href="./" class="logo"><strong>M. Mazhar</strong></a>
-									<ul class="icons">
-										<li><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
-										<li><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-										<li><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-										<li><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li>
-										<!-- <li><a href="https://www.kaggle.com/mazhar01" target="_blank" class="icon brands fa-kaggle"><span class="label">kaggle</span></a></li> -->
-										 <!-- <li><a href="https://twitter.com/mm_mazhar19" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-										<!-- <li><a href="https://wa.me/+923002576068" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li> -->
-										<!-- <li><a href="#" target="_blank" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+								<header id="header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 1.2em 0; width: 100%;">
+								<!-- Logo / Name (Left Aligned) -->
+								<a href="./" class="logo" style="font-size: 1.25em; border-bottom: none; flex-shrink: 0;"><strong>M. Mazhar</strong></a>
+
+								<!-- Right Header Actions Container (Pushed Flush Right) -->
+								<div style="margin-left: auto; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px;">
+									
+									<!-- Work Authorization Status Badge -->
+									<span style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--color-13); background: var(--color-11); color: var(--color-13); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px; flex-shrink: 0;">
+										<i class="fa-solid fa-circle-check"></i> Full Work Authorized
+									</span>
+
+									<!-- Download CV Button -->
+									<a href="images/mazhar_CV.pdf" target="_blank" class="button small" download style="height: 2.5em; line-height: 2.5em; padding: 0 1.2em; font-size: 0.7em; display: inline-flex; align-items: center; gap: 6px; border-bottom: none; flex-shrink: 0;">
+										<i class="fa-solid fa-download"></i> Download CV
+									</a>
+
+									<!-- Vertical Divider -->
+									<span style="height: 18px; width: 1px; background: var(--color-2); margin: 0 2px;"></span>
+
+									<!-- Contact & Social Icons (Aligned Flush Right) -->
+									<ul class="icons" style="margin: 0; padding: 0; display: inline-flex; align-items: center; gap: 12px;">
+										<li style="padding: 0;"><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone" style="border-bottom: none;"><span class="label">Phone</span></a></li>
+										<li style="padding: 0;"><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope" style="border-bottom: none;"><span class="label">Email</span></a></li>
+										<li style="padding: 0;"><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github" style="border-bottom: none;"><span class="label">Github</span></a></li>
+										<li style="padding: 0;"><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin" style="border-bottom: none;"><span class="label">Linkedin</span></a></li>
+										<li style="padding: 0; margin-right: 0;"><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp" style="border-bottom: none;"><span class="label">WhatsApp</span></a></li>
 									</ul>
-								</header>
+								</div>
+							</header>
 
 							<!-- Content -->
                             <section>
-								<header class="main">
-									<h2>Python Packages</h2>
-									<ul class="icons icons-badges">
-										<li><span class="label"><img src="https://img.shields.io/badge/Python->3.7-3776AB?style=plastic&logo=Python"/></span></li>
-									</ul>
-									<hr>
-								</header>
-								<!-- Python Packages Projects -->
-									<!-- <h2 id="elements">Python Packages</h2> -->
-									<div class="row gtr-200">
-										<div class="col-6 col-12-small">
-											<h2>Lasso Regression Model 0.0.1</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="images/pypi-lasso-regression-model.png" target="_blank">
-															<img src="images/pypi-lasso-regression-model.png" alt="pypi-lasso-regression-model" style="width:416; height:256" />
-														</a>
-													</span>
-													This is built in connection with other project `End-to-End Regression Model Pipeline`. Features Packaging and uploading the model to PyPi for easy integration and deployment.
-													  
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">Documentation on &nbsp;<a href="https://pypi.org/project/lasso-regression-model" target="_blank" class="fab fa-python fa-2x"><span class="label"></span></a></p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/Deploying-ML-Lasso-Regression-Model" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<h2>Pytubev3</h2>
-											<div align="center">
-												<span class="label"><img src="https://img.shields.io/badge/Python-3.7+-3776AB?style=plastic&logo=Python"/></span>
-												<span class="label"><img src="https://img.shields.io/pypi/wheel/pytubev3?style=plastic"/></span>
-												<span class="label"><img src="https://img.shields.io/pypi/dm/pytubev3?style=plastic"/></span>
-												<span class="label"><img src="https://img.shields.io/pypi/l/pytubev3?style=plastic"/></span>
-												<span class="label"><img src="https://img.shields.io/readthedocs/pytubev3?style=plastic"/></span>
-												<span class="label"><img src="https://img.shields.io/pypi/v/pytubev3?style=plastic"/></span>
-												
-											 </div>
-											 <br>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="images/pytubev3.jpg" target="_blank">
-															<img src="images/pytubev3.jpg" alt="Pytubev3" style="width:416; height:256" />
-														</a>
-													</span>
-													A wrapper around youtube API v3: pytubev3 is a Python library (work in progress) to simplify Youtube Data API tasks.
-													For now it provides a set of methods for interacting with the YouTube API. The methods include: <code>Get Video Categories of a Region</code> , <code>Search Youtube Channels by Keyword and Location (Latitude and Longitude)</code> , 
-													<code>Search Youtube Channels by Keyword and Region Code</code> , <code>Get Channel's Stats By Using Channel IDs</code> , <code>Get Channel's Stats By Using Channel IDs</code> , 
-													<code>Get Video IDs from Playlists by Using Playlist IDs</code> , <code>Get Video Details by using Video IDs</code> but in future versions more features will be added. 
-													To install with pip: <code>python -m pip install pytubev3</code>. For more details visit the Documentation link or github links given below
-							
-													
-													  
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">Documentation on &nbsp;<a href="https://pypi.org/project/pytubev3/" target="_blank" class="fab fa-python fa-2x"><span class="label"></span></a></p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/pytubev3" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>Bulk Image Downloader</h2>
-												<div align="center">
-													<span class="label"><img src="https://img.shields.io/badge/Python-3.7+-3776AB?style=plastic&logo=Python"/></span>
-													<span class="label"><img src="https://img.shields.io/pypi/wheel/imagedownloader?style=plastic"/></span>
-													<span class="label"><img src="https://img.shields.io/pypi/dm/imagedownloader?style=plastic"/></span>
-													<span class="label"><img src="https://img.shields.io/pypi/l/imagedownloader"/></span>
-													<span class="label"><img src="https://img.shields.io/readthedocs/pytubev3?style=plastic"/></span>
-													<span class="label"><img src="https://img.shields.io/pypi/v/imagedownloader?style=plastic"/></span>
-													
-												</div>
-												<br>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="images/imagedownloader.jpg" target="_blank">
-															<img src="images/imagedownloader.jpg" alt="Bulk Image Downloader"  style="width:416; height:256" />
-														</a>
-													</span>
-													This Python Package called imagedownloader that defines three methods: fromList(), fromCsv(), and zipFolder(). The class is designed to download images from either a list of URLs or a CSV file containing multiple URLs.
-													
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">Documentation on &nbsp;<a href="https://pypi.org/project/imagedownloader/" target="_blank" class="fab fa-python fa-2x"><span class="label"></span></a></p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/imagedownloader" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											
-											
-										</div>
-									</div>
-							</section>
+                                <header class="main">
+                                    <h2>Open Source Python Packages</h2>
+                                    <p>Reusable Python libraries published on PyPI for Machine Learning pipelines, API wrapping, and automated data processing.</p>
+                                    
+                                    <div class="badge-header-container">
+										<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+										<img src="https://img.shields.io/badge/PyPI-3776AB?style=for-the-badge&logo=pypi&logoColor=white" alt="PyPI"/>
+										<img src="https://img.shields.io/badge/Setuptools-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Setuptools"/>
+										<!-- <img src="https://img.shields.io/badge/Flit-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Flit"/> -->
+                                    </div>
+                                    <hr>
+                                </header>
+
+                                <!-- Python Packages List -->
+                                <div class="projects-container">
+
+                                    <!-- PACKAGE 1: Lasso Regression Model -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">lasso-regression-model (v0.0.1)</h3>
+                                            <a href="https://pypi.org/project/lasso-regression-model" target="_blank" class="button small">
+                                                <i class="icon brands fa-python"></i> PyPI Package
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/pypi-lasso-regression-model.png" target="_blank">
+                                                    <img src="images/pypi-lasso-regression-model.png" alt="Lasso Regression Model PyPI Package">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">PyPI Package</span>
+                                                    <span class="tech-pill">Lasso Regression</span>
+                                                    <span class="tech-pill">ML Pipeline</span>
+                                                    <span class="tech-pill">Scikit-Learn</span>
+                                                </div>
+
+                                                <p>Built in connection with the <em>End-to-End Regression Model Pipeline</em> project. Packages a trained Scikit-Learn Lasso Regression pipeline into a clean, installable PyPI wheel for easy integration into web APIs (FastAPI/Flask) and production environments.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://pypi.org/project/lasso-regression-model" target="_blank" class="button small"><i class="icon brands fa-python"></i> PyPI Documentation</a>
+                                                    <a href="https://github.com/mm-mazhar/Deploying-ML-Lasso-Regression-Model" target="_blank" class="button small"><i class="icon brands fa-github"></i> GitHub Repository</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PACKAGE 2: Pytubev3 -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">pytubev3 — YouTube Data API v3 Wrapper</h3>
+                                            <a href="https://pypi.org/project/pytubev3/" target="_blank" class="button small">
+                                                <i class="icon brands fa-python"></i> PyPI Package
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/pytubev3.jpg" target="_blank">
+                                                    <img src="images/pytubev3.jpg" alt="Pytubev3 Package">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">YouTube API v3</span>
+                                                    <span class="tech-pill">PyPI Library</span>
+                                                    <span class="tech-pill">API Wrapper</span>
+                                                    <span class="tech-pill">Python 3.7+</span>
+                                                </div>
+
+                                                <p>A Python client library designed to simplify interacting with YouTube Data API v3. Provides methods to retrieve regional video categories, search channels by location/keyword, fetch channel analytics by ID, and query playlist video metadata.</p>
+                                                
+                                                <p><strong>Install via pip: python -m pip install pytubev3</strong></p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://pypi.org/project/pytubev3/" target="_blank" class="button small"><i class="icon brands fa-python"></i> PyPI Package</a>
+                                                    <a href="https://github.com/mm-mazhar/pytubev3" target="_blank" class="button small"><i class="icon brands fa-github"></i> GitHub Repository</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PACKAGE 3: Bulk Image Downloader -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">imagedownloader — Bulk Image Downloader</h3>
+                                            <a href="https://pypi.org/project/imagedownloader/" target="_blank" class="button small">
+                                                <i class="icon brands fa-python"></i> PyPI Package
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/imagedownloader.jpg" target="_blank">
+                                                    <img src="images/imagedownloader.jpg" alt="Bulk Image Downloader Package">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Image Automation</span>
+                                                    <span class="tech-pill">PyPI Package</span>
+                                                    <span class="tech-pill">Data Pipelines</span>
+                                                    <span class="tech-pill">Zip Utilities</span>
+                                                </div>
+
+                                                <p>An automated Python package designed to bulk download image datasets from either a list of URLs (<strong>fromList()</strong>) or CSV files (<strong>fromCsv()</strong>), automatically organizing and compressing outputs into zip archives (<strong>zipFolder()</strong>) for dataset creation.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://pypi.org/project/imagedownloader/" target="_blank" class="button small"><i class="icon brands fa-python"></i> PyPI Package</a>
+                                                    <a href="https://github.com/mm-mazhar/imagedownloader" target="_blank" class="button small"><i class="icon brands fa-github"></i> GitHub Repository</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-				<div id="sidebar">
+					<!-- Sidebar -->
+					<div id="sidebar">
+					<style>
+						/* Dark Mode Sidebar Contrast Color */
+						body.dark #sidebar {
+							background-color: #1a1a1a !important;
+							border-right: 1px solid rgba(255, 255, 255, 0.08);
+						}
+
+						/* Adjust top padding so SWITCH MODE aligns with header line */
+						#sidebar > .inner {
+							padding-top: 1.2em !important;
+						}
+
+						/* Remove horizontal lines & section dividers inside sidebar */
+						#sidebar > .inner > * {
+							border-bottom: none !important;
+							margin-bottom: 1.8em !important;
+							padding-bottom: 0 !important;
+						}
+						#menu > ul > li {
+							border-top: none !important;
+							margin-top: 0.3em !important;
+							padding-top: 0.3em !important;
+						}
+						#sidebar a {
+							border-bottom: none !important;
+						}
+
+						/* Reset & Flex-align Get In Touch contact items */
+						ul.contact-flex {
+							list-style: none !important;
+							padding-left: 0 !important;
+							margin: 0 !important;
+						}
+						ul.contact-flex li {
+							display: flex !important;
+							align-items: center !important;
+							gap: 12px !important;
+							margin-bottom: 0.8em !important;
+							padding: 0 !important;
+							border-top: none !important;
+						}
+						ul.contact-flex li i {
+							color: var(--color-13);
+							font-size: 1.15em;
+							width: 20px;
+							text-align: center;
+							flex-shrink: 0;
+						}
+					</style>
+
 					<div class="inner">
+
+						<!-- Theme Toggle Button -->
+						<div style="margin-top: 0; margin-bottom: 1.5em;">
+							<button id="toggle" class="button fit" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 2.8em; line-height: 2.8em;">
+								<span>Switch Mode</span> 
+								<img src="images/moon.png" id="icon" class="icon-themes" style="width: 16px; height: 16px; margin: 0;">
+							</button>
+						</div>
+
 						<!-- Menu -->
-							<nav id="menu">
-								<div class="theme-buttons">
-									<button id="toggle" class="button">Switch Mode <img src="images/moon.png" id="icon" class="icon-themes"></button>
-								</div>
-								<header class="major">
-									<!-- <a href="#menu"><h2>Menu</h2></a> -->
-									<h2>Menu</h2>
-								</header>
-								<ul>
-									<!-- <li><a href="/index.html">Homepage</a></li> -->
-									<li><a href="./">Homepage</a></li>
-									<!-- <li><a href="#latest-work">Latest</a></li> -->
-									<li><a href="./genai.html">Generative AI</a></li>
-									<li><a href="./mldlcv.html">ML/DL and Computer Vision</a></li>
-									<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
-									<li><a href="./pythonpackages.html">Python Packages</a></li>
-									<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
-									<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
-							
-									<!-- <li><a href="generic.html">Generic</a></li>
-												<li><a href="elements.html">Elements</a></li> -->
-								  </ul>
-							</nav>
+						<nav id="menu">
+							<header class="major">
+								<h2>Navigation</h2>
+							</header>
+							<ul>
+								<li>
+									<a href="./"><i class="fa-solid fa-house" style="margin-right: 8px; color: var(--color-13);"></i> Homepage</a>
+								</li>
+								<li>
+									<a href="./genai.html"><i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 8px; color: var(--color-13);"></i> Generative AI</a>
+								</li>
+								<li>
+									<a href="./mldlcv.html"><i class="fa-solid fa-brain" style="margin-right: 8px; color: var(--color-13);"></i> ML / DL & Computer Vision</a>
+								</li>
 
-						<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Get in touch</h2>
-								</header>
-								<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
-								<ul class="contact">
-									<li class="icon solid fa-envelope"><a href="mazqoty.01@gmail.com" target="_blank">mazqoty.01@gmail.com</a></li>
-									<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
-									<!-- <li class="icon solid fa-phone"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li> -->
-									<li class="icon solid brands fa-whatsapp"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li>
-									<li class="icon brands fa-github"><a href="https://github.com/mm-mazhar/mazhar" target="_blank">Github</a></li>
-									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/m-mazhar-121133269/" target="_blank">Linkedin</a></li>
-									<!-- <li class="icon brands fa-twitter"><a href="https://twitter.com/mm_mazhar19" target="_blank">Twitter</a></li> -->
-									
-									<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-									Nashville, TN 00000-0000</li> -->
-								</ul>
-							</section>
+								<!-- Collapsible Archived Projects Dropdown -->
+								<li>
+									<span class="opener" style="opacity: 0.85;">
+										<i class="fa-solid fa-box-archive" style="margin-right: 8px; color: var(--color-4);"></i> Archived Projects
+									</span>
+									<ul style="padding-left: 1.2em; margin-top: 0.5em;">
+										<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
+										<li><a href="./pythonpackages.html">Python Packages</a></li>
+										<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
+										<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
 
+						<!-- Get In Touch Section -->
+						<section style="margin-top: 2em;">
+							<header class="major">
+								<h2>Get in touch</h2>
+							</header>
+							<ul class="contact-flex">
+								<li>
+									<i class="fa-solid fa-envelope"></i>
+									<a href="mailto:email.mazhar.01@gmail.com" target="_blank">email.mazhar.01@gmail.com</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-whatsapp"></i>
+									<a href="https://wa.me/+15715322248" target="_blank">WhatsApp (+1 571 532 2248)</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-github"></i>
+									<a href="https://github.com/mm-mazhar" target="_blank">GitHub Profile</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-linkedin"></i>
+									<a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank">LinkedIn Profile</a>
+								</li>
+							</ul>
+						</section>
 
 						<!-- Footer -->
-							<footer id="footer">
-								<p class=" © copyright">&copy; M. Mazhar Made with ❤️   +  <a href="https://html5up.net">HTML5 UP</a></p>
-								
-							</footer>
+						<footer id="footer" style="margin-top: 2em;">
+							<p class="copyright">&copy; M. Mazhar &bull; Built with ❤️ & <a href="https://html5up.net" target="_blank">HTML5 UP</a></p>
+						</footer>
 
 					</div>
 				</div>
-
 			</div>
 
 		<!-- Scripts -->
@@ -198,11 +404,9 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				const toggle = document.getElementById("toggle");
-				const refresh = document.getElementById("refresh");
 				let theme = window.localStorage.getItem("theme");
-				var icon=document.getElementById("icon");
+				var icon = document.getElementById("icon");
 
-				// Default to dark mode if no theme is set
 				if (!theme) {
 					theme = "dark";
 					window.localStorage.setItem("theme", "dark");
@@ -210,13 +414,12 @@
 
 				if (theme === "dark") {
 					document.body.classList.add("dark");
-					icon.src="images/sun.png";
+					icon.src = "images/sun.png";
 				} else {
 					document.body.classList.remove("dark");
-					icon.src="images/moon.png";
+					icon.src = "images/moon.png";
 				}
 
-				// event listener stops when the change theme button is clicked
 				toggle.addEventListener("click", () => {
 					if (theme === "dark") {
 						window.localStorage.setItem("theme", "light");
@@ -226,23 +429,5 @@
 					window.location.reload();
 				});
 			</script>
-
-			<script>
-				var tablinks=document.getElementsByClassName("tab-links");
-				var tabcontents=document.getElementsByClassName("tab-contents");
-				
-				function opentab(tabname){
-					for(tablink of tablinks){
-						tablink.classList.remove("active-link");
-					}
-					for(tabcontent of tabcontents){
-						tabcontent.classList.remove("active-tab");
-					}
-					event.currentTarget.classList.add("active-link");
-					document.getElementById(tabname).classList.add("active-tab");
-				}
-			</script>
-
-
 	</body>
 </html>

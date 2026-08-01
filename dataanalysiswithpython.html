@@ -1,17 +1,106 @@
 <!DOCTYPE HTML>
 <!--
-	Portfolio: M. Mazhar
+	Portfolio: M. Mazhar - Data Analysis with Python
 -->
 <html>
 	<head>
-		<title>Portfolio | Mazhar</title>
+		<title>Data Analysis with Python | M. Mazhar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" /> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		
+		<style>
+			/* Styling built using main.css variables */
+			.project-card {
+				background: var(--color-5);
+				border: 1px solid var(--color-2);
+				border-radius: 0.375em;
+				padding: 1.8em;
+				margin-bottom: 2em;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+			}
+			.project-card:hover {
+				border-color: var(--color-13);
+				box-shadow: 0 4px 15px var(--color-11);
+				transform: translateY(-2px);
+			}
+			.project-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-bottom: 1em;
+			}
+			.project-title {
+				margin: 0 !important;
+				color: var(--color-3);
+			}
+			.project-body {
+				display: flex;
+				flex-direction: row;
+				gap: 1.5em;
+				align-items: flex-start;
+			}
+			@media screen and (max-width: 768px) {
+				.project-body {
+					flex-direction: column;
+				}
+				.project-img-wrapper {
+					width: 100% !important;
+				}
+			}
+			.project-img-wrapper {
+				width: 35%;
+				flex-shrink: 0;
+				border-radius: 0.375em;
+				overflow: hidden;
+				border: 1px solid var(--color-2);
+			}
+			.project-img-wrapper img {
+				width: 100%;
+				height: 220px;
+				object-fit: cover;
+				display: block;
+				transition: transform 0.3s ease;
+			}
+			.project-card:hover .project-img-wrapper img {
+				transform: scale(1.05);
+			}
+			.project-content {
+				flex-grow: 1;
+			}
+			.tech-pill-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 10px 0 15px 0;
+			}
+			.tech-pill {
+				font-size: 0.75em;
+				padding: 2px 10px;
+				border-radius: 0.375em;
+				border: 1px solid var(--color-13);
+				background: var(--color-11);
+				color: var(--color-13);
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+			.action-buttons-group {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-top: 1.2em;
+			}
+			.badge-header-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 1.2em 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload dark">
 
@@ -22,275 +111,365 @@
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
-									<a href="./" class="logo"><strong>M. Mazhar</strong></a>
-									<ul class="icons">
-										<li><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
-										<li><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-										<li><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-										<li><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li>
-										<!-- <li><a href="https://www.kaggle.com/mazhar01" target="_blank" class="icon brands fa-kaggle"><span class="label">kaggle</span></a></li> -->
-										 <!-- <li><a href="https://twitter.com/mm_mazhar19" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-										<!-- <li><a href="https://wa.me/+923002576068" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li> -->
-										<!-- <li><a href="#" target="_blank" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+								<header id="header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 1.2em 0; width: 100%;">
+								<!-- Logo / Name (Left Aligned) -->
+								<a href="./" class="logo" style="font-size: 1.25em; border-bottom: none; flex-shrink: 0;"><strong>M. Mazhar</strong></a>
+
+								<!-- Right Header Actions Container (Pushed Flush Right) -->
+								<div style="margin-left: auto; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px;">
+									
+									<!-- Work Authorization Status Badge -->
+									<span style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--color-13); background: var(--color-11); color: var(--color-13); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px; flex-shrink: 0;">
+										<i class="fa-solid fa-circle-check"></i> Full Work Authorized
+									</span>
+
+									<!-- Download CV Button -->
+									<a href="images/mazhar_CV.pdf" target="_blank" class="button small" download style="height: 2.5em; line-height: 2.5em; padding: 0 1.2em; font-size: 0.7em; display: inline-flex; align-items: center; gap: 6px; border-bottom: none; flex-shrink: 0;">
+										<i class="fa-solid fa-download"></i> Download CV
+									</a>
+
+									<!-- Vertical Divider -->
+									<span style="height: 18px; width: 1px; background: var(--color-2); margin: 0 2px;"></span>
+
+									<!-- Contact & Social Icons (Aligned Flush Right) -->
+									<ul class="icons" style="margin: 0; padding: 0; display: inline-flex; align-items: center; gap: 12px;">
+										<li style="padding: 0;"><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone" style="border-bottom: none;"><span class="label">Phone</span></a></li>
+										<li style="padding: 0;"><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope" style="border-bottom: none;"><span class="label">Email</span></a></li>
+										<li style="padding: 0;"><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github" style="border-bottom: none;"><span class="label">Github</span></a></li>
+										<li style="padding: 0;"><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin" style="border-bottom: none;"><span class="label">Linkedin</span></a></li>
+										<li style="padding: 0; margin-right: 0;"><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp" style="border-bottom: none;"><span class="label">WhatsApp</span></a></li>
 									</ul>
-								</header>
+								</div>
+							</header>
 
 							<!-- Content -->
-								<section>
-									<header class="main">
-										<h2>Data Analysis with Python</h2>
-										
-										<ul class="icons icons-badges">
-											<li><span class="label"><img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=plastic&logo=Jupyter"/></span></li>
-											<li><span class="label"><img src="https://img.shields.io/badge/Python->3.7-3776AB?style=plastic&logo=Python"/></span></li>
-											<li><span class="label"><img src="https://img.shields.io/badge/Numpy-073343?style=plastic&logo=Numpy"/></span></li>
-											<li><span class="label"><img src="https://img.shields.io/badge/pandas-150458?style=plastic&logo=pandas"/></span></li>
-											<li><span class="label"><img src="https://img.shields.io/badge/matplotlib-366f81?style=plasticlogo=matplotlib"/></span></li>
-											<li><span class="label"><img src="https://img.shields.io/badge/seaborn-adafc2?style=plastic&logo=seaborn"/></span></li>
-											<li><span class="label"><img src="https://img.shields.io/badge/Plotly-3F4F75?style=plastic&logo=Plotly"/></span></li>
-											<li><span class="label"><img src="https://img.shields.io/badge/Django-092E20?style=plastic&logo=Django"/></span></li>
-										</ul>
-										<hr>
-									</header>
-									<!-- Data Analysis with Python Projects -->
-									<!-- <h2 id="elements">Data Analysis with Python</h2> -->
-									<div class="row gtr-200">
-										<div class="col-6 col-12-small">
-											<h2>COVID-19 DASHBOARD Django Plotly Dash App</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image right">
-														<a href="./images/covid-19.jpg" target="_blank">
-															<img src="./images/covid-19.jpg" alt="COVID-19 DASHBOARD Django Plotly Dash App" style="width:416; height:256" />
-														</a>
-													</span>
-													This COVID-19 Dashboard tracks covid-19 confirmed, deaths, recovered, active cases. It also contains vaccination analysis. The data was collected from various sources such as <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series" target="_blank">CSSE at Johns Hopkins University</a> and <a href="https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations" target="_blank">Our World in Data</a>. 
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<code>extractData.py</code>The script starts by importing the necessary libraries and filtering out any FutureWarning messages. It then sets three URL variables for the three CSV files that contain information on confirmed cases, deaths, and recoveries.
-													The script then merges the three data frames using the merge() function, first merging the total_confirmed and total_deaths data frames, and then merging the result with the total_recovered data frame.
-													The script then converts the date column from string to proper date format using the pd.to_datetime() function. It checks the number of missing values using the isna().sum() function and replaces any NaN values in the recovered column with 0 using the fillna() function.
-													The script then creates a new column called active that calculates the number of active cases by subtracting the number of deaths and recovered cases from the number of confirmed cases. It then groups the data by date and calculates the total number of confirmed cases, deaths, recoveries, and active cases using the groupby() and sum() functions.
-													Finally, the script creates a dictionary of lists containing the latitude and longitude coordinates of each country using the set_index(), T(), and to_dict() functions.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<code>processDFs.py</code>This script imports some data from a file named extractData.py and performs some data cleaning tasks. After that, it converts the data types of some columns of the imported data and prepares a dataframe dfc for animation confirmed cases.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<code>vaccinations_by_age_group.py</code>This Python code imports necessary libraries and packages to create an interactive dashboard for visualizing vaccination data by age group. It fetches vaccination data by age group from a GitHub repository and loads it into a pandas dataframe. 
-													The dataframe is sorted by date and location, and NaN values are filled with 0. The dashboard is built using the Dash library, which is a web application framework for building data-driven applications. The dashboard displays a dropdown menu with a list of countries to select from. 
-													Based on the user's selection, the line chart shows the percentage of fully vaccinated people per hundred for each age group in the selected country over time. The code also uses the 
-													DjangoDash library to integrate the dashboard into a Django project. Finally, the code defines a callback function to update the line chart based on the selected country in the dropdown menu. 
-													The figure is customized with various layout settings to improve its appearance.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													Similarly, there are few other scripts like <code>vaccineManufacturer.py</code> explores the data regarding vaccine manufacturers and <code>deathRace.py</code> animates the death toll in some countries.
-												</p>
-												<p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/Dashbaord-Covid19-Django-Plotly_Dash" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>Data Analysis and Visualization on Ecommerce Dataset</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="./images/EcommerceDataset1.jpg" target="_blank">
-															<img src="./images/EcommerceDataset1.jpg" alt="Data Analysis and Visualization on Ecommerce Dataset" style="width:416; height:256"  />
-														</a>
-													</span>
-												This is the largest retail e-commerce orders dataset from Pakistan. It contains half a million transaction records from March 2016 to August 2018. The data was collected from various e-commerce merchants as part of a research study. 
-												</p>
-												
-												<p style="text-align: justify; text-justify: inter-word;">
-													The code reads a dataset from a CSV file, performs some data cleaning operations like dropping some unnecessary columns, checking for missing data, dropping 
-													rows with missing data, replacing zeros from certain columns with values from other columns, and extracting year and month from a column. The cleaned dataset is stored in a Pandas DataFrame.
-													It explores, Best Seller Category Yearly, Highest Order Cancellation per Category, Highest Order Refunded per Category, Most Orders for Product and Top 10 Most Orders for Products,
-													Most Qty of Products Ordered, Visualize payment method and order status frequency etc and plot relevent charts and graphs
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													More on Github &nbsp; <a href="https://github.com/mm-mazhar/Data-Analysis-and-Visualization-on-Ecommerce-Dataset" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
-												</p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>TwitterAPI/dash/plotly, A simple example</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image right">
-														<a href="./images/TwitterDash.jpg" target="_blank">
-															<img src="./images/TwitterDash.jpg" alt="TwitterAPI/dash/plotly, A simple example" style="width:416; height:256" />
-														</a>
-													</span>
-													This is a simple example of TwitterAPI/dash/plotly deployment on server using flask, gunicorn and docker. 
-												</p>
-												
-												<p style="text-align: justify; text-justify: inter-word;">
-													<code>appTrends.py</code>The code is a Python script that imports several libraries including Plotly, Dash, and pandas. The script is designed to process Twitter trends and display them in a Dash web application. The script defines a generator function, 
-													woidsGenerator, that reads a JSON file, removes invalid parent ids, creates a list of countries and parent ids, removes duplicates, and yields a list of woeids, country, 
-													and parent ids. There is also a function called f that inserts a URL link inside a Dash DataTable.                            
-													The locationTrends variable is set to "United States" and a tuple object is created by calling the woidsGenerator function with the JSON file and locationTrends. 
-													The woeid variable is set to the first value in the tuple object and lstCountryParentid is set to the second value. The listCountry variable is created by creating a 
-													list of countries from the lstCountryParentid variable.                            
-													The trends_layout variable is a Dash container that includes a title row, a dropdown menu for selecting a country, a submit button, a notification row, a Dash table for displaying 
-													trends, and an interval for updating trends (not shown in the tab).                            
-													The displayTrends function is a callback function that takes a country input from the dropdown menu, retrieves the trends using the woidsGenerator function, and displays them in a Dash table. The n_clicks input from the submit button triggers the callback function. 
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<code>appTweetsSearch.py</code>This Python code is a part of a Dash app that displays analytics of Twitter search results based on inputted keywords. 
-													The code imports various modules, including plotly.express, dash_bootstrap_components, pandas, and re. It defines a function called "cleanText" that cleans 
-													the text data by removing Twitter-specific content such as URLs, mentions, hashtags, and retweets.
-													The code defines a Dash layout for the tab "Recent Search," which includes a search bar, a dropdown menu for the number of results to display, and a 
-													submit button. It also includes two bar charts and a Dash table for displaying trends.                             
-													The code defines a callback function called "display_value," which takes as input the number of clicks on the submit button, the number of results to 
-													return, and the search term. The function uses the Twitter API to search for tweets containing the inputted search term, and then creates two bar charts 
-													and a Dash table to display the results. The function returns the children of the notification component, the figure for the first bar chart, the figure 
-													for the second bar chart, and the children of the Dash table.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">
-													There are other scripts such as <code>getUsersTweet.py</code> which gather user's tweet and <code>getUsersInfo.py</code> which collects user's info pretty much 
-													basic use of Twitter's API
-												</p>
-												<p  style="text-align: justify; text-justify: inter-word;">View it on <a href="https://dashboard-twitter-analytics.onrender.com/" target="_blank">Render</a></p>
-												<p  style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/Dashboard-Twitter-Analytics" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>Chicago Divvy Bicycle Sharing Data</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="./images/da2.jpg" target="_blank">
-															<img src="./images/da2.jpg" alt="Chicago Divvy Bicycle Sharing Data" style="width:416; height:256" />
-														</a>
-													</span>
-													In this short exercise data analysis and visualization is being performed on the Chicago Divvy bicycle sharing data from 2014 to 2017. The code begins by importing 
-													the required libraries such as numpy, pandas, matplotlib, seaborn, and plotly.express. Next, the dataset is downloaded using the Kaggle API and the csv file is 
-													loaded into a dataframe called 'df'. The code then inspects the data and checks for missing values. It also adds new features to the dataframe such 
-													as 'date', 'weekend', 'dayofweek', 'months', 'dayofmonth', 'dayofyear', 'trip_count', and 'season'. The 'season' column is added using the given Northern 
-													Hemisphere season dates. Finally, the code visualizes the data using different plots such as scatter plot, bar plot, line plot, heatmaps, etc. 
-													The code shows various visualizations such as hourly usage patterns, daily usage patterns, monthly usage patterns, popular start and stop stations, 
-													user types, etc.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/ChicagoDivvyBicycleSharingData" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>Emergency 911 Calls</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image right">
-														<a href="./images/da2.jpg" target="_blank">
-															<img src="./images/da2.jpg" alt="Emergency 911 Calls" style="width:416; height:256" />
-														</a>
-													</span>
-													This Python code performs data analysis and visualization on a dataset of 911 calls. Initially, it imports necessary libraries including NumPy, Pandas, 
-													Matplotlib, Seaborn, and Plotly. Then it downloads a dataset of 911 calls through Kaggle API and reads it into a Pandas DataFrame named df. The code performs 
-													some basic data cleaning and analysis by checking missing values and filling missing values in the zip column. It then answers some questions about the 
-													dataset such as the top 5 zip codes and townships for 911 calls and the most common reason for 911 calls. Finally, it visualizes the data by creating a 
-													Seaborn countplot and a Plotly histogram.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/Emergency_911_Calls" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											<h2>Walmart Sales Dataset of 45 stores</h2>
-												<p style="text-align: justify; text-justify: inter-word;">
-													<span class="image left">
-														<a href="./images/WalmartSales.jpg" target="_blank">
-														<img src="./images/WalmartSales.jpg" alt="Walmart Sales Dataset of 45 stores" style="width:416; height:256" />
-													</a>
-												</span>
-												This Python code performs data analysis and visualization on a Walmart sales dataset of 45 stores. The code starts by importing necessary libraries like numpy, 
-												pandas, seaborn, matplotlib, and plotly for data manipulation and visualization. After that, it reads the Walmart sales dataset from a CSV file using Pandas. 
-												The code then performs data preprocessing tasks like inspecting the dataset's information, finding missing values, adding new features like holidays, season, 
-												and month names to the data frame. It also drops some columns and rearranges the data frame columns. Finally, the code performs exploratory data analysis 
-												using visualization techniques. It creates various charts and plots to analyze the annual sales of stores, monthly sales trends, sales by different holidays 
-												and seasons, sales based on temperature, fuel prices, CPI, and unemployment rate, etc. The code also provides insights into stores' performance and identifies 
-												the top-performing stores based on their annual sales.
-												</p>
-												<p style="text-align: justify; text-justify: inter-word;">More on Github &nbsp; <a href="https://github.com/mm-mazhar/WalmartSalesDatasetof45stores" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-												<hr>
-											<!-- Next -->
-											
-											<!-- Sample -->
-											<!-- Next -->
-											<!-- <h2>Enter Project Name</h2>
-												<p>
-													<span class="image left">
-														<a href="" target="_blank">
-														<img src="" alt=""  />
-														</a>
-													</span>
-													Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-												</p>
-												More on Github &nbsp; <a href="" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
-												<br>
-												<hr> -->
-											<!-- Next -->
-										</div>
-									</div>
-							</section>
+                            <section>
+                                <header class="main">
+                                    <h2>Data Analysis with Python</h2>
+                                    <p>Exploratory Data Analysis (EDA), Interactive Dashboards, Web Analytics, and Statistical Data Wrangling.</p>
+                                    
+                                    <div class="badge-header-container">
+										<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+										<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+										<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"/>
+										<img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"/>
+										<img src="https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Seaborn"/>
+										<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django"/>
+                                    </div>
+                                    <hr>
+                                </header>
+
+                                <!-- Projects List -->
+                                <div class="projects-container">
+
+                                    <!-- PROJECT 1: COVID-19 DASHBOARD -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">COVID-19 Interactive Dashboard (Django & Plotly Dash)</h3>
+                                            <a href="https://github.com/mm-mazhar/Dashbaord-Covid19-Django-Plotly_Dash" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/covid-19.jpg" target="_blank">
+                                                    <img src="./images/covid-19.jpg" alt="COVID-19 Dashboard App">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Django</span>
+                                                    <span class="tech-pill">Plotly Dash</span>
+                                                    <span class="tech-pill">Pandas</span>
+                                                    <span class="tech-pill">ETL Pipeline</span>
+                                                </div>
+
+                                                <p>An enterprise-grade interactive analytics dashboard tracking global COVID-19 infection rates, deaths, recoveries, and age-group vaccination trends. Integrates real-time dataset pipelines sourced from Johns Hopkins University CSSE and Our World in Data, embedded seamlessly into Django via <strong>django-plotly-dash</strong>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 2: E-commerce Analytics -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Retail E-Commerce Transaction Data Analysis</h3>
+                                            <a href="https://github.com/mm-mazhar/Data-Analysis-and-Visualization-on-Ecommerce-Dataset" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/EcommerceDataset1.jpg" target="_blank">
+                                                    <img src="./images/EcommerceDataset1.jpg" alt="E-Commerce Dataset Analysis">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Python</span>
+                                                    <span class="tech-pill">Pandas</span>
+                                                    <span class="tech-pill">Seaborn</span>
+                                                    <span class="tech-pill">E-Commerce EDA</span>
+                                                </div>
+
+                                                <p>Exploratory Data Analysis performed on a massive retail e-commerce dataset containing half a million transaction records (2016–2018). Analyzed best-selling product categories, annual order cancellation rates, top payment preferences, and customer refund drivers.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 3: Twitter API Analytics Dashboard -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Twitter API Real-Time Analytics Dashboard</h3>
+                                            <a href="https://github.com/mm-mazhar/Dashboard-Twitter-Analytics" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/TwitterDash.jpg" target="_blank">
+                                                    <img src="./images/TwitterDash.jpg" alt="Twitter API Analytics Dashboard">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Twitter API</span>
+                                                    <span class="tech-pill">Dash / Plotly</span>
+                                                    <span class="tech-pill">Flask</span>
+                                                    <span class="tech-pill">Docker</span>
+                                                </div>
+
+                                                <p>A web application processing real-time Twitter trends and keyword search queries. Features regex text cleaning (URL/hashtag removal), dynamic WOEID location trend extraction, and Plotly interactive data tables containerized with Docker and deployed via Gunicorn/Flask.</p>
+
+                                                <div class="action-buttons-group">
+                                                    <a href="https://dashboard-twitter-analytics.onrender.com/" target="_blank" class="button small"><i class="icon solid fa-bolt"></i> Live Render App</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 4: Chicago Divvy Bicycle Sharing -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Chicago Divvy Bicycle Sharing Data Analysis</h3>
+                                            <a href="https://github.com/mm-mazhar/ChicagoDivvyBicycleSharingData" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/da2.jpg" target="_blank">
+                                                    <img src="./images/da2.jpg" alt="Chicago Divvy Bicycle Sharing Data">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Pandas</span>
+                                                    <span class="tech-pill">Time Series</span>
+                                                    <span class="tech-pill">Plotly Express</span>
+                                                    <span class="tech-pill">Feature Engineering</span>
+                                                </div>
+
+                                                <p>Time-series data analysis on Chicago Divvy bike-sharing rider logs (2014–2017). Engineered seasonal, weekend, and hourly trip features to evaluate peak commuting hours, top start/stop stations, subscriber vs customer behaviors, and heatmaps.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 5: Emergency 911 Calls -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Emergency 911 Calls Dataset Analytics</h3>
+                                            <a href="https://github.com/mm-mazhar/Emergency_911_Calls" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/da2.jpg" target="_blank">
+                                                    <img src="./images/da2.jpg" alt="Emergency 911 Calls Analysis">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Python</span>
+                                                    <span class="tech-pill">Pandas</span>
+                                                    <span class="tech-pill">Seaborn</span>
+                                                    <span class="tech-pill">Data Cleaning</span>
+                                                </div>
+
+                                                <p>Statistical data wrangling and visualization on emergency 911 call records. Analyzed call frequencies across townships, ZIP codes, and emergency reason codes (EMS, Fire, Traffic), producing heatmaps and temporal distribution plots.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 6: Walmart Sales Dataset -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Walmart Multi-Store Sales EDA & Trend Forecasting</h3>
+                                            <a href="https://github.com/mm-mazhar/WalmartSalesDatasetof45stores" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="./images/WalmartSales.jpg" target="_blank">
+                                                    <img src="./images/WalmartSales.jpg" alt="Walmart Sales Analysis">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Python</span>
+                                                    <span class="tech-pill">Pandas</span>
+                                                    <span class="tech-pill">Retail Analytics</span>
+                                                    <span class="tech-pill">Plotly</span>
+                                                </div>
+
+                                                <p>Exploratory analysis evaluating revenue drivers across 45 Walmart stores. Assessed how external economic indicators (Consumer Price Index, unemployment rate, fuel prices, and temperature fluctuations) impact seasonal holiday sales performance.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
 						</div>
 					</div>
 
 				<!-- Sidebar -->
-				<div id="sidebar">
+					<div id="sidebar">
+					<style>
+						/* Dark Mode Sidebar Contrast Color */
+						body.dark #sidebar {
+							background-color: #1a1a1a !important;
+							border-right: 1px solid rgba(255, 255, 255, 0.08);
+						}
+
+						/* Adjust top padding so SWITCH MODE aligns with header line */
+						#sidebar > .inner {
+							padding-top: 1.2em !important;
+						}
+
+						/* Remove horizontal lines & section dividers inside sidebar */
+						#sidebar > .inner > * {
+							border-bottom: none !important;
+							margin-bottom: 1.8em !important;
+							padding-bottom: 0 !important;
+						}
+						#menu > ul > li {
+							border-top: none !important;
+							margin-top: 0.3em !important;
+							padding-top: 0.3em !important;
+						}
+						#sidebar a {
+							border-bottom: none !important;
+						}
+
+						/* Reset & Flex-align Get In Touch contact items */
+						ul.contact-flex {
+							list-style: none !important;
+							padding-left: 0 !important;
+							margin: 0 !important;
+						}
+						ul.contact-flex li {
+							display: flex !important;
+							align-items: center !important;
+							gap: 12px !important;
+							margin-bottom: 0.8em !important;
+							padding: 0 !important;
+							border-top: none !important;
+						}
+						ul.contact-flex li i {
+							color: var(--color-13);
+							font-size: 1.15em;
+							width: 20px;
+							text-align: center;
+							flex-shrink: 0;
+						}
+					</style>
+
 					<div class="inner">
+
+						<!-- Theme Toggle Button -->
+						<div style="margin-top: 0; margin-bottom: 1.5em;">
+							<button id="toggle" class="button fit" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 2.8em; line-height: 2.8em;">
+								<span>Switch Mode</span> 
+								<img src="images/moon.png" id="icon" class="icon-themes" style="width: 16px; height: 16px; margin: 0;">
+							</button>
+						</div>
+
 						<!-- Menu -->
-							<nav id="menu">
-								<div class="theme-buttons">
-									<button id="toggle" class="button">Switch Mode <img src="images/moon.png" id="icon" class="icon-themes"></button>
-								</div>
-								<header class="major">
-									<!-- <a href="#menu"><h2>Menu</h2></a> -->
-									<h2>Menu</h2>
-								</header>
-								<ul>
-									<!-- <li><a href="/index.html">Homepage</a></li> -->
-									<li><a href="./">Homepage</a></li>
-									<!-- <li><a href="#latest-work">Latest</a></li> -->
-									<li><a href="./genai.html">Generative AI</a></li>
-									<li><a href="./mldlcv.html">ML/DL and Computer Vision</a></li>
-									<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
-									<li><a href="./pythonpackages.html">Python Packages</a></li>
-									<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
-									<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
-							
-									<!-- <li><a href="generic.html">Generic</a></li>
-												<li><a href="elements.html">Elements</a></li> -->
-								  </ul>
-							</nav>
+						<nav id="menu">
+							<header class="major">
+								<h2>Navigation</h2>
+							</header>
+							<ul>
+								<li>
+									<a href="./"><i class="fa-solid fa-house" style="margin-right: 8px; color: var(--color-13);"></i> Homepage</a>
+								</li>
+								<li>
+									<a href="./genai.html"><i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 8px; color: var(--color-13);"></i> Generative AI</a>
+								</li>
+								<li>
+									<a href="./mldlcv.html"><i class="fa-solid fa-brain" style="margin-right: 8px; color: var(--color-13);"></i> ML / DL & Computer Vision</a>
+								</li>
 
-						<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Get in touch</h2>
-								</header>
-								<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
-								<ul class="contact">
-									<li class="icon solid fa-envelope"><a href="mazqoty.01@gmail.com" target="_blank">mazqoty.01@gmail.com</a></li>
-									<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
-									<!-- <li class="icon solid fa-phone"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li> -->
-									<li class="icon solid brands fa-whatsapp"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li>
-									<li class="icon brands fa-github"><a href="https://github.com/mm-mazhar/mazhar" target="_blank">Github</a></li>
-									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/m-mazhar-121133269/" target="_blank">Linkedin</a></li>
-									<!-- <li class="icon brands fa-twitter"><a href="https://twitter.com/mm_mazhar19" target="_blank">Twitter</a></li> -->
-									
-									<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-									Nashville, TN 00000-0000</li> -->
-								</ul>
-							</section>
+								<!-- Collapsible Archived Projects Dropdown -->
+								<li>
+									<span class="opener" style="opacity: 0.85;">
+										<i class="fa-solid fa-box-archive" style="margin-right: 8px; color: var(--color-4);"></i> Archived Projects
+									</span>
+									<ul style="padding-left: 1.2em; margin-top: 0.5em;">
+										<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
+										<li><a href="./pythonpackages.html">Python Packages</a></li>
+										<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
+										<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
 
+						<!-- Get In Touch Section -->
+						<section style="margin-top: 2em;">
+							<header class="major">
+								<h2>Get in touch</h2>
+							</header>
+							<ul class="contact-flex">
+								<li>
+									<i class="fa-solid fa-envelope"></i>
+									<a href="mailto:email.mazhar.01@gmail.com" target="_blank">email.mazhar.01@gmail.com</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-whatsapp"></i>
+									<a href="https://wa.me/+15715322248" target="_blank">WhatsApp (+1 571 532 2248)</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-github"></i>
+									<a href="https://github.com/mm-mazhar" target="_blank">GitHub Profile</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-linkedin"></i>
+									<a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank">LinkedIn Profile</a>
+								</li>
+							</ul>
+						</section>
 
 						<!-- Footer -->
-							<footer id="footer">
-								<p class=" © copyright">&copy; M. Mazhar Made with ❤️   +  <a href="https://html5up.net">HTML5 UP</a></p>
-								
-							</footer>
+						<footer id="footer" style="margin-top: 2em;">
+							<p class="copyright">&copy; M. Mazhar &bull; Built with ❤️ & <a href="https://html5up.net" target="_blank">HTML5 UP</a></p>
+						</footer>
 
 					</div>
 				</div>
-
 			</div>
 
 		<!-- Scripts -->
@@ -301,11 +480,9 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				const toggle = document.getElementById("toggle");
-				const refresh = document.getElementById("refresh");
 				let theme = window.localStorage.getItem("theme");
-				var icon=document.getElementById("icon");
+				var icon = document.getElementById("icon");
 
-				// Default to dark mode if no theme is set
 				if (!theme) {
 					theme = "dark";
 					window.localStorage.setItem("theme", "dark");
@@ -313,13 +490,12 @@
 
 				if (theme === "dark") {
 					document.body.classList.add("dark");
-					icon.src="images/sun.png";
+					icon.src = "images/sun.png";
 				} else {
 					document.body.classList.remove("dark");
-					icon.src="images/moon.png";
+					icon.src = "images/moon.png";
 				}
 
-				// event listener stops when the change theme button is clicked
 				toggle.addEventListener("click", () => {
 					if (theme === "dark") {
 						window.localStorage.setItem("theme", "light");
@@ -329,23 +505,5 @@
 					window.location.reload();
 				});
 			</script>
-
-			<script>
-				var tablinks=document.getElementsByClassName("tab-links");
-				var tabcontents=document.getElementsByClassName("tab-contents");
-				
-				function opentab(tabname){
-					for(tablink of tablinks){
-						tablink.classList.remove("active-link");
-					}
-					for(tabcontent of tabcontents){
-						tabcontent.classList.remove("active-tab");
-					}
-					event.currentTarget.classList.add("active-link");
-					document.getElementById(tabname).classList.add("active-tab");
-				}
-			</script>
-
-
 	</body>
 </html>

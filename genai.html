@@ -1,17 +1,116 @@
 <!DOCTYPE HTML>
 <!--
-	Portfolio: M. Mazhar
+	Portfolio: M. Mazhar - Generative AI
 -->
 <html>
 	<head>
-		<title>Portfolio | Mazhar</title>
+		<title>Generative AI Projects | M. Mazhar</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" /> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		
+		<style>
+			/* Styling built using main.css variables */
+			.project-card {
+				background: var(--color-5);
+				border: 1px solid var(--color-2);
+				border-radius: 0.375em;
+				padding: 1.8em;
+				margin-bottom: 2em;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+			}
+			.project-card:hover {
+				border-color: var(--color-13);
+				box-shadow: 0 4px 15px var(--color-11);
+				transform: translateY(-2px);
+			}
+			.project-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin-bottom: 1em;
+			}
+			.project-title {
+				margin: 0 !important;
+				color: var(--color-3);
+			}
+			.project-body {
+				display: flex;
+				flex-direction: row;
+				gap: 1.5em;
+				align-items: flex-start;
+			}
+			@media screen and (max-width: 768px) {
+				.project-body {
+					flex-direction: column;
+				}
+				.project-img-wrapper {
+					width: 100% !important;
+				}
+			}
+			.project-img-wrapper {
+				width: 35%;
+				flex-shrink: 0;
+				border-radius: 0.375em;
+				overflow: hidden;
+				border: 1px solid var(--color-2);
+			}
+			.project-img-wrapper img {
+				width: 100%;
+				height: 200px;
+				object-fit: cover;
+				display: block;
+				transition: transform 0.3s ease;
+			}
+			.project-card:hover .project-img-wrapper img {
+				transform: scale(1.05);
+			}
+			.project-content {
+				flex-grow: 1;
+			}
+			.tech-pill-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 10px 0 15px 0;
+			}
+			.tech-pill {
+				font-size: 0.75em;
+				padding: 2px 10px;
+				border-radius: 0.375em;
+				border: 1px solid var(--color-13);
+				background: var(--color-11);
+				color: var(--color-13);
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+			.medium-series-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 12px;
+				margin-top: 1.2em;
+			}
+			.medium-card {
+				border: 1px solid var(--color-2);
+				border-radius: 0.375em;
+				padding: 12px;
+				background: var(--primary-color);
+				transition: border-color 0.2s ease;
+			}
+			.medium-card:hover {
+				border-color: var(--color-13);
+			}
+			.badge-header-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				margin: 1.2em 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload dark">
 
@@ -22,246 +121,298 @@
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
-									<a href="./" class="logo"><strong>M. Mazhar</strong></a>
-									<ul class="icons">
-										<li><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone"><span class="label">Phone</span></a></li>
-										<li><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-										<li><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-										<li><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li>
-										<!-- <li><a href="https://www.kaggle.com/mazhar01" target="_blank" class="icon brands fa-kaggle"><span class="label">kaggle</span></a></li> -->
-										 <!-- <li><a href="https://twitter.com/mm_mazhar19" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-										<!-- <li><a href="https://wa.me/+923002576068" target="_blank" class="icon brands fa-whatsapp"><span class="label"></span></a></li> -->
-										<!-- <li><a href="#" target="_blank" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" target="_blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+								<header id="header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 1.2em 0; width: 100%;">
+								<!-- Logo / Name (Left Aligned) -->
+								<a href="./" class="logo" style="font-size: 1.25em; border-bottom: none; flex-shrink: 0;"><strong>M. Mazhar</strong></a>
+
+								<!-- Right Header Actions Container (Pushed Flush Right) -->
+								<div style="margin-left: auto; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px;">
+									
+									<!-- Work Authorization Status Badge -->
+									<span style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--color-13); background: var(--color-11); color: var(--color-13); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px; flex-shrink: 0;">
+										<i class="fa-solid fa-circle-check"></i> Full Work Authorized
+									</span>
+
+									<!-- Download CV Button -->
+									<a href="images/mazhar_CV.pdf" target="_blank" class="button small" download style="height: 2.5em; line-height: 2.5em; padding: 0 1.2em; font-size: 0.7em; display: inline-flex; align-items: center; gap: 6px; border-bottom: none; flex-shrink: 0;">
+										<i class="fa-solid fa-download"></i> Download CV
+									</a>
+
+									<!-- Vertical Divider -->
+									<span style="height: 18px; width: 1px; background: var(--color-2); margin: 0 2px;"></span>
+
+									<!-- Contact & Social Icons (Aligned Flush Right) -->
+									<ul class="icons" style="margin: 0; padding: 0; display: inline-flex; align-items: center; gap: 12px;">
+										<li style="padding: 0;"><a href="tel:+15715322248" target="_blank" class="icon solid fa-phone" style="border-bottom: none;"><span class="label">Phone</span></a></li>
+										<li style="padding: 0;"><a href="mailto:email.mazhar.01@gmail.com" target="_blank" class="icon solid fa-envelope" style="border-bottom: none;"><span class="label">Email</span></a></li>
+										<li style="padding: 0;"><a href="https://github.com/mm-mazhar" target="_blank" class="icon brands fa-github" style="border-bottom: none;"><span class="label">Github</span></a></li>
+										<li style="padding: 0;"><a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank" class="icon brands fa-linkedin" style="border-bottom: none;"><span class="label">Linkedin</span></a></li>
+										<li style="padding: 0; margin-right: 0;"><a href="https://wa.me/+15715322248" target="_blank" class="icon brands fa-whatsapp" style="border-bottom: none;"><span class="label">WhatsApp</span></a></li>
 									</ul>
-								</header>
+								</div>
+							</header>
 
 							<!-- Content -->
                             <section>
                                 <header class="main">
                                     <h2>Generative AI</h2>
+                                    <p>End-to-end LLM applications, RAG pipelines, fine-tuning Vision-Language models, and MLOps architectures.</p>
                                     
-                                    <ul class="icons icons-badges">
-										<li><span class="label"><img src="https://img.shields.io/badge/Python-3776AB?plastice&logo=python&logoColor=white"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Docker-000000?style=plastic&logo=Docker"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/FastAPI-000000?style=plastic&logo=FastAPI"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=plastic&logo=Streamlit"/></span></li>
-                                        <li><span class="label"><img src="https://img.shields.io/badge/CircleCI-000000?style=plastic&logo=CircleCI"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/Flask-000000?plastice&logo=flask&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/LangChain-1C3C3C?plastice&logo=langchain&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?plastice&logo=pytorch&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?plastice&logo=tensorflow&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/Docker-2496ED?plastice&logo=docker&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/MLflow-0194E2?plastice&logo=mlflow&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/AWS-232F3E?plastice&logo=amazon-aws&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/Azure-0089D6?plastice&logo=microsoft-azure&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/MySQL-4479A1?plastice&logo=mysql&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?plastice&logo=postgresql&logoColor=white"/></span></li>
-										<li><span class="label"><img src="https://img.shields.io/badge/OpenCV-273E89?plastice&logo=opencv&logoColor=white"/></span></li>
-
-										
-                                    </ul>
+                                    <div class="badge-header-container">
+										<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+										<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain"/>
+										<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+										<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white" alt="Streamlit"/>
+										<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+										<img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow"/>
+										<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/>
+										<img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
+										<img src="https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure"/>
+                                    </div>
                                     <hr>
                                 </header>
-                                <!-- GenAI Projects -->
-                                    <!-- <h2 id="elements">GenAI</h2> -->
-                                    <div class="row gtr-200">
-                                        <div class="col-6 col-12-small">
-											<h2>Fine Tune Gemma</h2>
-                                                <p>
-                                                    <span class="image left">
-                                                        <a href="images/finetune_gemma_01.jpg" target="_blank">
-                                                            <img src="images/finetune_gemma_01.jpg" alt="" style="width:416; height:256" />
-                                                        </a>
-                                                    </span>
-                                                    Fine-tuning Vision-Language Models (VLMs) like Google’s Gemma is one of the most exciting frontiers in AI. The ability to teach a model to see and describe the world according to a specific task is incredibly powerful. But as anyone who has tried knows, the journey from a raw dataset to a trained model is fraught with peril: massive datasets, out-of-memory errors, and tangled notebook code.
-												<p>This project aims to simplify the fine-tuning process by providing a streamlined, end-to-end pipeline that takes you from data preparation to fine tuning.</p>
-												</p>
-												<div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 1.5em;">
-	<!-- Part 1 -->
-	<div style="flex: 1; min-width: 220px; border: 1px solid rgba(0,0,0,0.12); border-radius: 8px; padding: 16px; background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
-		<div>
-			<span style="font-size: 0.8em; font-weight: bold; color: var(--color-13); text-transform: uppercase;">Medium Series • Part 1</span>
-			<h4 style="margin: 8px 0 12px 0; font-size: 1em; line-height: 1.4;">Fine-Tuning Gemma: PEFT Explained</h4>
-		</div>
-		<a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-peft-explained-part-1-6f49615f1d18" target="_blank" class="button small fit">
-			<i class="icon brands fa-medium"></i> Read Article
-		</a>
-	</div>
 
-	<!-- Part 2 -->
-	<div style="flex: 1; min-width: 220px; border: 1px solid rgba(0,0,0,0.12); border-radius: 8px; padding: 16px; background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
-		<div>
-			<span style="font-size: 0.8em; font-weight: bold; color: var(--color-13); text-transform: uppercase;">Medium Series • Part 2</span>
-			<h4 style="margin: 8px 0 12px 0; font-size: 1em; line-height: 1.4;">Fine-Tuning Gemma: LoRA & QLoRA</h4>
-		</div>
-		<a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-lora-and-qlora-explained-part-2-0127ae6144b5" target="_blank" class="button small fit">
-			<i class="icon brands fa-medium"></i> Read Article
-		</a>
-	</div>
+                                <!-- GenAI Projects List -->
+                                <div class="projects-container">
 
-	<!-- Part 3 -->
-	<div style="flex: 1; min-width: 220px; border: 1px solid rgba(0,0,0,0.12); border-radius: 8px; padding: 16px; background: #fff; display: flex; flex-direction: column; justify-content: space-between;">
-		<div>
-			<span style="font-size: 0.8em; font-weight: bold; color: var(--color-13); text-transform: uppercase;">Medium Series • Part 3</span>
-			<h4 style="margin: 8px 0 12px 0; font-size: 1em; line-height: 1.4;">Fine-Tuning Gemma: Reusable Pipeline</h4>
-		</div>
-		<a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-part-3-5c7f9182f1ee" target="_blank" class="button small fit">
-			<i class="icon brands fa-medium"></i> Read Article
-		</a>
-	</div>
-</div>
-                                                <p>More on Github &nbsp; <a href="https://github.com/mm-mazhar/FineTuneGemma" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a></p>
-												<!-- <br> -->
-                                                <hr>
-                                            <h2>Hybrid RAG | WEBSITE CRAWLER</h2>
-                                                <p>
-                                                    <span class="image right">
-                                                        <a href="images/rag_streamlit_app.png" target="_blank">
-                                                            <img src="images/rag_streamlit_app.png" alt="" style="width:416; height:256" />
+                                    <!-- PROJECT 1: FineTune Gemma -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Fine-Tuning Gemma (VLM Pipeline)</h3>
+                                            <a href="https://github.com/mm-mazhar/FineTuneGemma" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/finetune_gemma_01.jpg" target="_blank">
+                                                    <img src="images/finetune_gemma_01.jpg" alt="Fine Tune Gemma">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Google Gemma</span>
+                                                    <span class="tech-pill">PEFT</span>
+                                                    <span class="tech-pill">LoRA / QLoRA</span>
+                                                    <span class="tech-pill">PyTorch</span>
+                                                </div>
+
+                                                <p>Fine-tuning Vision-Language Models (VLMs) like Google’s Gemma provides custom vision and multi-modal text understanding. This project delivers a streamlined, modular end-to-end pipeline that handles data preparation, memory optimization (QLoRA), and parameter-efficient fine-tuning without OOM crashes.</p>
+
+                                                <!-- Medium Articles Grid -->
+                                                <div class="medium-series-grid">
+                                                    <div class="medium-card">
+                                                        <span style="font-size: 0.75em; font-weight: bold; color: var(--color-13);">PART 1</span>
+                                                        <h5 style="margin: 4px 0 8px 0;">PEFT Explained</h5>
+                                                        <a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-peft-explained-part-1-6f49615f1d18" target="_blank" class="button fit small">
+                                                            <i class="icon brands fa-medium"></i> Read Article
                                                         </a>
-                                                    </span>
-                                                A Document Q&A Application with LanceDB 
-                                                <p>Streamlit-based application that enables you to ask questions about documents and receive answers based on the content of those documents. It uses Hybrid Retrieval-Augmented Generation (RAG) approach to find relevant information within the document and generate accurate, context-aware responses.</p>
-                                                </p>
-                                                More on Github &nbsp; <a href="https://github.com/mm-mazhar/hybrid_rag" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
-                                                <br>
-                                                <hr>
-                                            <h2>Text to Speech</h2>
-                                                <p>
-                                                    <span class="image left">
-                                                        <a href="images/tts.jpg" target="_blank">
-                                                            <img src="images/tts.jpg" alt="" />
+                                                    </div>
+                                                    <div class="medium-card">
+                                                        <span style="font-size: 0.75em; font-weight: bold; color: var(--color-13);">PART 2</span>
+                                                        <h5 style="margin: 4px 0 8px 0;">LoRA & QLoRA</h5>
+                                                        <a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-lora-and-qlora-explained-part-2-0127ae6144b5" target="_blank" class="button fit small">
+                                                            <i class="icon brands fa-medium"></i> Read Article
                                                         </a>
-                                                    </span>
-                                                    The Text to Speech (TTS) project is a Python-based application that converts text data from an Excel file into speech audio files. The system uses a pre-trained TTS model, providing users with the ability to customize various parameters, such as the selected TTS model, encoder configuration, and speaker information. 
-                                                <p>The system integrates with the <a href="https://github.com/coqui-ai/TTS" target="_blank">Coqui TTS</a> library, allowing users to leverage various TTS models for speech synthesis.</p>
-                                                </p>
-                                                More on Github &nbsp; <a href="https://github.com/mm-mazhar/text_to_speech/tree/main" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
-                                                <br>
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Project 2</h2>
-                                                <p>
-                                                    <span class="image left">
-                                                        <a href="images/pic02.jpg" target="_blank">
-                                                            <img src="images/pic02.jpg" alt="" style="width:416; height:256" />
+                                                    </div>
+                                                    <div class="medium-card">
+                                                        <span style="font-size: 0.75em; font-weight: bold; color: var(--color-13);">PART 3</span>
+                                                        <h5 style="margin: 4px 0 8px 0;">Reusable Pipeline</h5>
+                                                        <a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-part-3-5c7f9182f1ee" target="_blank" class="button fit small">
+                                                            <i class="icon brands fa-medium"></i> Read Article
                                                         </a>
-                                                    </span>
-                                                Coming Soon. 
-                                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, debitis commodi illo blanditiis nemo voluptatum! Quasi eligendi laborum aperiam exercitationem praesentium maxime doloribus, blanditiis tempore voluptatum delectus earum voluptates expedita!</p>
-                                                </p>
-                                                More on Github &nbsp; <a href="#" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
-                                                <br>
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Project 3</h2>
-                                                <p>
-                                                    <span class="image right">
-                                                        <a href="images/pic03.jpg" target="_blank">
-                                                            <img src="images/pic03.jpg" alt="" style="width:416; height:256"/>
-                                                        </a>
-                                                    </span>
-                                                Coming Soon.
-                                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, debitis commodi illo blanditiis nemo voluptatum! Quasi eligendi laborum aperiam exercitationem praesentium maxime doloribus, blanditiis tempore voluptatum delectus earum voluptates expedita!</p>
-                                                </p>
-                                                More on Github &nbsp; <a href="#" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
-                                                <br>
-                                                <hr>
-                                            <!-- Next -->
-                                            <h2>Project 4</h2>
-                                                <p>
-                                                    <span class="image left">
-                                                        <a href="images/pic04.jpg" target="_blank">
-                                                            <img src="images/pic04.jpg" alt="" style="width:416; height:256"/>
-                                                        </a>
-                                                    </span>
-                                                Coming Soon.
-                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis totam reprehenderit velit ut dolores tenetur illum, corporis, repellendus autem saepe consequuntur harum molestiae quia doloremque sit optio architecto aspernatur sint.</p>
-                                                </p>
-                                                More on Github &nbsp; <a href="#" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
-                                                <br>
-                                                <hr>
-                                            <!-- Next -->
-                                            
-                                            <!-- Sample -->
-                                            <!-- Next -->
-                                            <!-- <h2>Enter Project Name</h2>
-                                                <p>
-                                                    <span class="image left">
-                                                        <a href="" target="_blank">
-                                                        <img src="" alt=""  />
-                                                        </a>
-                                                    </span>
-                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                                </p>
-                                                More on Github &nbsp; <a href="" target="_blank" class="icon brands fa-github fa-2x"><span class="label">Github</span></a>
-                                                <br>
-                                                <hr> -->
-                                            <!-- Next -->
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <!-- PROJECT 2: Hybrid RAG -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Hybrid RAG | Website Crawler & Q&A App</h3>
+                                            <a href="https://github.com/mm-mazhar/hybrid_rag" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/rag_streamlit_app.png" target="_blank">
+                                                    <img src="images/rag_streamlit_app.png" alt="Hybrid RAG Streamlit App">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">LangChain</span>
+                                                    <span class="tech-pill">LanceDB</span>
+                                                    <span class="tech-pill">Streamlit</span>
+                                                    <span class="tech-pill">Hybrid RAG</span>
+                                                </div>
+
+                                                <p>An interactive Streamlit-based Document Q&A application utilizing a Hybrid Retrieval-Augmented Generation (RAG) framework with LanceDB. Combines dense semantic vector search with keyword retrieval to find relevant information within documents and generate context-aware responses.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PROJECT 3: Text to Speech -->
+                                    <div class="project-card">
+                                        <div class="project-header">
+                                            <h3 class="project-title">Text to Speech (TTS) Synthesis System</h3>
+                                            <a href="https://github.com/mm-mazhar/text_to_speech/tree/main" target="_blank" class="button small">
+                                                <i class="icon brands fa-github"></i> GitHub Repo
+                                            </a>
+                                        </div>
+
+                                        <div class="project-body">
+                                            <div class="project-img-wrapper">
+                                                <a href="images/tts.jpg" target="_blank">
+                                                    <img src="images/tts.jpg" alt="Text to Speech Project">
+                                                </a>
+                                            </div>
+
+                                            <div class="project-content">
+                                                <div class="tech-pill-container">
+                                                    <span class="tech-pill">Coqui TTS</span>
+                                                    <span class="tech-pill">Audio Processing</span>
+                                                    <span class="tech-pill">Python</span>
+                                                </div>
+
+                                                <p>A Python application that converts tabular Excel text data into natural audio speech files. Integrates with the open-source <a href="https://github.com/coqui-ai/TTS" target="_blank">Coqui TTS</a> library, allowing users to select pre-trained models, adjust encoder configurations, and export voice output.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </section>
 						</div>
 					</div>
 
 				<!-- Sidebar -->
-				<div id="sidebar">
+					<div id="sidebar">
+					<style>
+						/* Dark Mode Sidebar Contrast Color */
+						body.dark #sidebar {
+							background-color: #1a1a1a !important;
+							border-right: 1px solid rgba(255, 255, 255, 0.08);
+						}
+
+						/* Adjust top padding so SWITCH MODE aligns with header line */
+						#sidebar > .inner {
+							padding-top: 1.2em !important;
+						}
+
+						/* Remove horizontal lines & section dividers inside sidebar */
+						#sidebar > .inner > * {
+							border-bottom: none !important;
+							margin-bottom: 1.8em !important;
+							padding-bottom: 0 !important;
+						}
+						#menu > ul > li {
+							border-top: none !important;
+							margin-top: 0.3em !important;
+							padding-top: 0.3em !important;
+						}
+						#sidebar a {
+							border-bottom: none !important;
+						}
+
+						/* Reset & Flex-align Get In Touch contact items */
+						ul.contact-flex {
+							list-style: none !important;
+							padding-left: 0 !important;
+							margin: 0 !important;
+						}
+						ul.contact-flex li {
+							display: flex !important;
+							align-items: center !important;
+							gap: 12px !important;
+							margin-bottom: 0.8em !important;
+							padding: 0 !important;
+							border-top: none !important;
+						}
+						ul.contact-flex li i {
+							color: var(--color-13);
+							font-size: 1.15em;
+							width: 20px;
+							text-align: center;
+							flex-shrink: 0;
+						}
+					</style>
+
 					<div class="inner">
+
+						<!-- Theme Toggle Button -->
+						<div style="margin-top: 0; margin-bottom: 1.5em;">
+							<button id="toggle" class="button fit" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 2.8em; line-height: 2.8em;">
+								<span>Switch Mode</span> 
+								<img src="images/moon.png" id="icon" class="icon-themes" style="width: 16px; height: 16px; margin: 0;">
+							</button>
+						</div>
+
 						<!-- Menu -->
-							<nav id="menu">
-								<div class="theme-buttons">
-									<button id="toggle" class="button">Switch Mode <img src="images/moon.png" id="icon" class="icon-themes"></button>
-								</div>
-								<header class="major">
-									<!-- <a href="#menu"><h2>Menu</h2></a> -->
-									<h2>Menu</h2>
-								</header>
-								<ul>
-									<!-- <li><a href="/index.html">Homepage</a></li> -->
-									<li><a href="./">Homepage</a></li>
-									<li><a href="./genai.html">Generative AI</a></li>
-									<li><a href="./mldlcv.html">ML/DL and Computer Vision</a></li>
-									<!-- <li><a href="#latest-work">Latest</a></li> -->
-									<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
-									<li><a href="./pythonpackages.html">Python Packages</a></li>
-									<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
-									<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
-							
-									<!-- <li><a href="generic.html">Generic</a></li>
-												<li><a href="elements.html">Elements</a></li> -->
-								  </ul>
-							</nav>
+						<nav id="menu">
+							<header class="major">
+								<h2>Navigation</h2>
+							</header>
+							<ul>
+								<li>
+									<a href="./"><i class="fa-solid fa-house" style="margin-right: 8px; color: var(--color-13);"></i> Homepage</a>
+								</li>
+								<li>
+									<a href="./genai.html"><i class="fa-solid fa-wand-magic-sparkles" style="margin-right: 8px; color: var(--color-13);"></i> Generative AI</a>
+								</li>
+								<li>
+									<a href="./mldlcv.html"><i class="fa-solid fa-brain" style="margin-right: 8px; color: var(--color-13);"></i> ML / DL & Computer Vision</a>
+								</li>
 
-						<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Get in touch</h2>
-								</header>
-								<!-- <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
-								<ul class="contact">
-									<li class="icon solid fa-envelope"><a href="mazqoty.01@gmail.com" target="_blank">mazqoty.01@gmail.com</a></li>
-									<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
-									<!-- <li class="icon solid fa-phone"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li> -->
-									<li class="icon solid brands fa-whatsapp"><a href="https://wa.me/+923002576068" target="_blank">Send Message on WhatsApp</a></li>
-									<li class="icon brands fa-github"><a href="https://github.com/mm-mazhar/mazhar" target="_blank">Github</a></li>
-									<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/m-mazhar-121133269/" target="_blank">Linkedin</a></li>
-									<!-- <li class="icon brands fa-twitter"><a href="https://twitter.com/mm_mazhar19" target="_blank">Twitter</a></li> -->
-									
-									<!-- <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-									Nashville, TN 00000-0000</li> -->
-								</ul>
-							</section>
+								<!-- Collapsible Archived Projects Dropdown -->
+								<li>
+									<span class="opener" style="opacity: 0.85;">
+										<i class="fa-solid fa-box-archive" style="margin-right: 8px; color: var(--color-4);"></i> Archived Projects
+									</span>
+									<ul style="padding-left: 1.2em; margin-top: 0.5em;">
+										<li><a href="./dataanalysiswithpython.html">Data Analysis with Python</a></li>
+										<li><a href="./pythonpackages.html">Python Packages</a></li>
+										<li><a href="./sqlandpowerbi.html">SQL & Power BI</a></li>
+										<li><a href="./webscrapingandothers.html">Web Scraping & Others</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
 
+						<!-- Get In Touch Section -->
+						<section style="margin-top: 2em;">
+							<header class="major">
+								<h2>Get in touch</h2>
+							</header>
+							<ul class="contact-flex">
+								<li>
+									<i class="fa-solid fa-envelope"></i>
+									<a href="mailto:email.mazhar.01@gmail.com" target="_blank">email.mazhar.01@gmail.com</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-whatsapp"></i>
+									<a href="https://wa.me/+15715322248" target="_blank">WhatsApp (+1 571 532 2248)</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-github"></i>
+									<a href="https://github.com/mm-mazhar" target="_blank">GitHub Profile</a>
+								</li>
+								<li>
+									<i class="fa-brands fa-linkedin"></i>
+									<a href="https://www.linkedin.com/in/mm-mazhar/" target="_blank">LinkedIn Profile</a>
+								</li>
+							</ul>
+						</section>
 
 						<!-- Footer -->
-							<footer id="footer">
-								<p class=" © copyright">&copy; M. Mazhar Made with ❤️   +  <a href="https://html5up.net">HTML5 UP</a></p>
-								
-							</footer>
+						<footer id="footer" style="margin-top: 2em;">
+							<p class="copyright">&copy; M. Mazhar &bull; Built with ❤️ & <a href="https://html5up.net" target="_blank">HTML5 UP</a></p>
+						</footer>
 
 					</div>
 				</div>
@@ -276,11 +427,9 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				const toggle = document.getElementById("toggle");
-				const refresh = document.getElementById("refresh");
 				let theme = window.localStorage.getItem("theme");
-				var icon=document.getElementById("icon");
+				var icon = document.getElementById("icon");
 
-				// Default to dark mode if no theme is set
 				if (!theme) {
 					theme = "dark";
 					window.localStorage.setItem("theme", "dark");
@@ -288,13 +437,12 @@
 
 				if (theme === "dark") {
 					document.body.classList.add("dark");
-					icon.src="images/sun.png";
+					icon.src = "images/sun.png";
 				} else {
 					document.body.classList.remove("dark");
-					icon.src="images/moon.png";
+					icon.src = "images/moon.png";
 				}
 
-				// event listener stops when the change theme button is clicked
 				toggle.addEventListener("click", () => {
 					if (theme === "dark") {
 						window.localStorage.setItem("theme", "light");
@@ -304,23 +452,5 @@
 					window.location.reload();
 				});
 			</script>
-
-			<script>
-				var tablinks=document.getElementsByClassName("tab-links");
-				var tabcontents=document.getElementsByClassName("tab-contents");
-				
-				function opentab(tabname){
-					for(tablink of tablinks){
-						tablink.classList.remove("active-link");
-					}
-					for(tabcontent of tabcontents){
-						tabcontent.classList.remove("active-tab");
-					}
-					event.currentTarget.classList.add("active-link");
-					document.getElementById(tabname).classList.add("active-tab");
-				}
-			</script>
-
-
 	</body>
 </html>
