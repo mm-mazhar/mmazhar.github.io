@@ -36,7 +36,7 @@
 									
 									<!-- Work Authorization Status Badge -->
 									<span style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; border: 1px solid var(--color-13); background: var(--color-11); color: var(--color-13); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.5px; flex-shrink: 0;">
-										<i class="fa-solid fa-circle-check"></i> Full Work Authorized
+										<i class="fa-solid fa-circle-check"></i> Full Work Authorization
 									</span>
 
 									<!-- Download CV Button -->
@@ -230,60 +230,324 @@
 								
 							</section>
 							
-							<!-- Section -->
+							<!-- Section: Latest Projects -->
 							<section id="latest-work">
+								<style>
+									.latest-grid {
+										display: grid;
+										grid-template-columns: repeat(3, 1fr);
+										gap: 1.5em;
+										margin-top: 1.5em;
+										width: 100%;
+									}
+									.latest-card {
+										background: var(--color-5);
+										border: 1px solid var(--color-2);
+										border-radius: 0.375em;
+										padding: 1.5em;
+										display: flex;
+										flex-direction: column;
+										justify-content: space-between;
+										min-width: 0 !important;
+										transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+									}
+									.latest-card:hover {
+										border-color: var(--color-13);
+										box-shadow: 0 4px 15px var(--color-11);
+										transform: translateY(-2px);
+									}
+									.latest-badge {
+										font-size: 0.7em;
+										font-weight: 700;
+										color: var(--color-13);
+										text-transform: uppercase;
+										letter-spacing: 0.5px;
+										margin-bottom: 0.5em;
+										display: inline-block;
+									}
+									.latest-title {
+										font-size: 1.15em;
+										font-weight: 700;
+										color: var(--color-3);
+										margin: 0 0 0.5em 0 !important;
+										line-height: 1.3;
+									}
+									.latest-pills {
+										display: flex;
+										flex-wrap: wrap;
+										gap: 6px;
+										margin: 0.8em 0 1.2em 0;
+									}
+									.latest-pill {
+										font-size: 0.7em;
+										padding: 2px 8px;
+										border-radius: 4px;
+										background: var(--color-11);
+										border: 1px solid var(--color-13);
+										color: var(--color-13);
+										font-weight: 600;
+									}
+									.latest-link {
+										display: inline-flex;
+										align-items: center;
+										gap: 6px;
+										font-size: 0.825em;
+										font-weight: 600;
+										color: var(--color-13) !important;
+										border-bottom: none !important;
+										margin-top: 1.2em;
+									}
+									.latest-link:hover {
+										color: var(--color-14) !important;
+									}
+
+									/* --- Desktop 3-Column Grid Rules & Trailing Full-Width Card --- */
+									@media screen and (min-width: 981px) {
+										.latest-grid {
+											grid-template-columns: repeat(3, 1fr) !important;
+										}
+										/* When a single trailing project ends on a new row (e.g., 7th or 10th card) */
+										.latest-card:last-child:nth-child(3n+1) {
+											grid-column: 1 / -1 !important;
+											flex-direction: column !important; /* Keeps vertical flow so link stays below pills */
+										}
+										.latest-card:last-child:nth-child(3n+1) .latest-link {
+											margin-top: 1.2em !important;
+										}
+									}
+
+									/* --- Tablet (2 Columns) --- */
+									@media screen and (max-width: 980px) and (min-width: 601px) {
+										.latest-grid {
+											grid-template-columns: repeat(2, 1fr) !important;
+										}
+										.latest-card:last-child:nth-child(2n+1) {
+											grid-column: 1 / -1 !important;
+										}
+									}
+
+									/* --- Mobile (1 Column) --- */
+									@media screen and (max-width: 600px) {
+										.latest-grid {
+											grid-template-columns: 1fr !important;
+										}
+									}
+								</style>
+
 								<header class="major">
-									<h2>Latest</h2>
+									<h2>Latest Projects</h2>
+									<p style="font-size: 0.9em; opacity: 0.85; text-transform: none; margin-top: 0;">Recent highlights in Generative AI, Computer Vision, and MLOps</p>
 								</header>
-								<div class="features">
-									<article>
-										<span class="icon fa-gem"></span>
-										<div class="content">
-											<h3>Fine Tune Gemma</h3>
-											<p style="text-align: justify; text-justify: inter-word;">This project provides a modular pipeline for preparing the VizWiz dataset and fine-tuning vision-language models (such as Gemma) using Unsloth. The workflow is designed for easy use in Google Colab and supports robust configuration via a single YAML file.</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./genai.html">GenerativeAI</a></p>
+
+								<div class="latest-grid">
+
+									<!-- Project 1: Supply Chain Document Processing -->
+									<div class="latest-card">
+										<div>
+											<span class="latest-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Generative AI</span>
+											<h3 class="latest-title">Supply Chain Document Processing (GenAI Pipeline)</h3>
+											<p style="font-size: 0.9em; margin-bottom: 0.5em;">End-to-end Generative AI pipeline automating supply chain document parsing (PDFs & scanned images). Converts unstructured Purchase Orders and Invoices into normalized records in <strong>MongoDB Atlas</strong> using <strong>Google Gemini</strong>, <strong>PaddleOCR</strong>, and <strong>pdfplumber</strong>.</p>
+											
+											<div class="latest-pills">
+												<span class="latest-pill">Google Gemini</span>
+												<span class="latest-pill">OpenRouter</span>
+												<span class="latest-pill">PaddleOCR</span>
+												<span class="latest-pill">MongoDB Atlas</span>
+											</div>
+
+											<div class="action-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8em;">
+												<a href="https://supplychaindocprocessingapp.onrender.com/" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-solid fa-rocket"></i> Live Application
+												</a>
+												<a href="https://github.com/mm-mazhar/SupplyChainDocProcessingApp" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-github"></i> GitHub Repo
+												</a>
+												<a href="images/sys_arch_01.jpg" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-solid fa-sitemap"></i> Architecture
+												</a>
+											</div>
 										</div>
-									</article>
-									<article>
-										<span class="icon solid fa-rocket"></span>
-										<div class="content">
-											<h3>IPAGE | Omdena-Innovative Challenge | Soil Nutrient Prediction for Enhanced Fertilizer Recommendations</h3>
-											<p style="text-align: justify; text-justify: inter-word;">EDA, Developed Models for SOC, Boron, Experiment Tracking using MLFlow, Zn, API using FastAPI, Streamlit App for PoC</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv.html">Machine/Deep Learning and Computer Vision</a></p>
+										<a href="./genai.html" class="latest-link">Explore in Generative AI <i class="fa-solid fa-arrow-right"></i></a>
+									</div>
+
+									<!-- Project 2: Fine-Tuning Gemma -->
+									<div class="latest-card">
+										<div>
+											<span class="latest-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Generative AI</span>
+											<h3 class="latest-title">Fine-Tuning Gemma (VLM Pipeline)</h3>
+											<p style="font-size: 0.9em; margin-bottom: 0.5em;">Modular pipeline for preparing vision-language datasets and fine-tuning Google's Gemma VLM model using <strong>Unsloth</strong> and <strong>PEFT / QLoRA</strong> with YAML configuration.</p>
+
+											<div class="latest-pills">
+												<span class="latest-pill">Google Gemma</span>
+												<span class="latest-pill">Unsloth</span>
+												<span class="latest-pill">PEFT / QLoRA</span>
+												<span class="latest-pill">PyTorch</span>
+											</div>
+
+											<div class="action-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8em;">
+												<a href="https://github.com/mm-mazhar/FineTuneGemma" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-github"></i> GitHub Repo
+												</a>
+												<a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-peft-explained-part-1-6f49615f1d18" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-medium"></i> Part 1: PEFT
+												</a>
+												<a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-lora-and-qlora-explained-part-2-0127ae6144b5" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-medium"></i> Part 2: LoRA & QLoRA
+												</a>
+												<a href="https://medium.com/@mazqoty.01/fine-tuning-gemma-with-reusable-pipeline-part-3-5c7f9182f1ee" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-medium"></i> Part 3: Pipeline
+												</a>
+											</div>
 										</div>
-									</article>
-									<article>
-										<span class="icon solid fa-paper-plane"></span>
-										<div class="content">
-											<h3>Cognitive Health Prediction: A Hybrid Unsupervised and Supervised Learning System For Alzheimer's Disease</h3>
-											<p style="text-align: justify; text-justify: inter-word;">This research project aims to predict Cognitive Health Scores (composite_score) in an aging population.</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv.html" >Machine/Deep Learning and Computer Vision</a></p>
+										<a href="./genai.html" class="latest-link">Explore in Generative AI <i class="fa-solid fa-arrow-right"></i></a>
+									</div>
+
+									<!-- Project 3: IPAGE Soil Nutrient -->
+									<div class="latest-card">
+										<div>
+											<span class="latest-badge"><i class="fa-solid fa-brain"></i> Machine Learning, MLOps</span>
+											<h3 class="latest-title">IPAGE: Soil Nutrient Prediction for Fertilizer Recommendations</h3>
+											<p style="font-size: 0.9em; margin-bottom: 0.5em;">Omdena challenge project building ML models for Soil Organic Carbon, Boron, and Zinc predictions. Features experiment tracking via <strong>MLflow</strong>, <strong>FastAPI</strong> microservice backend, and a <strong>Streamlit</strong> web PoC.</p>
+
+											<div class="latest-pills">
+												<span class="latest-pill">FastAPI</span>
+												<span class="latest-pill">MLflow</span>
+												<span class="latest-pill">Streamlit</span>
+												<span class="latest-pill">Scikit-Learn</span>
+											</div>
+
+											<div class="action-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8em;">
+												<!-- GitHub Repo Pill (Solid Green) -->
+												<a href="https://github.com/mm-mazhar/IPAGE" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-github"></i> GitHub Repo
+												</a>
+
+												<!-- Streamlit App Pill (Solid Green) -->
+												<a href="https://ipage-app.streamlit.app/" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-solid fa-desktop"></i> Streamlit App
+												</a>
+
+												<!-- FastAPI API Pill (Solid Green) -->
+												<a href="https://ipage.onrender.com/" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-solid fa-bolt"></i> FastAPI API
+												</a>
+
+												<!-- Omdena Details Pill (Secondary Outline) -->
+												<a href="https://www.omdena.com/projects/soil-nutrient-prediction-for-enhanced-fertilizer-recommendations" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-solid fa-circle-info"></i> Omdena Details
+												</a>
+											</div>
 										</div>
-									</article>
-									<article>
-										<span class="icon solid fa-paper-plane"></span>
-										<div class="content">
-											<h3>IECO | Omdena-Innovative Challenge | 3D Roof Reconstruction with Computer Vision</h3>
-											<p style="text-align: justify; text-justify: inter-word;">Automate and streamline the process of creating 3D roof models for photovoltaic installations using AI.</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv.html">Machine/Deep Learning and Computer Vision</a></p>
+										<a href="./mldlcv.html" class="latest-link">Explore in ML / DL & Computer Vision <i class="fa-solid fa-arrow-right"></i></a>
+									</div>
+
+									<!-- Project 4: Cognitive Health Alzheimer's -->
+									<div class="latest-card">
+										<div>
+											<span class="latest-badge"><i class="fa-solid fa-notes-medical"></i> Machine Learning | Healthcare</span>
+											<h3 class="latest-title">Cognitive Health Score Prediction (Alzheimer's Disease)</h3>
+											<p style="font-size: 0.9em; margin-bottom: 0.5em;">Research project predicting cognitive health scores using a Hybrid Unsupervised (K-Means) and Supervised Learning system validated with <strong>SHAP explainability</strong>.</p>
+
+											<div class="latest-pills">
+												<span class="latest-pill">K-Means</span>
+												<span class="latest-pill">SHAP</span>
+												<span class="latest-pill">Scikit-Learn</span>
+												<span class="latest-pill">Machine Learning | Healthcare</span>
+											</div>
+
+											<div class="action-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8em;">
+												<a href="https://github.com/mm-mazhar/Hybrid-Unsupervised-Supervised-Learning-System-for-Alzheimer" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-github"></i> GitHub Repo
+												</a>
+											</div>
 										</div>
-									</article>
-									<article>
-										<span class="icon fa-gem"></span>
-										<div class="content">
-											<h3>Omdena-local Chapter Challenge | Identifying Potential Areas for Urban Agriculture in Milan - Italy</h3>
-											<p style="text-align: justify; text-justify: inter-word;">Contributed mainly in task 1 of the Omdena challenge, includes, data collection from GEE, EDA and visualization, unsupervised modeling and web app development</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv.html">Machine/Deep Learning and Computer Vision</a></p>
+										<a href="./mldlcv.html" class="latest-link">Explore in ML / DL & Computer Vision <i class="fa-solid fa-arrow-right"></i></a>
+									</div>
+
+									<!-- Project 5: IECO 3D Roof -->
+									<div class="latest-card">
+										<div>
+											<span class="latest-badge"><i class="fa-solid fa-cube"></i> Machine Learning | Computer Vision 3D</span>
+											<h3 class="latest-title">IECO: 3D Roof Reconstruction for Solar Energy Optimization</h3>
+											<p style="font-size: 0.9em; margin-bottom: 0.5em;">Omdena challenge developing <strong>PointNet 3D point cloud segmentation</strong> models to automate solar photovoltaic roof installation modeling.</p>
+
+											<div class="latest-pills">
+												<span class="latest-pill">PointNet</span>
+												<span class="latest-pill">3D Point Cloud</span>
+												<span class="latest-pill">PyTorch</span>
+												<span class="latest-pill">Computer Vision</span>
+											</div>
+
+											<div class="action-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8em;">
+												<a href="https://github.com/mm-mazhar/IECO" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-github"></i> GitHub Repo
+												</a>
+												<a href="https://www.omdena.com/projects/3d-roof-reconstruction-with-computer-vision-for-solar-energy-optimization" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-solid fa-circle-info"></i> Omdena Details
+												</a>
+											</div>
 										</div>
-									</article>
-									<article>
-										<span class="icon solid fa-rocket"></span>
-										<div class="content">
-											<h3>End-to-End Regression Model Pipeline</h3>
-											<p style="text-align: justify; text-justify: inter-word;">From Data Scraping to Deployment: using, PyPI Model Packaging, FastAPI, Railway, Docker with CI/CD Integration.</p>
-											<p style="text-align: justify; text-justify: inter-word;">More on &nbsp; <a href="./mldlcv.html">Machine/Deep Learning and Computer Vision</a></p>
+										<a href="./mldlcv.html" class="latest-link">Explore in ML / DL & Computer Vision <i class="fa-solid fa-arrow-right"></i></a>
+									</div>
+
+									<!-- Project 6: Urban Agriculture Milan -->
+									<div class="latest-card">
+										<div>
+											<span class="latest-badge"><i class="fa-solid fa-earth-americas"></i> Machine Learning | Geospatial</span>
+											<h3 class="latest-title">Urban Agriculture Potential Area Identification (Milan, Italy)</h3>
+											<p style="font-size: 0.9em; margin-bottom: 0.5em;">Omdena challenge collecting satellite GIS data from <strong>Google Earth Engine (GEE)</strong>, clustering sites, and publishing curated datasets to Kaggle.</p>
+
+											<div class="latest-pills">
+												<span class="latest-pill">Google Earth Engine</span>
+												<span class="latest-pill">GIS Data</span>
+												<span class="latest-pill">Streamlit</span>
+												<span class="latest-pill">Kaggle</span>
+											</div>
+
+											<div class="action-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8em;">
+												<a href="https://github.com/maria-fisher/Urban-Agriculture-in-Milan" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-github"></i> GitHub Repo
+												</a>
+												<a href="https://www.kaggle.com/datasets/mazhar01/identify-potential-areas-for-urban-agriculture/data" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-kaggle"></i> Kaggle Data
+												</a>
+											</div>
 										</div>
-									</article>
+										<a href="./mldlcv.html" class="latest-link">Explore in ML / DL & Computer Vision <i class="fa-solid fa-arrow-right"></i></a>
+									</div>
+
+									<!-- Project 7: End-to-End Regression ML Pipeline (Full Width Spanning 7th Card) -->
+									<div class="latest-card">
+										<div>
+											<span class="latest-badge"><i class="fa-solid fa-boxes-packing"></i> Machine Learning, MLOps & Production</span>
+											<h3 class="latest-title">End-to-End Regression ML Pipeline & PyPI Package</h3>
+											<p style="font-size: 0.9em; margin-bottom: 0.5em;">Full regression workflow from web scraping to publishing a reusable model wheel to <strong>PyPI</strong>, exposing predictions via <strong>FastAPI</strong>, containerized with <strong>Docker</strong>.</p>
+
+											<div class="latest-pills">
+												<span class="latest-pill">PyPI Package</span>
+												<span class="latest-pill">FastAPI</span>
+												<span class="latest-pill">Docker</span>
+												<span class="latest-pill">Scikit-Learn</span>
+											</div>
+
+											<div class="action-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.8em;">
+												<a href="https://github.com/mm-mazhar/Deploying-ML-Lasso-Regression-Model-Render" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-13); color: var(--primary-color) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-github"></i> GitHub Repo
+												</a>
+												<a href="https://pypi.org/project/lasso-regression-model/" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-solid fa-box"></i> PyPI Package
+												</a>
+												<a href="https://deploying-ml-lasso-regression-model.onrender.com" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-solid fa-bolt"></i> Predict API
+												</a>
+												<a href="https://www.kaggle.com/datasets/mazhar01/real-state-website-data" target="_blank" style="font-size: 0.75em; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: var(--color-11); color: var(--color-13) !important; border: 1px solid var(--color-13); text-decoration: none !important; display: inline-flex; align-items: center; gap: 5px;">
+													<i class="fa-brands fa-kaggle"></i> Kaggle Data
+												</a>
+											</div>
+										</div>
+										<a href="./mldlcv.html" class="latest-link">Explore in ML / DL & Computer Vision <i class="fa-solid fa-arrow-right"></i></a>
+									</div>
+
 								</div>
 							</section>
 

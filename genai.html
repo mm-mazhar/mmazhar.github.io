@@ -175,6 +175,54 @@
                                 <!-- GenAI Projects List -->
                                 <div class="projects-container">
 
+									<!-- PROJECT: Supply Chain Document Processing -->
+									<div class="project-card">
+										<div class="project-header">
+											<h3 class="project-title">📦 Supply Chain Document Processing (GenAI Pipeline)</h3>
+											<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+												<a href="https://supplychaindocprocessingapp.onrender.com/" target="_blank" class="button small primary">
+													<i class="icon solid fa-rocket"></i> Live Demo
+												</a>
+												<a href="https://github.com/mm-mazhar/SupplyChainDocProcessingApp" target="_blank" class="button small">
+													<i class="icon brands fa-github"></i> GitHub Repo
+												</a>
+											</div>
+										</div>
+
+										<div class="project-body">
+											<div class="project-img-wrapper">
+												<a href="images/sys_arch_01.jpg" target="_blank">
+													<img src="images/sys_arch_01.jpg" alt="System Architecture" onerror="this.src='images/sys_arch_01.jpg';">
+												</a>
+											</div>
+
+											<div class="project-content">
+												<div class="tech-pill-container">
+													<span class="tech-pill">Google Gemini</span>
+													<span class="tech-pill">OpenRouter</span>
+													<span class="tech-pill">PaddleOCR</span>
+													<span class="tech-pill">pdfplumber</span>
+													<span class="tech-pill">MongoDB Atlas</span>
+													<span class="tech-pill">uv</span>
+												</div>
+
+												<p>An end-to-end Generative AI pipeline designed for <strong>automated supply chain document processing</strong>. It ingests unstructured PDFs and scanned images (Purchase Orders, Invoices, Delivery Notes) and transforms them into clean, normalized database records in <strong>MongoDB Atlas</strong>. Originally, developed for a client with <strong>Azure Document Intelligence</strong> and <strong>Azure OpenAI</strong>, but for demo purpose switched to <strong>PaddleOCR</strong> and <strong>PDF Plumber</strong> and some parts are omitted.</p>
+
+												<ul style="margin-bottom: 1em; padding-left: 1.2em; line-height: 1.6;">
+													<li><strong>Layered Extraction:</strong> Extracts native text & tables via <strong>pdfplumber</strong> with automatic fallback to <strong>PaddleOCR</strong> for scanned/image PDFs.</li>
+													<li><strong>Deterministic Parsing:</strong> Custom Python module cleans raw OCR noise and structures tables before sending to AI, drastically reducing token usage and costs.</li>
+													<li><strong>Two-Tier AI Normalization:</strong> Maps inconsistent field names to target database schemas using <strong>Google Gemini</strong> (JSON mode) with automated fallback routing to <strong>OpenRouter</strong> (OSS LLMs like LLaMA/Mistral).</li>
+													<li><strong>Cloud Database:</strong> Stores flexible BSON records with UTC timestamps and source file metadata in cloud-hosted <strong>MongoDB Atlas</strong>.</li>
+												</ul>
+
+												<div class="action-buttons-group">
+													<a href="https://supplychaindocprocessingapp.onrender.com/" target="_blank" class="button small primary"><i class="icon solid fa-bolt"></i> Launch Application</a>
+													<a href="images/sys_arch_01.jpg" target="_blank" class="button small"><i class="icon solid fa-sitemap"></i> View Architecture Diagram</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
                                     <!-- PROJECT 1: FineTune Gemma -->
                                     <div class="project-card">
                                         <div class="project-header">
