@@ -32,12 +32,12 @@ body {
   --color-8: rgba(255, 255, 255, 0);
   --color-9: rgba(0, 0, 0, 0.175); 
   --color-10: rgba(222, 225, 226, 0.75);
-  --color-11: rgba(245, 106, 106, 0.05);
-  --color-12: rgba(245, 106, 106, 0.15);
-  /* Third Color */
-  --color-13: #f56a6a;
-  --color-14: #f67878;
-  --color-15: #f45c5c;
+  --color-11: rgba(62, 207, 142, 0.05);
+  --color-12: rgba(62, 207, 142, 0.15);
+  /* Third Color - Supabase Green */
+  --color-13: #3ecf8e;
+  --color-14: #56d69e;
+  --color-15: #24b47e;
 }
 .dark{
   /* Dark Theme */
@@ -54,12 +54,12 @@ body {
   --color-8: rgba(255, 255, 255, 0);
   --color-9: rgba(0, 0, 0, 0.175); 
   --color-10: rgba(222, 225, 226, 0.75);
-  --color-11: rgba(245, 106, 106, 0.05);
-  --color-12: rgba(245, 106, 106, 0.15);
-  /* Third Color */
-  --color-13: #f56a6a;
-  --color-14: #f67878;
-  --color-15: #f45c5c;
+  --color-11: rgba(62, 207, 142, 0.05);
+  --color-12: rgba(62, 207, 142, 0.15);
+  /* Third Color - Supabase Green */
+  --color-13: #3ecf8e;
+  --color-14: #56d69e;
+  --color-15: #24b47e;
 }
 .theme-buttons {
   width: 100%;
