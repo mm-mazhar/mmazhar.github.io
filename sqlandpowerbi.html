@@ -13,7 +13,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" /> -->
 	</head>
-	<body class="is-preload">
+	<body class="is-preload dark">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -237,28 +237,31 @@
 			<script>
 				const toggle = document.getElementById("toggle");
 				const refresh = document.getElementById("refresh");
-				const theme = window.localStorage.getItem("theme");
+				let theme = window.localStorage.getItem("theme");
 				var icon=document.getElementById("icon");
 
-				/* checks if the theme stored in localStorage is dark
-				if yes apply the dark theme to the body */
+				// Default to dark mode if no theme is set
+				if (!theme) {
+					theme = "dark";
+					window.localStorage.setItem("theme", "dark");
+				}
+
 				if (theme === "dark") {
 					document.body.classList.add("dark");
 					icon.src="images/sun.png";
+				} else {
+					document.body.classList.remove("dark");
+					icon.src="images/moon.png";
 				}
 
 				// event listener stops when the change theme button is clicked
 				toggle.addEventListener("click", () => {
-				document.body.classList.toggle("dark");
-				if (theme === "dark") {
-					icon.src="images/sun.png";
-					window.localStorage.setItem("theme", "light");
+					if (theme === "dark") {
+						window.localStorage.setItem("theme", "light");
+					} else {
+						window.localStorage.setItem("theme", "dark");
+					}
 					window.location.reload();
-				} else {
-					icon.src="images/moon.png";
-					window.localStorage.setItem("theme", "dark");
-					window.location.reload();
-				}
 				});
 			</script>
 
