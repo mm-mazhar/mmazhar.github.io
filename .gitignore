@@ -4,3 +4,4 @@ elements.html
 .github/workflows/static.yml
 machinelearning.html
 deeplearning.html
+.history/*
