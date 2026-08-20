@@ -65,8 +65,23 @@
 				display: block;
 				transition: transform 0.3s ease;
 			}
+			.project-img-wrapper--diagram {
+				width: 42%;
+				background: #1a1a1a;
+			}
+			.project-img-wrapper--diagram img {
+				height: auto;
+				min-height: 0;
+				max-height: 220px;
+				object-fit: contain;
+				padding: 0.6em;
+				box-sizing: border-box;
+			}
 			.project-card:hover .project-img-wrapper img {
 				transform: scale(1.05);
+			}
+			.project-card:hover .project-img-wrapper--diagram img {
+				transform: none;
 			}
 			.project-content {
 				flex-grow: 1;
@@ -174,6 +189,46 @@
 
                                 <!-- GenAI Projects List -->
                                 <div class="projects-container">
+
+									<!-- PROJECT: Vesper AI (OpenClaw + Composio) -->
+									<div class="project-card">
+										<div class="project-header">
+											<h3 class="project-title">🤖 Vesper AI — Personal Agent with Real App Access</h3>
+											<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+												<!-- <a href="https://openclawcomposio.vercel.app/" target="_blank" class="button small primary"> -->
+												<a href="#" target="_blank" class="button small primary">
+													<i class="icon solid fa-rocket"></i> Request Access to Live Demo
+												</a>
+												<!-- <a href="https://github.com/mm-mazhar/openclawcomposio" target="_blank" class="button small"> -->
+												<a href="#" target="_blank" class="button small">
+													<i class="icon brands fa-github"></i> GitHub Repo
+												</a>
+											</div>
+										</div>
+
+										<div class="project-body">
+											<div class="project-img-wrapper project-img-wrapper--diagram">
+												<a href="images/openclawcomposio-architecture.png" target="_blank">
+													<img src="images/openclawcomposio-architecture.png" alt="Vesper AI architecture: Chat, Hands, Memory, Soul, Anywhere, and Heartbeat">
+												</a>
+											</div>
+
+											<div class="project-content">
+												<div class="tech-pill-container">
+													<span class="tech-pill">Next.js</span>
+													<span class="tech-pill">Vercel AI SDK</span>
+													<span class="tech-pill">Composio</span>
+													<span class="tech-pill">Supermemory</span>
+													<span class="tech-pill">Telegram</span>
+													<span class="tech-pill">Neon Postgres</span>
+												</div>
+
+												<p>A production-style personal AI agent built on the <strong>Vercel AI SDK</strong> chatbot template and extended into a full agent stack. It streams replies, calls tools, and — for signed-in users — acts in <strong>Gmail, Slack, Notion, Calendar, and 1000+ apps</strong> through <strong>Composio</strong> with per-user OAuth.</p>
+
+												<p>The same agent runs from the browser, <strong>Telegram</strong>, or scheduled cron jobs, with <strong>Supermemory</strong> for cross-session recall and a per-user <strong>soul</strong> that defines voice, principles, and boundaries. Guests can try chat and local tools; signed-in users unlock external app connections, memory, Telegram linking, and agent-managed schedules.</p>
+											</div>
+										</div>
+									</div>
 
 									<!-- PROJECT: Supply Chain Document Processing -->
 									<div class="project-card">
